@@ -1572,6 +1572,7 @@ footer {
 /* ============================================================
    RESPONSIVE
    ============================================================ */
+/* Tablet */
 @media (max-width: 1024px) {
   .about-grid { grid-template-columns: 1fr; }
   .about-profile-card { position: static; max-width: 360px; }
@@ -1579,18 +1580,105 @@ footer {
   .resume-layout { grid-template-columns: 1fr; }
   .proj-card.featured { grid-column: span 1; }
 }
+
+/* Mobile */
 @media (max-width: 768px) {
+  /* Hide custom cursor on touch devices */
+  .cursor, .cursor-ring { display: none !important; }
+  body { cursor: auto; }
+
   section { padding: 80px 5% 60px; }
-  .nav-links { display: none; flex-direction: column; position: fixed; top: 64px; left: 0; right: 0; background: rgba(9,13,18,0.97); padding: 24px; gap: 4px; border-bottom: 1px solid var(--border); }
+
+  /* Navigation */
+  .nav-links {
+    display: none; flex-direction: column;
+    position: fixed; top: 64px; left: 0; right: 0;
+    background: rgba(9,13,18,0.97);
+    padding: 24px; gap: 4px;
+    border-bottom: 1px solid var(--border);
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
   .nav-links.open { display: flex; }
+  .nav-links a { padding: 12px 14px; font-size: 1rem; }
   .nav-toggle { display: flex; }
+  .nav-dots { display: none; }
+
+  /* Hero */
+  .hero-content { max-width: 100%; }
+  .hero-badge { font-size: 0.6rem; letter-spacing: 1.5px; padding: 5px 12px; }
+  .hero-title { font-size: 0.9rem; letter-spacing: 3px; }
+  .hero-title-line::before { width: 24px; }
   .hero-stats { gap: 24px; }
+  .stat-num { font-size: 1.8rem; }
+  .hero-ctas { flex-direction: column; }
+  .hero-ctas .btn { width: 100%; justify-content: center; }
+  .scroll-indicator { display: none; }
+
+  /* About */
+  .about-profile-card { max-width: 100%; margin: 0 auto; }
+  .skills-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+  .timeline { padding-left: 20px; }
+  .timeline-item::before { left: -26px; width: 10px; height: 10px; }
+  .timeline-dot-line { left: -20px; width: 20px; }
+
+  /* Projects */
+  .proj-grid { grid-template-columns: 1fr; }
+  .projects-tabs { gap: 4px; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .tab-btn { padding: 8px 12px; font-size: 0.72rem; white-space: nowrap; }
+  .project-header { flex-direction: column; }
+
+  /* 3D Viewer */
+  .viewer-container { aspect-ratio: 4/3; }
+  .viewer-info { margin-top: 16px; }
+  .measure-toolbar { flex-wrap: wrap; }
+
+  /* Resume */
+  .resume-content-preview { padding: 20px; min-height: 400px; }
+  .resume-content-preview .r-name { font-size: 1.4rem; }
+
+  /* Contact */
   .contact-layout { grid-template-columns: 1fr; }
+  .contact-form { padding: 24px; }
   .edu-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
-  .projects-tabs { gap: 4px; }
-  .nav-dots { display: none; }
-  .footer-grid { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; text-align: center; }
+  .footer-links { justify-content: center; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  section { padding: 70px 4% 50px; }
+
+  .nav-logo { font-size: 1.1rem; }
+  .nav-logo span span { display: none; }
+
+  .hero-name { letter-spacing: 2px; }
+  .hero-desc { font-size: 0.9rem; }
+  .hero-stats { gap: 16px; flex-wrap: wrap; }
+  .stat-num { font-size: 1.5rem; }
+  .stat-label { font-size: 0.65rem; }
+
+  .section-title { margin-bottom: 10px; }
+  .section-subtitle { margin-bottom: 40px; font-size: 0.9rem; }
+
+  .skills-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 6px; }
+  .skill-tag { padding: 6px 10px; font-size: 0.72rem; }
+
+  .timeline-item { padding: 16px; }
+
+  .proj-body { padding: 16px; }
+
+  .contact-link-card { padding: 14px 16px; }
+  .contact-link-icon { width: 36px; height: 36px; font-size: 1rem; }
+
+  .btn { padding: 12px 20px; font-size: 0.82rem; }
+
+  footer { padding: 36px 5% 24px; }
 }
 </style>
 </head>
@@ -2438,7 +2526,7 @@ footer {
         <div class="contact-link-icon"><i class="fas fa-map-marker-alt"></i></div>
         <div>
           <div class="contact-link-name">LOCATION</div>
-          <div class="contact-link-val">Salem, Tamil Nadu, India</div>
+          <div class="contact-link-val">Karur, Tamil Nadu, India</div>
         </div>
       </div>
     </div>
@@ -2553,6 +2641,13 @@ window.addEventListener('scroll', () => {
 function toggleNav() {
   document.getElementById('navLinks').classList.toggle('open');
 }
+
+/* ---- Close mobile nav when a link is tapped ---- */
+document.querySelectorAll('.nav-links a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
 
 /* ---- Scroll to ---- */
 function scrollToSection(selector) {
