@@ -4,8 +4,7 @@ A modern, interactive portfolio website for a Mechanical Engineer with 6+ years 
 
 ## Live Demo
 
-> After deploying to GitHub Pages, your site will be available at:  
-> `https://<your-username>.github.io/<repo-name>/`
+🌐 **[santhoshkumarsanty.github.io/My-Portfolio](https://santhoshkumarsanty.github.io/My-Portfolio/)**
 
 ## Features
 
@@ -67,6 +66,9 @@ npx serve .
 
 **Santhosh Kumar S**  
 Project Engineer | Mechanical Design | CAD | CFD | FEA
+
+- 📧 [sundramsivasanthosh@gmail.com](mailto:sundramsivasanthosh@gmail.com)
+- 🐙 [github.com/santhoshkumarsanty](https://github.com/santhoshkumarsanty)
 
 ## License
 
