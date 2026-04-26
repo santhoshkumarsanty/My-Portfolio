@@ -4287,7 +4287,8 @@ async function submitForm(e) {
   const storageKey = 'portfolio-language';
   const defaultLang = 'en';
   const translationRetryDelayMs = 250;
-  const maxTranslationWaitMs = 3 * 1000;
+  const maxTranslationWaitSeconds = 3;
+  const maxTranslationWaitMs = maxTranslationWaitSeconds * 1000;
   const maxTranslationAttempts = Math.ceil(maxTranslationWaitMs / translationRetryDelayMs);
   const stored = localStorage.getItem(storageKey);
   const languageOptions = Array.from(languageSelect.options);
@@ -4320,7 +4321,7 @@ async function submitForm(e) {
   });
 
   // Google Translate loads via callback parameter and requires a global function name.
-  window.googleTranslateElementInit = function googleTranslateElementInit() {
+  window.googleTranslateElementInit = () => {
     if (!window.google?.translate?.TranslateElement) {
       console.warn('Google Translate is unavailable.');
       return;
