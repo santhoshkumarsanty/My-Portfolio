@@ -4287,6 +4287,8 @@ async function submitForm(e) {
   const supportedLanguages = 'sq,hy,az,eu,be,bs,bg,ca,hr,cs,da,nl,en,et,fi,fr,gl,ka,de,el,hu,is,ga,it,lv,lt,lb,mk,mt,no,pl,pt,ro,ru,gd,sr,sk,sl,es,sv,tr,uk,cy';
   const storageKey = 'portfolio-language';
   const defaultLang = 'en';
+  const maxTranslationAttempts = 12;
+  const translationRetryDelayMs = 250;
   const stored = localStorage.getItem(storageKey);
   const available = Array.from(languageSelect.options).map(option => option.value);
   const saved = available.includes(stored) ? stored : defaultLang;
@@ -4302,8 +4304,8 @@ async function submitForm(e) {
       translateCombo.dispatchEvent(new Event('change'));
       return;
     }
-    if (attempt < 12) {
-      setTimeout(() => applyLanguage(lang, attempt + 1), 250);
+    if (attempt < maxTranslationAttempts) {
+      setTimeout(() => applyLanguage(lang, attempt + 1), translationRetryDelayMs);
     }
   };
 
@@ -4313,6 +4315,7 @@ async function submitForm(e) {
     applyLanguage(lang);
   });
 
+  // Google Translate loads via callback parameter and requires a global function name.
   window.googleTranslateElementInit = function googleTranslateElementInit() {
     new google.translate.TranslateElement({
       pageLanguage: 'en',
