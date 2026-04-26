@@ -1,6 +1,6 @@
 # Santhosh Kumar S — Mechanical Engineer Portfolio
 
-A modern, interactive portfolio website for a Mechanical Engineer with 6+ years of experience in Product Development, CAD Modeling, CFD, Structural Analysis, and End-to-End Manufacturing.
+A clean, multilingual portfolio website for a Mechanical Engineer with 6+ years of experience in product development, CAD modeling, CFD, structural analysis, and end-to-end manufacturing.
 
 ## Live Demo
 
@@ -9,25 +9,38 @@ A modern, interactive portfolio website for a Mechanical Engineer with 6+ years 
 
 ## Features
 
-- **Interactive 3D Robot Animation** — Six-axis articulated robot with realistic servo motion, pneumatic gripper, and pick-and-place cycle (Three.js)
-- **3D CAD Viewer** — Upload and view STEP, STL, and OBJ files directly in the browser with measurement tools and render modes
-- **Project Showcase** — Categorized tabs: Product Design, CFD Analysis, Structural Analysis, Nesting, Concept Development, End-to-End Projects
-- **Dark/Light Theme Toggle**
-- **Responsive Design** — Works on desktop, tablet, and mobile
-- **Downloadable Resume**
+- **German-inspired industrial design** — clean grid layout, professional typography, high readability
+- **Multi-language system** — German (default), English, Japanese, French, Spanish, Italian, Dutch, Portuguese, Polish, Swedish
+- **Instant language switch** — no page reload, updates all sections
+- **Light/Dark theme toggle** — stored in localStorage
+- **Structured sections** — Home, About, Portfolio, Success Stories, Contact
+- **Responsive design** — optimized for desktop and mobile
+- **Downloadable resume**
 
 ## Tech Stack
 
 - HTML5, CSS3, JavaScript (Vanilla)
-- [Three.js r128](https://threejs.org/) — 3D rendering
-- [occt-import-js v0.0.23](https://github.com/nicholasgasior/occt-import-js) — STEP file parsing
-- [Font Awesome 6.5](https://fontawesome.com/) — Icons
-- [Google Fonts](https://fonts.google.com/) — Rajdhani, Share Tech Mono, Exo 2
+- Google Fonts — Inter, IBM Plex Sans
 
 ## Project Structure
 
 ```
-├── index.html                  # Main portfolio page (all-in-one)
+├── index.html                  # Main portfolio page
+├── css/                        # Stylesheets
+│   └── styles.css
+├── js/                         # Application scripts
+│   └── app.js
+├── locales/                    # Translation files
+│   ├── de.json
+│   ├── en.json
+│   ├── es.json
+│   ├── fr.json
+│   ├── it.json
+│   ├── ja.json
+│   ├── nl.json
+│   ├── pl.json
+│   ├── pt.json
+│   └── sv.json
 ├── CFD/                        # CFD analysis images & videos
 ├── Concept Development/        # Concept development media & CAD files
 ├── Design/                     # Product design images
@@ -35,7 +48,6 @@ A modern, interactive portfolio website for a Mechanical Engineer with 6+ years 
 ├── nesting/                    # Nesting optimization images
 ├── profile/                    # Profile photo
 ├── resume/                     # Downloadable resume PDF
-├── robo/                       # Robot/CAD images
 ├── Structural analysis/        # FEA/structural analysis media
 ├── README.md
 └── .gitignore

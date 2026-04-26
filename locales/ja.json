@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "title": "Santhosh Kumar S — 機械エンジニア ポートフォリオ",
+    "description": "製品開発、CAD、CFD、構造解析に焦点を当てた産業向けポートフォリオ。"
+  },
+  "header": {
+    "skipLink": "本文へスキップ",
+    "languageLabel": "言語",
+    "themeLabel": "テーマ",
+    "themeToggle": "テーマ切替",
+    "navToggle": "ナビゲーションを開閉"
+  },
+  "nav": {
+    "home": "ホーム",
+    "about": "プロフィール",
+    "portfolio": "ポートフォリオ",
+    "success": "成功事例",
+    "contact": "連絡先"
+  },
+  "hero": {
+    "badge": "プロジェクト対応可能 · 機械エンジニア",
+    "name": "Santhosh Kumar S",
+    "title": "プロジェクトエンジニア · 製品開発 · CAD & シミュレーション",
+    "description": "コンセプトから量産リリースまで、エンドツーエンドの開発を6年以上担当。",
+    "summary": "産業製品開発、CAD/CAE検証、量産対応ソリューションに注力。",
+    "stats": {
+      "years": "経験年数",
+      "projects": "完了プロジェクト",
+      "domains": "専門分野"
+    },
+    "ctaProjects": "プロジェクトを見る",
+    "ctaContact": "連絡する",
+    "ctaResume": "履歴書をダウンロード"
+  },
+  "about": {
+    "label": "プロフィール",
+    "title": "エンジニア。開発者。体系的。",
+    "subtitle": "産業標準に沿った技術的深さ、明確なコミュニケーション、確実な実行。",
+    "profile": {
+      "imageAlt": "Santhosh Kumar S のポートレート",
+      "name": "Santhosh Kumar S",
+      "role": "Mechanical / Project Engineer",
+      "locationLabel": "所在地",
+      "locationValue": "バンガロール（インド）",
+      "phoneLabel": "電話",
+      "emailLabel": "メール",
+      "linkedinLabel": "LinkedIn",
+      "linkedinValue": "プロフィールを開く",
+      "githubLabel": "GitHub"
+    },
+    "summary": "製品開発、CAD/CAE、製造最適化で6年以上の経験。DFM、GD&T、検証済みプロセスに注力。",
+    "coreTitle": "主要スキル",
+    "core": {
+      "1": "製品開発とコンセプト検証",
+      "2": "3D CAD（SolidWorks、AutoCAD）と図面作成",
+      "3": "CFD・FEAの検証",
+      "4": "GD&T、DFM、製造支援",
+      "5": "プロジェクト管理とサプライヤー調整",
+      "6": "品質・プロセス保証"
+    },
+    "methodTitle": "進め方",
+    "method": {
+      "1": "明確なマイルストーン計画とリスク評価",
+      "2": "データに基づく判断とレビューの記録",
+      "3": "設計・シミュレーション・製造の橋渡し"
+    }
+  },
+  "portfolio": {
+    "label": "ポートフォリオ",
+    "title": "産業インパクトのあるプロジェクト",
+    "subtitle": "構造化された開発、検証済み成果、製造と性能の改善。",
+    "projects": {
+      "p1": {
+        "title": "エンドツーエンド組立ライン",
+        "desc": "多工程組立ラインの構想、設計、立ち上げまでを担当。",
+        "tag1": "プロジェクト管理",
+        "tag2": "量産立上げ",
+        "alt": "エンドツーエンド組立ライン"
+      },
+      "p2": {
+        "title": "CFDによる流路最適化",
+        "desc": "流体チャネルの解析と再設計で効率と圧力損失を改善。",
+        "tag1": "CFD",
+        "tag2": "検証",
+        "alt": "流体解析のCFD可視化"
+      },
+      "p3": {
+        "title": "構造応力解析",
+        "desc": "治具のFEA評価と安全性確認、材料最適化を実施。",
+        "tag1": "FEA",
+        "tag2": "安全設計",
+        "alt": "機械部品の構造解析"
+      },
+      "p4": {
+        "title": "精密部品設計",
+        "desc": "製造性と公差連鎖を最適化した量産部品のCAD設計。",
+        "tag1": "CAD",
+        "tag2": "GD&T",
+        "alt": "精密部品のCAD設計"
+      }
+    }
+  },
+  "success": {
+    "label": "成功事例",
+    "title": "測定可能な成果",
+    "subtitle": "コスト削減、品質向上、納期遵守につながる改善。",
+    "stories": {
+      "s1": {
+        "metric": "製造コスト -18%",
+        "title": "生産ラインの安定化",
+        "desc": "プロセス分析とDFM最適化により不良率を低減し、サイクルタイムを安定化。"
+      },
+      "s2": {
+        "metric": "流路効率 +35%",
+        "title": "CFD再設計を実現",
+        "desc": "検証済みシミュレーションで圧力損失を削減し、性能を向上。"
+      },
+      "s3": {
+        "metric": "12ステーションを納期内",
+        "title": "ライン立ち上げ完了",
+        "desc": "サプライヤーと社内チームを調整し、期日通りに稼働開始。"
+      }
+    }
+  },
+  "contact": {
+    "label": "連絡先",
+    "title": "技術的な協業を開始",
+    "subtitle": "プロジェクト相談、技術調整、新しい課題など迅速に対応します。",
+    "info": {
+      "phoneLabel": "電話",
+      "emailLabel": "メール",
+      "locationLabel": "所在地",
+      "locationValue": "バンガロール（インド）"
+    },
+    "form": {
+      "nameLabel": "お名前",
+      "emailLabel": "メール",
+      "subjectLabel": "件名",
+      "messageLabel": "メッセージ",
+      "submit": "メッセージ送信",
+      "placeholders": {
+        "name": "お名前",
+        "email": "name@example.com",
+        "subject": "プロジェクト相談 / 協業",
+        "message": "プロジェクト内容や要件を簡潔にご記入ください"
+      },
+      "statusIncomplete": "すべての項目を入力してください。",
+      "statusSending": "メールクライアントを開いています…"
+    }
+  },
+  "footer": {
+    "rights": "© 2026 Santhosh Kumar S. 無断転載を禁じます。",
+    "backToTop": "トップへ"
+  }
+}

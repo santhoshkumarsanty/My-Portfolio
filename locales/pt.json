@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "title": "Santhosh Kumar S — Portfólio de engenharia mecânica",
+    "description": "Portfólio industrial limpo focado em desenvolvimento de produto, CAD, CFD e análise estrutural."
+  },
+  "header": {
+    "skipLink": "Ir para o conteúdo",
+    "languageLabel": "Idioma",
+    "themeLabel": "Tema",
+    "themeToggle": "Alternar tema",
+    "navToggle": "Abrir ou fechar navegação"
+  },
+  "nav": {
+    "home": "Início",
+    "about": "Perfil",
+    "portfolio": "Portfólio",
+    "success": "Resultados",
+    "contact": "Contato"
+  },
+  "hero": {
+    "badge": "Disponível para projetos · Engenheiro mecânico",
+    "name": "Santhosh Kumar S",
+    "title": "Project Engineer · Desenvolvimento de produto · CAD & Simulação",
+    "description": "Mais de 6 anos entregando programas de engenharia de ponta a ponta — do conceito à liberação para produção.",
+    "summary": "Foco em desenvolvimento de produto industrial, validação CAD/CAE e soluções prontas para produção.",
+    "stats": {
+      "years": "Anos de experiência",
+      "projects": "Projetos entregues",
+      "domains": "Domínios de engenharia"
+    },
+    "ctaProjects": "Ver projetos",
+    "ctaContact": "Entrar em contato",
+    "ctaResume": "Baixar CV"
+  },
+  "about": {
+    "label": "Perfil",
+    "title": "Engenheiro. Desenvolvedor. Estruturado.",
+    "subtitle": "Profundidade técnica, comunicação clara e execução controlada segundo padrões industriais.",
+    "profile": {
+      "imageAlt": "Retrato de Santhosh Kumar S",
+      "name": "Santhosh Kumar S",
+      "role": "Mechanical / Project Engineer",
+      "locationLabel": "Localização",
+      "locationValue": "Bangalore, Índia",
+      "phoneLabel": "Telefone",
+      "emailLabel": "Email",
+      "linkedinLabel": "LinkedIn",
+      "linkedinValue": "Abrir perfil",
+      "githubLabel": "GitHub"
+    },
+    "summary": "Project Engineer com mais de 6 anos de experiência em desenvolvimento de produto, CAD/CAE e otimização de manufatura. Foco em DFM, GD&T e processos validados.",
+    "coreTitle": "Competências principais",
+    "core": {
+      "1": "Desenvolvimento de produto e validação de conceito",
+      "2": "CAD 3D (SolidWorks, AutoCAD) e desenhos técnicos",
+      "3": "Validação CFD e FEA",
+      "4": "GD&T, DFM e suporte à produção",
+      "5": "Controle de projetos e coordenação de fornecedores",
+      "6": "Qualidade e garantia de processos"
+    },
+    "methodTitle": "Forma de trabalho",
+    "method": {
+      "1": "Planejamento claro de marcos e avaliação de riscos",
+      "2": "Decisões baseadas em dados e revisões documentadas",
+      "3": "Ponte entre design, simulação e manufatura"
+    }
+  },
+  "portfolio": {
+    "label": "Portfólio",
+    "title": "Projetos com impacto industrial",
+    "subtitle": "Desenvolvimento estruturado, resultados validados e melhorias mensuráveis em produção e desempenho.",
+    "projects": {
+      "p1": {
+        "title": "Linha de montagem end-to-end",
+        "desc": "Conceito, dimensionamento e comissionamento de uma linha de montagem multiestação.",
+        "tag1": "Gestão de projetos",
+        "tag2": "Industrialização",
+        "alt": "Linha de montagem para projeto end-to-end"
+      },
+      "p2": {
+        "title": "Otimização de fluxo com CFD",
+        "desc": "Análise e redesign de um canal fluido para melhorar eficiência e reduzir perdas de pressão.",
+        "tag1": "CFD",
+        "tag2": "Validação",
+        "alt": "Visualização CFD de análise de fluxo"
+      },
+      "p3": {
+        "title": "Análise de tensões estruturais",
+        "desc": "Avaliação FEA de um dispositivo com verificação de segurança e otimização de material.",
+        "tag1": "FEA",
+        "tag2": "Design seguro",
+        "alt": "Análise estrutural de um componente mecânico"
+      },
+      "p4": {
+        "title": "Design de peça de precisão",
+        "desc": "Desenvolvimento CAD de um componente seriado com fabricabilidade e tolerâncias otimizadas.",
+        "tag1": "CAD",
+        "tag2": "GD&T",
+        "alt": "Design CAD de um componente de precisão"
+      }
+    }
+  },
+  "success": {
+    "label": "Resultados",
+    "title": "Resultados mensuráveis",
+    "subtitle": "Melhorias que reduzem custos, aumentam a qualidade e garantem prazos.",
+    "stories": {
+      "s1": {
+        "metric": "-18% custo de fabricação",
+        "title": "Linha de produção estabilizada",
+        "desc": "Análise de processo e otimização DFM reduziram refugo e estabilizaram o ciclo."
+      },
+      "s2": {
+        "metric": "+35% eficiência de fluxo",
+        "title": "Redesign CFD entregue",
+        "desc": "Simulações validadas reduziram perdas de pressão e melhoraram o desempenho."
+      },
+      "s3": {
+        "metric": "12 estações no prazo",
+        "title": "Lançamento end-to-end",
+        "desc": "Coordenação de fornecedores e equipes internas para comissionamento pontual."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contato",
+    "title": "Iniciar uma colaboração técnica",
+    "subtitle": "Consultas de projeto, alinhamento técnico ou novos desafios — resposta rápida.",
+    "info": {
+      "phoneLabel": "Telefone",
+      "emailLabel": "Email",
+      "locationLabel": "Localização",
+      "locationValue": "Bangalore, Índia"
+    },
+    "form": {
+      "nameLabel": "Nome",
+      "emailLabel": "Email",
+      "subjectLabel": "Assunto",
+      "messageLabel": "Mensagem",
+      "submit": "Enviar mensagem",
+      "placeholders": {
+        "name": "Seu nome",
+        "email": "nome@exemplo.com",
+        "subject": "Consulta de projeto / Colaboração",
+        "message": "Descreva brevemente seu projeto ou requisitos"
+      },
+      "statusIncomplete": "Preencha todos os campos.",
+      "statusSending": "Abrindo seu cliente de email…"
+    }
+  },
+  "footer": {
+    "rights": "© 2026 Santhosh Kumar S. Todos os direitos reservados.",
+    "backToTop": "Voltar ao topo"
+  }
+}

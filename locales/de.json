@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "title": "Santhosh Kumar S — Mechanical Engineering Portfolio",
+    "description": "Klares, industrielles Portfolio mit Fokus auf Produktentwicklung, CAD, CFD und Struktur-Analyse."
+  },
+  "header": {
+    "skipLink": "Zum Inhalt",
+    "languageLabel": "Sprache",
+    "themeLabel": "Design",
+    "themeToggle": "Designmodus wechseln",
+    "navToggle": "Navigation öffnen oder schließen"
+  },
+  "nav": {
+    "home": "Start",
+    "about": "Profil",
+    "portfolio": "Projekte",
+    "success": "Erfolge",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "badge": "Verfügbar für Projekte · Mechanical Engineer",
+    "name": "Santhosh Kumar S",
+    "title": "Project Engineer · Product Development · CAD & Simulation",
+    "description": "6+ Jahre Erfahrung in der End-to-End-Umsetzung von Entwicklungsprojekten – von Konzept bis Serienfreigabe.",
+    "summary": "Fokus auf industrielle Produktentwicklung, CAD/CAE-Validierung und serientaugliche Fertigungslösungen.",
+    "stats": {
+      "years": "Jahre Erfahrung",
+      "projects": "Projekte geliefert",
+      "domains": "Engineering-Domains"
+    },
+    "ctaProjects": "Projekte ansehen",
+    "ctaContact": "Kontakt aufnehmen",
+    "ctaResume": "Lebenslauf herunterladen"
+  },
+  "about": {
+    "label": "Profil",
+    "title": "Ingenieur. Entwickler. Strukturiert.",
+    "subtitle": "Technische Tiefe, klare Kommunikation und kontrollierte Umsetzung nach industriellen Standards.",
+    "profile": {
+      "imageAlt": "Porträt von Santhosh Kumar S",
+      "name": "Santhosh Kumar S",
+      "role": "Mechanical / Project Engineer",
+      "locationLabel": "Standort",
+      "locationValue": "Bangalore, Indien",
+      "phoneLabel": "Telefon",
+      "emailLabel": "E-Mail",
+      "linkedinLabel": "LinkedIn",
+      "linkedinValue": "Profil öffnen",
+      "githubLabel": "GitHub"
+    },
+    "summary": "Project Engineer mit 6+ Jahren Erfahrung in Produktentwicklung, CAD/CAE und Fertigungsoptimierung. Schwerpunkt auf DFM, GD&T und validierten Prozessketten.",
+    "coreTitle": "Kernkompetenzen",
+    "core": {
+      "1": "Produktentwicklung & Konzeptabsicherung",
+      "2": "3D CAD (SolidWorks, AutoCAD) & technische Zeichnung",
+      "3": "CFD- und FEA-Validierung",
+      "4": "GD&T, DFM und Fertigungsbetreuung",
+      "5": "Projektsteuerung und Lieferantenkoordination",
+      "6": "Qualitäts- und Prozesssicherung"
+    },
+    "methodTitle": "Arbeitsweise",
+    "method": {
+      "1": "Klare Meilensteinplanung und Risikoabschätzung",
+      "2": "Datenbasierte Entscheidungen und dokumentierte Reviews",
+      "3": "Schnittstelle zwischen Design, Simulation und Fertigung"
+    }
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "title": "Projekte mit industrieller Wirkung",
+    "subtitle": "Strukturierte Entwicklung, validierte Ergebnisse und messbare Verbesserungen in Produktion und Produktleistung.",
+    "projects": {
+      "p1": {
+        "title": "End-to-End Montageanlage",
+        "desc": "Konzeption, Auslegung und Inbetriebnahme einer Montagelinie für Mehrstationen-Baugruppen.",
+        "tag1": "Projektmanagement",
+        "tag2": "Industrialisierung",
+        "alt": "Montageanlage für End-to-End-Projekt"
+      },
+      "p2": {
+        "title": "CFD-gestützte Strömungsoptimierung",
+        "desc": "Analyse und Redesign eines Fluidkanals zur Effizienzsteigerung und Druckverlustreduzierung.",
+        "tag1": "CFD",
+        "tag2": "Validierung",
+        "alt": "CFD-Visualisierung einer Strömungsanalyse"
+      },
+      "p3": {
+        "title": "Strukturelle Spannungsanalyse",
+        "desc": "FEA-Analyse einer Vorrichtung mit Sicherheitsnachweis und materialoptimierter Lösung.",
+        "tag1": "FEA",
+        "tag2": "Design for Safety",
+        "alt": "Strukturanalyse eines mechanischen Bauteils"
+      },
+      "p4": {
+        "title": "Präzisionsbauteil-Design",
+        "desc": "CAD-Entwicklung eines Serienbauteils mit optimierter Fertigbarkeit und Toleranzkette.",
+        "tag1": "CAD",
+        "tag2": "GD&T",
+        "alt": "CAD-Design eines Präzisionsbauteils"
+      }
+    }
+  },
+  "success": {
+    "label": "Erfolgsgeschichten",
+    "title": "Nachweisbare Ergebnisse",
+    "subtitle": "Verbesserungen, die Kosten senken, Qualität steigern und Termine absichern.",
+    "stories": {
+      "s1": {
+        "metric": "-18% Herstellkosten",
+        "title": "Produktionslinie stabilisiert",
+        "desc": "Prozessanalyse und DFM-Optimierung führten zu geringeren Ausschussraten und stabiler Taktzeit."
+      },
+      "s2": {
+        "metric": "+35% Strömungseffizienz",
+        "title": "CFD-Redesign umgesetzt",
+        "desc": "Validierte Simulationen reduzierten Druckverluste und steigerten die Systemleistung messbar."
+      },
+      "s3": {
+        "metric": "12 Stationen termingerecht",
+        "title": "End-to-End Anlagenstart",
+        "desc": "Koordination von Lieferanten und internen Teams für eine pünktliche Inbetriebnahme."
+      }
+    }
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Technische Zusammenarbeit starten",
+    "subtitle": "Projektanfragen, technische Abstimmungen oder neue Aufgaben – ich antworte zeitnah.",
+    "info": {
+      "phoneLabel": "Telefon",
+      "emailLabel": "E-Mail",
+      "locationLabel": "Standort",
+      "locationValue": "Bangalore, Indien"
+    },
+    "form": {
+      "nameLabel": "Name",
+      "emailLabel": "E-Mail",
+      "subjectLabel": "Betreff",
+      "messageLabel": "Nachricht",
+      "submit": "Nachricht senden",
+      "placeholders": {
+        "name": "Ihr Name",
+        "email": "name@beispiel.de",
+        "subject": "Projektanfrage / Zusammenarbeit",
+        "message": "Beschreiben Sie kurz Ihr Projekt oder Ihre Anforderungen"
+      },
+      "statusIncomplete": "Bitte füllen Sie alle Felder aus.",
+      "statusSending": "E-Mail-Programm wird geöffnet…"
+    }
+  },
+  "footer": {
+    "rights": "© 2026 Santhosh Kumar S. Alle Rechte vorbehalten.",
+    "backToTop": "Nach oben"
+  }
+}

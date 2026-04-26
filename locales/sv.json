@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "title": "Santhosh Kumar S — Portfolio inom maskinteknik",
+    "description": "Rent industriellt portfolio med fokus på produktutveckling, CAD, CFD och strukturanalys."
+  },
+  "header": {
+    "skipLink": "Hoppa till innehåll",
+    "languageLabel": "Språk",
+    "themeLabel": "Tema",
+    "themeToggle": "Växla tema",
+    "navToggle": "Öppna eller stäng navigering"
+  },
+  "nav": {
+    "home": "Hem",
+    "about": "Profil",
+    "portfolio": "Portfolio",
+    "success": "Resultat",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "badge": "Tillgänglig för projekt · Maskiningenjör",
+    "name": "Santhosh Kumar S",
+    "title": "Project Engineer · Produktutveckling · CAD & Simulering",
+    "description": "Över 6 år med end-to-end ingenjörsprogram — från koncept till produktionssläpp.",
+    "summary": "Fokus på industriell produktutveckling, CAD/CAE-validering och produktionsklara lösningar.",
+    "stats": {
+      "years": "År av erfarenhet",
+      "projects": "Levererade projekt",
+      "domains": "Tekniska områden"
+    },
+    "ctaProjects": "Se projekt",
+    "ctaContact": "Kontakta mig",
+    "ctaResume": "Ladda ner CV"
+  },
+  "about": {
+    "label": "Profil",
+    "title": "Ingenjör. Utvecklare. Strukturerad.",
+    "subtitle": "Teknisk bredd, tydlig kommunikation och kontrollerad leverans enligt industristandard.",
+    "profile": {
+      "imageAlt": "Porträtt av Santhosh Kumar S",
+      "name": "Santhosh Kumar S",
+      "role": "Mechanical / Project Engineer",
+      "locationLabel": "Plats",
+      "locationValue": "Bangalore, Indien",
+      "phoneLabel": "Telefon",
+      "emailLabel": "E-post",
+      "linkedinLabel": "LinkedIn",
+      "linkedinValue": "Öppna profil",
+      "githubLabel": "GitHub"
+    },
+    "summary": "Project Engineer med över 6 års erfarenhet inom produktutveckling, CAD/CAE och produktionsoptimering. Fokus på DFM, GD&T och validerade processer.",
+    "coreTitle": "Kärnkompetenser",
+    "core": {
+      "1": "Produktutveckling och konceptvalidering",
+      "2": "3D CAD (SolidWorks, AutoCAD) och tekniska ritningar",
+      "3": "CFD- och FEA-validering",
+      "4": "GD&T, DFM och produktionsstöd",
+      "5": "Projektstyrning och leverantörskoordinering",
+      "6": "Kvalitets- och processäkring"
+    },
+    "methodTitle": "Arbetssätt",
+    "method": {
+      "1": "Tydlig milstolpeplanering och riskbedömning",
+      "2": "Datadrivna beslut och dokumenterade granskningar",
+      "3": "Brygga mellan design, simulering och tillverkning"
+    }
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "title": "Projekt med industriell effekt",
+    "subtitle": "Strukturerad utveckling, validerade resultat och mätbara förbättringar i produktion och prestanda.",
+    "projects": {
+      "p1": {
+        "title": "End-to-end monteringslina",
+        "desc": "Koncept, dimensionering och driftsättning av en flerstations monteringslina.",
+        "tag1": "Projektledning",
+        "tag2": "Industrialisering",
+        "alt": "Monteringslina för end-to-end-projekt"
+      },
+      "p2": {
+        "title": "CFD-baserad flödesoptimering",
+        "desc": "Analys och redesign av en flödeskanal för högre effektivitet och lägre tryckfall.",
+        "tag1": "CFD",
+        "tag2": "Validering",
+        "alt": "CFD-visualisering av flödesanalys"
+      },
+      "p3": {
+        "title": "Strukturell spänningsanalys",
+        "desc": "FEA-bedömning av fixtur med säkerhetsverifiering och materialoptimering.",
+        "tag1": "FEA",
+        "tag2": "Säker design",
+        "alt": "Strukturanalys av en mekanisk komponent"
+      },
+      "p4": {
+        "title": "Precisionkomponentdesign",
+        "desc": "CAD-utveckling av seriekomponent med optimerad tillverkbarhet och toleranskedja.",
+        "tag1": "CAD",
+        "tag2": "GD&T",
+        "alt": "CAD-design av en precisionskomponent"
+      }
+    }
+  },
+  "success": {
+    "label": "Resultat",
+    "title": "Mätbara resultat",
+    "subtitle": "Förbättringar som sänker kostnader, höjer kvalitet och säkrar leveranser.",
+    "stories": {
+      "s1": {
+        "metric": "-18% tillverkningskostnad",
+        "title": "Produktionslinje stabiliserad",
+        "desc": "Processanalys och DFM-optimering minskade kassationer och stabiliserade cykeltid."
+      },
+      "s2": {
+        "metric": "+35% flödeseffektivitet",
+        "title": "CFD-redesign levererad",
+        "desc": "Validerade simuleringar minskade tryckfall och förbättrade systemprestanda."
+      },
+      "s3": {
+        "metric": "12 stationer i tid",
+        "title": "End-to-end driftsättning",
+        "desc": "Samordning av leverantörer och interna team gav driftsättning i tid."
+      }
+    }
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Starta ett tekniskt samarbete",
+    "subtitle": "Projektförfrågningar, teknisk samordning eller nya utmaningar — snabbt svar.",
+    "info": {
+      "phoneLabel": "Telefon",
+      "emailLabel": "E-post",
+      "locationLabel": "Plats",
+      "locationValue": "Bangalore, Indien"
+    },
+    "form": {
+      "nameLabel": "Namn",
+      "emailLabel": "E-post",
+      "subjectLabel": "Ämne",
+      "messageLabel": "Meddelande",
+      "submit": "Skicka meddelande",
+      "placeholders": {
+        "name": "Ditt namn",
+        "email": "namn@exempel.com",
+        "subject": "Projektförfrågan / Samarbete",
+        "message": "Beskriv kort ditt projekt eller krav"
+      },
+      "statusIncomplete": "Fyll i alla fält.",
+      "statusSending": "Öppnar din e-postklient…"
+    }
+  },
+  "footer": {
+    "rights": "© 2026 Santhosh Kumar S. Alla rättigheter förbehållna.",
+    "backToTop": "Till toppen"
+  }
+}

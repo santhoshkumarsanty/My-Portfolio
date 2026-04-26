@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "title": "Santhosh Kumar S — Mechanical Engineering Portfolio",
+    "description": "Clean industrial portfolio focused on product development, CAD, CFD, and structural analysis."
+  },
+  "header": {
+    "skipLink": "Skip to content",
+    "languageLabel": "Language",
+    "themeLabel": "Theme",
+    "themeToggle": "Toggle theme",
+    "navToggle": "Open or close navigation"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "success": "Success Stories",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Available for projects · Mechanical Engineer",
+    "name": "Santhosh Kumar S",
+    "title": "Project Engineer · Product Development · CAD & Simulation",
+    "description": "6+ years delivering end-to-end engineering programs — from concept to production release.",
+    "summary": "Focused on industrial product development, CAD/CAE validation, and production-ready solutions.",
+    "stats": {
+      "years": "Years Experience",
+      "projects": "Projects Delivered",
+      "domains": "Engineering Domains"
+    },
+    "ctaProjects": "View Projects",
+    "ctaContact": "Get in Touch",
+    "ctaResume": "Download CV"
+  },
+  "about": {
+    "label": "About",
+    "title": "Engineer. Developer. Structured.",
+    "subtitle": "Technical depth, clear communication, and controlled delivery aligned with industrial standards.",
+    "profile": {
+      "imageAlt": "Portrait of Santhosh Kumar S",
+      "name": "Santhosh Kumar S",
+      "role": "Mechanical / Project Engineer",
+      "locationLabel": "Location",
+      "locationValue": "Bangalore, India",
+      "phoneLabel": "Phone",
+      "emailLabel": "Email",
+      "linkedinLabel": "LinkedIn",
+      "linkedinValue": "Open profile",
+      "githubLabel": "GitHub"
+    },
+    "summary": "Project Engineer with 6+ years of experience in product development, CAD/CAE, and manufacturing optimization. Focused on DFM, GD&T, and validated process chains.",
+    "coreTitle": "Core Competencies",
+    "core": {
+      "1": "Product development & concept validation",
+      "2": "3D CAD (SolidWorks, AutoCAD) & technical drawings",
+      "3": "CFD and FEA validation",
+      "4": "GD&T, DFM, and production support",
+      "5": "Project control and supplier coordination",
+      "6": "Quality and process assurance"
+    },
+    "methodTitle": "Working Style",
+    "method": {
+      "1": "Clear milestone planning and risk assessment",
+      "2": "Data-driven decisions with documented reviews",
+      "3": "Bridge between design, simulation, and manufacturing"
+    }
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "title": "Projects with industrial impact",
+    "subtitle": "Structured development, validated outcomes, and measurable improvements in production and performance.",
+    "projects": {
+      "p1": {
+        "title": "End-to-end assembly line",
+        "desc": "Concept, sizing, and commissioning of a multi-station assembly line.",
+        "tag1": "Project Management",
+        "tag2": "Industrialization",
+        "alt": "Assembly line for an end-to-end project"
+      },
+      "p2": {
+        "title": "CFD-driven flow optimization",
+        "desc": "Analysis and redesign of a fluid channel to improve efficiency and reduce pressure loss.",
+        "tag1": "CFD",
+        "tag2": "Validation",
+        "alt": "CFD visualization of a flow analysis"
+      },
+      "p3": {
+        "title": "Structural stress analysis",
+        "desc": "FEA assessment of a fixture with safety verification and material optimization.",
+        "tag1": "FEA",
+        "tag2": "Design for Safety",
+        "alt": "Structural analysis of a mechanical component"
+      },
+      "p4": {
+        "title": "Precision part design",
+        "desc": "CAD development of a serial component with optimized manufacturability and tolerance chain.",
+        "tag1": "CAD",
+        "tag2": "GD&T",
+        "alt": "CAD design of a precision component"
+      }
+    }
+  },
+  "success": {
+    "label": "Success Stories",
+    "title": "Measured results",
+    "subtitle": "Improvements that reduce cost, raise quality, and secure delivery dates.",
+    "stories": {
+      "s1": {
+        "metric": "-18% manufacturing cost",
+        "title": "Production line stabilized",
+        "desc": "Process analysis and DFM optimization reduced scrap rates and stabilized cycle time."
+      },
+      "s2": {
+        "metric": "+35% flow efficiency",
+        "title": "CFD redesign delivered",
+        "desc": "Validated simulations reduced pressure losses and improved system performance."
+      },
+      "s3": {
+        "metric": "12 stations on time",
+        "title": "End-to-end line launch",
+        "desc": "Coordinated suppliers and internal teams for on-time commissioning."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Start a technical collaboration",
+    "subtitle": "Project inquiries, technical alignment, or new challenges — I respond quickly.",
+    "info": {
+      "phoneLabel": "Phone",
+      "emailLabel": "Email",
+      "locationLabel": "Location",
+      "locationValue": "Bangalore, India"
+    },
+    "form": {
+      "nameLabel": "Name",
+      "emailLabel": "Email",
+      "subjectLabel": "Subject",
+      "messageLabel": "Message",
+      "submit": "Send message",
+      "placeholders": {
+        "name": "Your name",
+        "email": "name@example.com",
+        "subject": "Project inquiry / Collaboration",
+        "message": "Briefly describe your project or requirements"
+      },
+      "statusIncomplete": "Please fill out all fields.",
+      "statusSending": "Opening your email client…"
+    }
+  },
+  "footer": {
+    "rights": "© 2026 Santhosh Kumar S. All rights reserved.",
+    "backToTop": "Back to top"
+  }
+}

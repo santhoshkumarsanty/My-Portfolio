@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "title": "Santhosh Kumar S — Portfolio d’ingénierie mécanique",
+    "description": "Portfolio industriel clair axé sur le développement produit, la CAO, la CFD et l’analyse structurelle."
+  },
+  "header": {
+    "skipLink": "Aller au contenu",
+    "languageLabel": "Langue",
+    "themeLabel": "Thème",
+    "themeToggle": "Changer le thème",
+    "navToggle": "Ouvrir ou fermer la navigation"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "portfolio": "Portfolio",
+    "success": "Réussites",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Disponible pour projets · Ingénieur mécanique",
+    "name": "Santhosh Kumar S",
+    "title": "Ingénieur projet · Développement produit · CAO & Simulation",
+    "description": "6+ ans de programmes d’ingénierie de bout en bout — du concept à la mise en production.",
+    "summary": "Focus sur le développement produit industriel, la validation CAO/CAE et des solutions prêtes pour la production.",
+    "stats": {
+      "years": "Années d’expérience",
+      "projects": "Projets livrés",
+      "domains": "Domaines d’ingénierie"
+    },
+    "ctaProjects": "Voir les projets",
+    "ctaContact": "Me contacter",
+    "ctaResume": "Télécharger le CV"
+  },
+  "about": {
+    "label": "À propos",
+    "title": "Ingénieur. Développeur. Structuré.",
+    "subtitle": "Profondeur technique, communication claire et exécution maîtrisée selon des standards industriels.",
+    "profile": {
+      "imageAlt": "Portrait de Santhosh Kumar S",
+      "name": "Santhosh Kumar S",
+      "role": "Mechanical / Project Engineer",
+      "locationLabel": "Localisation",
+      "locationValue": "Bangalore, Inde",
+      "phoneLabel": "Téléphone",
+      "emailLabel": "Email",
+      "linkedinLabel": "LinkedIn",
+      "linkedinValue": "Ouvrir le profil",
+      "githubLabel": "GitHub"
+    },
+    "summary": "Ingénieur projet avec plus de 6 ans d’expérience en développement produit, CAO/CAE et optimisation de la fabrication. Focus sur le DFM, le GD&T et des processus validés.",
+    "coreTitle": "Compétences clés",
+    "core": {
+      "1": "Développement produit & validation de concept",
+      "2": "CAO 3D (SolidWorks, AutoCAD) & plans techniques",
+      "3": "Validation CFD et FEA",
+      "4": "GD&T, DFM et support de production",
+      "5": "Pilotage projet et coordination fournisseurs",
+      "6": "Qualité et assurance process"
+    },
+    "methodTitle": "Méthodologie",
+    "method": {
+      "1": "Planification claire des jalons et analyse des risques",
+      "2": "Décisions basées sur les données et revues documentées",
+      "3": "Interface entre design, simulation et fabrication"
+    }
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "title": "Des projets à impact industriel",
+    "subtitle": "Développement structuré, résultats validés et améliorations mesurables en production et performance.",
+    "projects": {
+      "p1": {
+        "title": "Ligne d’assemblage end-to-end",
+        "desc": "Concept, dimensionnement et mise en service d’une ligne multi-stations.",
+        "tag1": "Gestion de projet",
+        "tag2": "Industrialisation",
+        "alt": "Ligne d’assemblage pour projet end-to-end"
+      },
+      "p2": {
+        "title": "Optimisation de flux par CFD",
+        "desc": "Analyse et redesign d’un canal fluide pour améliorer l’efficacité et réduire les pertes.",
+        "tag1": "CFD",
+        "tag2": "Validation",
+        "alt": "Visualisation CFD d’une analyse de flux"
+      },
+      "p3": {
+        "title": "Analyse des contraintes",
+        "desc": "Évaluation FEA d’un outillage avec validation sécurité et optimisation matière.",
+        "tag1": "FEA",
+        "tag2": "Design sécurisé",
+        "alt": "Analyse structurelle d’un composant mécanique"
+      },
+      "p4": {
+        "title": "Conception de pièce de précision",
+        "desc": "Développement CAO d’une pièce série avec manufacturabilité et tolérances optimisées.",
+        "tag1": "CAO",
+        "tag2": "GD&T",
+        "alt": "Conception CAO d’une pièce de précision"
+      }
+    }
+  },
+  "success": {
+    "label": "Réussites",
+    "title": "Résultats mesurés",
+    "subtitle": "Améliorations qui réduisent les coûts, augmentent la qualité et sécurisent les délais.",
+    "stories": {
+      "s1": {
+        "metric": "-18 % de coût de fabrication",
+        "title": "Ligne de production stabilisée",
+        "desc": "Analyse process et optimisation DFM pour réduire les rebuts et stabiliser le cycle."
+      },
+      "s2": {
+        "metric": "+35 % d’efficacité de flux",
+        "title": "Refonte CFD livrée",
+        "desc": "Simulations validées réduisant les pertes de charge et améliorant la performance."
+      },
+      "s3": {
+        "metric": "12 stations dans les délais",
+        "title": "Démarrage end-to-end",
+        "desc": "Coordination fournisseurs et équipes internes pour une mise en service à temps."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Démarrer une collaboration technique",
+    "subtitle": "Demandes de projet, alignements techniques ou nouveaux défis — réponse rapide.",
+    "info": {
+      "phoneLabel": "Téléphone",
+      "emailLabel": "Email",
+      "locationLabel": "Localisation",
+      "locationValue": "Bangalore, Inde"
+    },
+    "form": {
+      "nameLabel": "Nom",
+      "emailLabel": "Email",
+      "subjectLabel": "Objet",
+      "messageLabel": "Message",
+      "submit": "Envoyer le message",
+      "placeholders": {
+        "name": "Votre nom",
+        "email": "nom@exemple.com",
+        "subject": "Demande de projet / Collaboration",
+        "message": "Décrivez brièvement votre projet ou vos besoins"
+      },
+      "statusIncomplete": "Veuillez remplir tous les champs.",
+      "statusSending": "Ouverture de votre messagerie…"
+    }
+  },
+  "footer": {
+    "rights": "© 2026 Santhosh Kumar S. Tous droits réservés.",
+    "backToTop": "Haut de page"
+  }
+}

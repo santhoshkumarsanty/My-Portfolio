@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "title": "Santhosh Kumar S — Portfolio werktuigbouwkunde",
+    "description": "Strak industrieel portfolio met focus op productontwikkeling, CAD, CFD en structurele analyse."
+  },
+  "header": {
+    "skipLink": "Ga naar inhoud",
+    "languageLabel": "Taal",
+    "themeLabel": "Thema",
+    "themeToggle": "Thema wisselen",
+    "navToggle": "Navigatie openen of sluiten"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "Profiel",
+    "portfolio": "Portfolio",
+    "success": "Successen",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Beschikbaar voor projecten · Werktuigbouwkundig ingenieur",
+    "name": "Santhosh Kumar S",
+    "title": "Project Engineer · Productontwikkeling · CAD & Simulatie",
+    "description": "6+ jaar end-to-end engineeringtrajecten — van concept tot productie-release.",
+    "summary": "Focus op industriële productontwikkeling, CAD/CAE-validatie en productieklare oplossingen.",
+    "stats": {
+      "years": "Jaren ervaring",
+      "projects": "Opgeleverde projecten",
+      "domains": "Engineeringdomeinen"
+    },
+    "ctaProjects": "Bekijk projecten",
+    "ctaContact": "Contact opnemen",
+    "ctaResume": "CV downloaden"
+  },
+  "about": {
+    "label": "Profiel",
+    "title": "Ingenieur. Ontwikkelaar. Gestructureerd.",
+    "subtitle": "Technische diepgang, heldere communicatie en gecontroleerde uitvoering volgens industriële standaarden.",
+    "profile": {
+      "imageAlt": "Portret van Santhosh Kumar S",
+      "name": "Santhosh Kumar S",
+      "role": "Mechanical / Project Engineer",
+      "locationLabel": "Locatie",
+      "locationValue": "Bangalore, India",
+      "phoneLabel": "Telefoon",
+      "emailLabel": "Email",
+      "linkedinLabel": "LinkedIn",
+      "linkedinValue": "Profiel openen",
+      "githubLabel": "GitHub"
+    },
+    "summary": "Project Engineer met 6+ jaar ervaring in productontwikkeling, CAD/CAE en productie-optimalisatie. Focus op DFM, GD&T en gevalideerde procesketens.",
+    "coreTitle": "Kerncompetenties",
+    "core": {
+      "1": "Productontwikkeling en conceptvalidatie",
+      "2": "3D CAD (SolidWorks, AutoCAD) en technische tekeningen",
+      "3": "CFD- en FEA-validatie",
+      "4": "GD&T, DFM en productie-ondersteuning",
+      "5": "Projectsturing en leverancierscoördinatie",
+      "6": "Kwaliteits- en procesborging"
+    },
+    "methodTitle": "Werkwijze",
+    "method": {
+      "1": "Heldere mijlpaalplanning en risicobeoordeling",
+      "2": "Datagedreven beslissingen en gedocumenteerde reviews",
+      "3": "Schakel tussen design, simulatie en productie"
+    }
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "title": "Projecten met industriële impact",
+    "subtitle": "Gestructureerde ontwikkeling, gevalideerde resultaten en meetbare verbeteringen in productie en prestaties.",
+    "projects": {
+      "p1": {
+        "title": "End-to-end assemblagelijn",
+        "desc": "Concept, dimensionering en ingebruikname van een multi-station assemblagelijn.",
+        "tag1": "Projectmanagement",
+        "tag2": "Industrialisatie",
+        "alt": "Assemblagelijn voor een end-to-end project"
+      },
+      "p2": {
+        "title": "CFD-gestuurde flowoptimalisatie",
+        "desc": "Analyse en herontwerp van een vloeistofkanaal om efficiëntie te verhogen en drukverlies te beperken.",
+        "tag1": "CFD",
+        "tag2": "Validatie",
+        "alt": "CFD-visualisatie van een flowanalyse"
+      },
+      "p3": {
+        "title": "Structurele spanningsanalyse",
+        "desc": "FEA-beoordeling van een opspanning met veiligheidsverificatie en materiaaloptimalisatie.",
+        "tag1": "FEA",
+        "tag2": "Veilig ontwerp",
+        "alt": "Structurele analyse van een mechanisch onderdeel"
+      },
+      "p4": {
+        "title": "Precisiecomponent ontwerp",
+        "desc": "CAD-ontwikkeling van een seriecomponent met optimale maakbaarheid en tolerantieketen.",
+        "tag1": "CAD",
+        "tag2": "GD&T",
+        "alt": "CAD-ontwerp van een precisieonderdeel"
+      }
+    }
+  },
+  "success": {
+    "label": "Successen",
+    "title": "Meetbare resultaten",
+    "subtitle": "Verbeteringen die kosten verlagen, kwaliteit verhogen en leverdata borgen.",
+    "stories": {
+      "s1": {
+        "metric": "-18% productiekosten",
+        "title": "Productielijn gestabiliseerd",
+        "desc": "Procesanalyse en DFM-optimalisatie verlaagden scrap en stabiliseerden de cyclustijd."
+      },
+      "s2": {
+        "metric": "+35% flowefficiëntie",
+        "title": "CFD-herontwerp geleverd",
+        "desc": "Gevalideerde simulaties verlaagden drukverlies en verbeterden de systeemprestatie."
+      },
+      "s3": {
+        "metric": "12 stations op tijd",
+        "title": "End-to-end opstart",
+        "desc": "Coördinatie van leveranciers en interne teams voor tijdige ingebruikname."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Start een technische samenwerking",
+    "subtitle": "Projectvragen, technische afstemming of nieuwe uitdagingen — snelle reactie.",
+    "info": {
+      "phoneLabel": "Telefoon",
+      "emailLabel": "Email",
+      "locationLabel": "Locatie",
+      "locationValue": "Bangalore, India"
+    },
+    "form": {
+      "nameLabel": "Naam",
+      "emailLabel": "Email",
+      "subjectLabel": "Onderwerp",
+      "messageLabel": "Bericht",
+      "submit": "Bericht versturen",
+      "placeholders": {
+        "name": "Uw naam",
+        "email": "naam@voorbeeld.com",
+        "subject": "Projectaanvraag / Samenwerking",
+        "message": "Beschrijf kort uw project of wensen"
+      },
+      "statusIncomplete": "Vul alle velden in.",
+      "statusSending": "E-mailclient wordt geopend…"
+    }
+  },
+  "footer": {
+    "rights": "© 2026 Santhosh Kumar S. Alle rechten voorbehouden.",
+    "backToTop": "Naar boven"
+  }
+}
