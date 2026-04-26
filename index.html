@@ -4295,10 +4295,10 @@ async function submitForm(e) {
   const storageKey = 'portfolio-language';
   const defaultLang = 'en';
   const translationRetryDelayMs = 500;
-  const maxTranslationWaitSeconds = 3; // Short timeout to keep the UI responsive on fast connections.
+  const maxTranslationWaitSeconds = 3; // Short timeout to keep the UI responsive when the translate API is slow or fails to load.
   const maxTranslationWaitMs = maxTranslationWaitSeconds * 1000;
   const maxTranslationAttempts = Math.ceil(maxTranslationWaitMs / translationRetryDelayMs);
-  const translateFailureMessage = `Failed to initialize Google Translate after ${maxTranslationWaitSeconds} seconds. This may be caused by network issues, ad blockers, or Content Security Policy restrictions.`;
+  const translateFailureMessage = `Failed to initialize Google Translate after ${maxTranslationWaitSeconds} seconds. This may be caused by network issues or content/ad blockers.`;
   const stored = localStorage.getItem(storageKey);
   const languageOptions = Array.from(languageSelect.options);
   const supportedLanguages = languageOptions.map(option => option.value);
@@ -4321,7 +4321,9 @@ async function submitForm(e) {
   };
 
   const applyLanguage = (lang, attemptCount = 0) => {
-    document.documentElement.lang = lang;
+    if (attemptCount === 0) {
+      document.documentElement.lang = lang;
+    }
     const translateCombo = document.querySelector('select.goog-te-combo');
     if (translateCombo) {
       translateCombo.value = lang;
@@ -4345,8 +4347,10 @@ async function submitForm(e) {
   });
 
   // Google Translate loads via callback parameter and requires a global function name.
-  const existingTranslateInit = window.googleTranslateElementInit;
-  if (!existingTranslateInit || !existingTranslateInit.__portfolioTranslateInit) {
+  const translateInitFlag = '__portfolioTranslateInitRegistered';
+  if (!window[translateInitFlag]) {
+    window[translateInitFlag] = true;
+    const existingTranslateInit = window.googleTranslateElementInit;
     window.googleTranslateElementInit = () => {
       if (typeof existingTranslateInit === 'function') {
         existingTranslateInit();
@@ -4363,7 +4367,6 @@ async function submitForm(e) {
       }, 'google_translate_element');
       applyLanguage(selectedLanguage);
     };
-    window.googleTranslateElementInit.__portfolioTranslateInit = true;
   }
 })();
 
