@@ -4287,7 +4287,7 @@ async function submitForm(e) {
   const storageKey = 'portfolio-language';
   const defaultLang = 'en';
   const translationRetryDelayMs = 250;
-  const maxTranslationWaitSeconds = 3;
+  const maxTranslationWaitSeconds = 3; // Short window for Google Translate to inject the selector.
   const maxTranslationWaitMs = maxTranslationWaitSeconds * 1000;
   const maxTranslationAttempts = Math.ceil(maxTranslationWaitMs / translationRetryDelayMs);
   const stored = localStorage.getItem(storageKey);
@@ -4332,6 +4332,7 @@ async function submitForm(e) {
       autoDisplay: false
     }, 'google_translate_element');
     applyLanguage(saved);
+    // Remove the global callback to avoid lingering globals after initialization.
     delete window.googleTranslateElementInit;
   };
 })();
