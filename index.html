@@ -4286,8 +4286,9 @@ async function submitForm(e) {
 
   const storageKey = 'portfolio-language';
   const defaultLang = 'en';
-  const maxTranslationAttempts = 12;
   const translationRetryDelayMs = 250;
+  const maxTranslationWaitMs = 3000;
+  const maxTranslationAttempts = Math.ceil(maxTranslationWaitMs / translationRetryDelayMs);
   const stored = localStorage.getItem(storageKey);
   const languageOptions = Array.from(languageSelect.options);
   const supportedLanguages = languageOptions.map(option => option.value);
@@ -4319,16 +4320,12 @@ async function submitForm(e) {
   });
 
   // Google Translate loads via callback parameter and requires a global function name.
-  const previousTranslateInit = window.googleTranslateElementInit;
   window.googleTranslateElementInit = function googleTranslateElementInit() {
-    if (typeof previousTranslateInit === 'function') {
-      previousTranslateInit();
-    }
-    if (!window.google || !google.translate || !google.translate.TranslateElement) {
+    if (!window.google?.translate?.TranslateElement) {
       console.warn('Google Translate is unavailable.');
       return;
     }
-    new google.translate.TranslateElement({
+    new window.google.translate.TranslateElement({
       pageLanguage: 'en',
       includedLanguages: supportedLanguages.join(','),
       autoDisplay: false
