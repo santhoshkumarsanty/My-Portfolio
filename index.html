@@ -1811,7 +1811,7 @@ footer {
     </div>
   </div>
 </nav>
-<div id="google_translate_element" class="google-translate-hidden" aria-hidden="true"></div>
+<div id="google_translate_element" class="google-translate-hidden"></div>
 
 <!-- Section Nav Dots -->
 <div class="nav-dots">
@@ -4287,7 +4287,7 @@ async function submitForm(e) {
   const storageKey = 'portfolio-language';
   const defaultLang = 'en';
   const translationRetryDelayMs = 250;
-  const maxTranslationWaitMs = 3000;
+  const maxTranslationWaitMs = 3 * 1000;
   const maxTranslationAttempts = Math.ceil(maxTranslationWaitMs / translationRetryDelayMs);
   const stored = localStorage.getItem(storageKey);
   const languageOptions = Array.from(languageSelect.options);
@@ -4309,7 +4309,7 @@ async function submitForm(e) {
     if (attempt < maxTranslationAttempts) {
       setTimeout(() => applyLanguage(lang, attempt + 1), translationRetryDelayMs);
     } else {
-      console.warn('Translation initialization timed out. Please retry later.');
+      console.warn('Translation initialization timed out.');
     }
   };
 
@@ -4331,6 +4331,7 @@ async function submitForm(e) {
       autoDisplay: false
     }, 'google_translate_element');
     applyLanguage(saved);
+    delete window.googleTranslateElementInit;
   };
 })();
 
