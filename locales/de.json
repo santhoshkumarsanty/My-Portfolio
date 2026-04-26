@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "title": "Santhosh Kumar S | Portfolio für Maschinenbau",
+    "description": "Maschinenbauingenieur für Produktentwicklung, CAD, CFD, FEA und End-to-End-Fertigung."
+  },
+  "brand": {
+    "role": "Maschinenbau / Projektingenieur"
+  },
+  "nav": {
+    "home": "Start",
+    "about": "Über mich",
+    "portfolio": "Portfolio",
+    "success": "Erfolgsgeschichten",
+    "contact": "Kontakt"
+  },
+  "controls": {
+    "language": "Sprache",
+    "theme": "Design",
+    "themeToggleAria": "Hell/Dunkel umschalten",
+    "skip": "Zum Inhalt springen"
+  },
+  "hero": {
+    "eyebrow": "Verfügbar für Ingenieurprojekte",
+    "titleLine1": "Santhosh",
+    "titleLine2": "Kumar S",
+    "subtitle": "Projektingenieur • Produktentwicklung • CAD & Simulation",
+    "description": "6+ Jahre Erfahrung in der Entwicklung mechanischer Lösungen – von Design und Analyse bis zur Fertigung, mit Fokus auf Präzision, Zuverlässigkeit und Kosten.",
+    "ctaPrimary": "Portfolio ansehen",
+    "ctaSecondary": "Kontakt",
+    "stats": {
+      "experience": {
+        "value": "6+",
+        "label": "Jahre Erfahrung"
+      },
+      "projects": {
+        "value": "50+",
+        "label": "Projekte geliefert"
+      },
+      "domains": {
+        "value": "6",
+        "label": "Fachbereiche"
+      }
+    }
+  },
+  "about": {
+    "label": "Über mich",
+    "title": "Ingenieurarbeit mit strukturierter Designlogik",
+    "subtitle": "Deutsche Klarheit, strukturierte Umsetzung und messbare Ergebnisse.",
+    "body": "Projektingenieur mit nachgewiesener Erfahrung in der ganzheitlichen Entwicklung mechanischer Systeme – von der Idee bis zur Serie. Kompetent in SolidWorks, AutoCAD, GD&T, CFD und FEA mit starkem Fokus auf Herstellbarkeit und Qualität.",
+    "highlightsTitle": "Schwerpunkte",
+    "highlights": {
+      "one": "Produktentwicklung & DFM",
+      "two": "Simulation & Validierung (CFD/FEA)",
+      "three": "Fertigungsreife & Kostenkontrolle"
+    }
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "title": "Ausgewählte Ingenieurarbeiten",
+    "subtitle": "Strukturierte Übersicht interdisziplinärer Projekte mit messbaren Resultaten.",
+    "items": {
+      "product": {
+        "title": "Produktdesign & CAD",
+        "desc": "Präzise 3D-Modellierung und Dokumentation mit GD&T-Konformität und fertigungsgerechten Ergebnissen.",
+        "tag": "Design"
+      },
+      "cfd": {
+        "title": "CFD- & Thermoanalyse",
+        "desc": "Strömungs- und Thermosimulationen zur Verbesserung von Leistung, Effizienz und Zuverlässigkeit.",
+        "tag": "Simulation"
+      },
+      "structural": {
+        "title": "Strukturanalyse / FEA",
+        "desc": "Spannungs-, Verformungs- und Ermüdungsanalysen zur Validierung der mechanischen Integrität.",
+        "tag": "FEA"
+      },
+      "nesting": {
+        "title": "Nesting-Optimierung",
+        "desc": "Materialoptimierte Layouts für Laserschneiden und Fertigungseffizienz.",
+        "tag": "Optimierung"
+      },
+      "concept": {
+        "title": "Konzeptentwicklung",
+        "desc": "Frühe Konzeptentwicklung und Prototyping für industrielle Systeme.",
+        "tag": "Innovation"
+      },
+      "e2e": {
+        "title": "End-to-End Lieferung",
+        "desc": "Projektabwicklung über den gesamten Lebenszyklus von Anforderungen bis zur Endvalidierung.",
+        "tag": "Lieferung"
+      }
+    }
+  },
+  "success": {
+    "label": "Erfolgsgeschichten",
+    "title": "Ergebnisse, die zählen",
+    "subtitle": "Fokus auf messbaren Nutzen und Ingenieurdisziplin.",
+    "items": {
+      "delivery": {
+        "title": "Termingerechter Produktstart",
+        "desc": "Koordination interdisziplinärer Teams zur termingerechten Übergabe serienreifer Baugruppen."
+      },
+      "quality": {
+        "title": "Qualität & Compliance",
+        "desc": "Einsatz von GD&T- und DFM-Standards zur Verbesserung der Erstpassquote und Reduktion von Nacharbeit."
+      },
+      "innovation": {
+        "title": "Fertigungseffizienz",
+        "desc": "Optimierte Abläufe und Layouts zur Reduktion von Materialverlusten und höherem Durchsatz."
+      }
+    }
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Lassen Sie uns das nächste System bauen",
+    "subtitle": "Offen für Festanstellung und Engineering-Kooperationen.",
+    "cards": {
+      "phone": {
+        "label": "Telefon"
+      },
+      "email": {
+        "label": "E-Mail"
+      },
+      "location": {
+        "label": "Standort"
+      },
+      "availability": {
+        "label": "Verfügbarkeit",
+        "value": "Offen für Projekte und Kooperationen"
+      }
+    },
+    "ctaPrimary": "Lebenslauf herunterladen",
+    "ctaSecondary": "GitHub ansehen"
+  },
+  "footer": {
+    "note": "Gestaltet mit deutscher Ingenieurdisziplin, umgesetzt mit Klarheit.",
+    "rights": "Alle Rechte vorbehalten."
+  }
+}

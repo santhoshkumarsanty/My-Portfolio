@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "title": "Santhosh Kumar S | Portfolio inżynierii mechanicznej",
+    "description": "Inżynier mechanik specjalizujący się w rozwoju produktu, CAD, CFD, FEA i produkcji end-to-end."
+  },
+  "brand": {
+    "role": "Inżynier mechanik / projektowy"
+  },
+  "nav": {
+    "home": "Start",
+    "about": "O mnie",
+    "portfolio": "Portfolio",
+    "success": "Sukcesy",
+    "contact": "Kontakt"
+  },
+  "controls": {
+    "language": "Język",
+    "theme": "Motyw",
+    "themeToggleAria": "Przełącz jasny/ciemny",
+    "skip": "Przejdź do treści"
+  },
+  "hero": {
+    "eyebrow": "Dostępny do projektów inżynieryjnych",
+    "titleLine1": "Santhosh",
+    "titleLine2": "Kumar S",
+    "subtitle": "Inżynier projektu • Rozwój produktu • CAD i symulacje",
+    "description": "Ponad 6 lat dostarczania rozwiązań mechanicznych od projektu po produkcję, z naciskiem na precyzję, niezawodność i koszty.",
+    "ctaPrimary": "Zobacz portfolio",
+    "ctaSecondary": "Kontakt",
+    "stats": {
+      "experience": {
+        "value": "6+",
+        "label": "Lata doświadczenia"
+      },
+      "projects": {
+        "value": "50+",
+        "label": "Zrealizowane projekty"
+      },
+      "domains": {
+        "value": "6",
+        "label": "Dziedziny inżynierii"
+      }
+    }
+  },
+  "about": {
+    "label": "O mnie",
+    "title": "Inżynieria z dyscypliną projektowania",
+    "subtitle": "Niemiecka klarowność, uporządkowana realizacja i mierzalne wyniki.",
+    "body": "Inżynier projektu z potwierdzonym doświadczeniem w pełnym cyklu rozwoju systemów mechanicznych – od koncepcji po produkcję. Biegłość w SolidWorks, AutoCAD, GD&T, CFD i FEA, z silnym naciskiem na wytwarzalność i jakość.",
+    "highlightsTitle": "Główne obszary",
+    "highlights": {
+      "one": "Rozwój produktu i DFM",
+      "two": "Symulacja i walidacja (CFD/FEA)",
+      "three": "Gotowość produkcyjna i kontrola kosztów"
+    }
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "title": "Wybrane prace inżynierskie",
+    "subtitle": "Uporządkowany przegląd projektów wielodyscyplinarnych z mierzalnymi rezultatami.",
+    "items": {
+      "product": {
+        "title": "Projektowanie produktu i CAD",
+        "desc": "Precyzyjne modelowanie 3D oraz dokumentacja zgodna z GD&T, gotowa do produkcji.",
+        "tag": "Projekt"
+      },
+      "cfd": {
+        "title": "Analiza CFD i termiczna",
+        "desc": "Symulacje przepływu i cieplne poprawiające wydajność, efektywność i niezawodność.",
+        "tag": "Symulacja"
+      },
+      "structural": {
+        "title": "Analiza strukturalna / FEA",
+        "desc": "Analizy naprężeń, odkształceń i zmęczeniowe potwierdzające integralność mechaniczną.",
+        "tag": "FEA"
+      },
+      "nesting": {
+        "title": "Optymalizacja nestingu",
+        "desc": "Układy optymalizujące zużycie materiału dla cięcia laserowego.",
+        "tag": "Optymalizacja"
+      },
+      "concept": {
+        "title": "Rozwój koncepcji",
+        "desc": "Wczesne koncepcje i prototypowanie systemów przemysłowych.",
+        "tag": "Innowacja"
+      },
+      "e2e": {
+        "title": "Realizacja end-to-end",
+        "desc": "Pełny cykl projektu od wymagań po końcową walidację.",
+        "tag": "Dostarczenie"
+      }
+    }
+  },
+  "success": {
+    "label": "Sukcesy",
+    "title": "Rezultaty, które mają znaczenie",
+    "subtitle": "Mierzalny wpływ i dyscyplina inżynierska.",
+    "items": {
+      "delivery": {
+        "title": "Terminowe wdrożenie produktu",
+        "desc": "Koordynacja zespołów międzydziałowych w celu terminowego dostarczenia gotowych do produkcji zespołów."
+      },
+      "quality": {
+        "title": "Jakość i zgodność",
+        "desc": "Zastosowanie standardów GD&T/DFM w celu poprawy jakości za pierwszym razem i redukcji poprawek."
+      },
+      "innovation": {
+        "title": "Efektywność produkcji",
+        "desc": "Optymalizacja przepływów i układów w celu zmniejszenia strat materiału i zwiększenia przepustowości."
+      }
+    }
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Zbudujmy następny system",
+    "subtitle": "Otwarty na etaty i współpracę.",
+    "cards": {
+      "phone": {
+        "label": "Telefon"
+      },
+      "email": {
+        "label": "E-mail"
+      },
+      "location": {
+        "label": "Lokalizacja"
+      },
+      "availability": {
+        "label": "Dostępność",
+        "value": "Otwarty na projekty i współpracę"
+      }
+    },
+    "ctaPrimary": "Pobierz CV",
+    "ctaSecondary": "Zobacz GitHub"
+  },
+  "footer": {
+    "note": "Projekt w duchu niemieckiej dyscypliny inżynierskiej, dostarczony klarownie.",
+    "rights": "Wszelkie prawa zastrzeżone."
+  }
+}

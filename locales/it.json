@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "title": "Santhosh Kumar S | Portfolio di ingegneria meccanica",
+    "description": "Ingegnere meccanico specializzato in sviluppo prodotto, CAD, CFD, FEA e produzione end-to-end."
+  },
+  "brand": {
+    "role": "Ingegnere meccanico / di progetto"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "Profilo",
+    "portfolio": "Portfolio",
+    "success": "Successi",
+    "contact": "Contatto"
+  },
+  "controls": {
+    "language": "Lingua",
+    "theme": "Tema",
+    "themeToggleAria": "Attiva/disattiva chiaro/scuro",
+    "skip": "Vai al contenuto"
+  },
+  "hero": {
+    "eyebrow": "Disponibile per progetti di ingegneria",
+    "titleLine1": "Santhosh",
+    "titleLine2": "Kumar S",
+    "subtitle": "Ingegnere di progetto • Sviluppo prodotto • CAD & simulazione",
+    "description": "Oltre 6 anni di soluzioni meccaniche dal design alla produzione, con focus su precisione, affidabilità e costi.",
+    "ctaPrimary": "Vedi portfolio",
+    "ctaSecondary": "Contatta",
+    "stats": {
+      "experience": {
+        "value": "6+",
+        "label": "Anni di esperienza"
+      },
+      "projects": {
+        "value": "50+",
+        "label": "Progetti consegnati"
+      },
+      "domains": {
+        "value": "6",
+        "label": "Domini ingegneristici"
+      }
+    }
+  },
+  "about": {
+    "label": "Profilo",
+    "title": "Ingegneria con pensiero progettuale disciplinato",
+    "subtitle": "Chiarezza tedesca, esecuzione strutturata, risultati misurabili.",
+    "body": "Ingegnere di progetto con esperienza comprovata nello sviluppo end-to-end di sistemi meccanici, dal concept alla produzione. Competenze in SolidWorks, AutoCAD, GD&T, CFD e FEA, con forte attenzione a producibilità e qualità.",
+    "highlightsTitle": "Focus principale",
+    "highlights": {
+      "one": "Sviluppo prodotto & DFM",
+      "two": "Simulazione e validazione (CFD/FEA)",
+      "three": "Preparazione alla produzione & controllo costi"
+    }
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "title": "Lavori ingegneristici selezionati",
+    "subtitle": "Panoramica strutturata di progetti multidisciplinari con risultati misurabili.",
+    "items": {
+      "product": {
+        "title": "Design di prodotto & CAD",
+        "desc": "Modellazione 3D precisa e documentazione conforme GD&T, pronta per la produzione.",
+        "tag": "Design"
+      },
+      "cfd": {
+        "title": "Analisi CFD e termica",
+        "desc": "Simulazioni di flusso e termiche per migliorare prestazioni, efficienza e affidabilità.",
+        "tag": "Simulazione"
+      },
+      "structural": {
+        "title": "Analisi strutturale / FEA",
+        "desc": "Studi su stress, deformazioni e fatica per validare l’integrità meccanica.",
+        "tag": "FEA"
+      },
+      "nesting": {
+        "title": "Ottimizzazione nesting",
+        "desc": "Layout ottimizzati per taglio laser e massima efficienza del materiale.",
+        "tag": "Ottimizzazione"
+      },
+      "concept": {
+        "title": "Sviluppo concetti",
+        "desc": "Ideazione e prototipazione iniziale per sistemi industriali.",
+        "tag": "Innovazione"
+      },
+      "e2e": {
+        "title": "Consegna end-to-end",
+        "desc": "Gestione completa del ciclo progetto da requisiti a validazione finale.",
+        "tag": "Consegna"
+      }
+    }
+  },
+  "success": {
+    "label": "Successi",
+    "title": "Risultati che contano",
+    "subtitle": "Impatto misurabile e disciplina ingegneristica.",
+    "items": {
+      "delivery": {
+        "title": "Lancio prodotto puntuale",
+        "desc": "Coordinamento di team interfunzionali per consegnare assiemi pronti alla produzione nei tempi previsti."
+      },
+      "quality": {
+        "title": "Qualità & conformità",
+        "desc": "Applicazione di standard GD&T/DFM per aumentare il primo passaggio e ridurre rilavorazioni."
+      },
+      "innovation": {
+        "title": "Efficienza produttiva",
+        "desc": "Ottimizzazione di flussi e layout per ridurre sprechi e aumentare la produttività."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contatto",
+    "title": "Costruiamo il prossimo sistema",
+    "subtitle": "Disponibile per ruoli full-time e collaborazioni.",
+    "cards": {
+      "phone": {
+        "label": "Telefono"
+      },
+      "email": {
+        "label": "Email"
+      },
+      "location": {
+        "label": "Sede"
+      },
+      "availability": {
+        "label": "Disponibilità",
+        "value": "Disponibile per progetti e collaborazioni"
+      }
+    },
+    "ctaPrimary": "Scarica CV",
+    "ctaSecondary": "Vedi GitHub"
+  },
+  "footer": {
+    "note": "Progettato con disciplina tedesca, consegnato con chiarezza.",
+    "rights": "Tutti i diritti riservati."
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "title": "Santhosh Kumar S｜機械エンジニア ポートフォリオ",
+    "description": "製品開発、CAD、CFD、FEA、エンドツーエンド製造に強い機械エンジニア。"
+  },
+  "brand": {
+    "role": "機械／プロジェクトエンジニア"
+  },
+  "nav": {
+    "home": "ホーム",
+    "about": "について",
+    "portfolio": "ポートフォリオ",
+    "success": "成功事例",
+    "contact": "お問い合わせ"
+  },
+  "controls": {
+    "language": "言語",
+    "theme": "テーマ",
+    "themeToggleAria": "ライト／ダーク切替",
+    "skip": "本文へスキップ"
+  },
+  "hero": {
+    "eyebrow": "エンジニアリング案件対応可能",
+    "titleLine1": "Santhosh",
+    "titleLine2": "Kumar S",
+    "subtitle": "プロジェクトエンジニア • 製品開発 • CAD & シミュレーション",
+    "description": "設計・解析・製造まで一貫して6年以上の実績。精度、信頼性、コスト最適化を重視。",
+    "ctaPrimary": "ポートフォリオを見る",
+    "ctaSecondary": "連絡する",
+    "stats": {
+      "experience": {
+        "value": "6+",
+        "label": "経験年数"
+      },
+      "projects": {
+        "value": "50+",
+        "label": "納品プロジェクト"
+      },
+      "domains": {
+        "value": "6",
+        "label": "専門領域"
+      }
+    }
+  },
+  "about": {
+    "label": "概要",
+    "title": "規律ある設計思考でのエンジニアリング",
+    "subtitle": "ドイツ流の明快さ、構造化された実行、測定可能な成果。",
+    "body": "機械システムの企画から量産までを主導してきたプロジェクトエンジニア。SolidWorks、AutoCAD、GD&T、CFD、FEAに精通し、製造性と品質を重視。",
+    "highlightsTitle": "重点領域",
+    "highlights": {
+      "one": "製品開発とDFM",
+      "two": "シミュレーションと検証（CFD/FEA）",
+      "three": "製造準備とコスト管理"
+    }
+  },
+  "portfolio": {
+    "label": "ポートフォリオ",
+    "title": "選定プロジェクト",
+    "subtitle": "多分野にわたるプロジェクトを構造化して整理。",
+    "items": {
+      "product": {
+        "title": "製品設計 & CAD",
+        "desc": "GD&T準拠の精密3Dモデリングと製造図面。",
+        "tag": "設計"
+      },
+      "cfd": {
+        "title": "CFD・熱解析",
+        "desc": "流体/熱解析で性能・効率・信頼性を向上。",
+        "tag": "解析"
+      },
+      "structural": {
+        "title": "構造/FEA解析",
+        "desc": "応力・変形・疲労解析で機械強度を検証。",
+        "tag": "FEA"
+      },
+      "nesting": {
+        "title": "ネスティング最適化",
+        "desc": "レーザー切断向けに材料利用率を最大化。",
+        "tag": "最適化"
+      },
+      "concept": {
+        "title": "コンセプト開発",
+        "desc": "産業システム向けの初期コンセプトと試作。",
+        "tag": "イノベーション"
+      },
+      "e2e": {
+        "title": "エンドツーエンド提供",
+        "desc": "要件定義から最終検証まで全工程を管理。",
+        "tag": "デリバリー"
+      }
+    }
+  },
+  "success": {
+    "label": "成功事例",
+    "title": "成果に集中",
+    "subtitle": "測定可能なインパクトとエンジニアリング規律。",
+    "items": {
+      "delivery": {
+        "title": "新製品の期日通り立ち上げ",
+        "desc": "部門横断チームを統率し、量産対応のユニットを期限内に提供。"
+      },
+      "quality": {
+        "title": "品質・規格順守",
+        "desc": "GD&T/DFMの適用で初回合格率を向上、手戻りを削減。"
+      },
+      "innovation": {
+        "title": "製造効率の改善",
+        "desc": "工程とレイアウトを最適化し、材料ロス削減とスループット向上。"
+      }
+    }
+  },
+  "contact": {
+    "label": "お問い合わせ",
+    "title": "次のシステムを一緒に",
+    "subtitle": "正社員・協業案件に対応可能。",
+    "cards": {
+      "phone": {
+        "label": "電話"
+      },
+      "email": {
+        "label": "メール"
+      },
+      "location": {
+        "label": "所在地"
+      },
+      "availability": {
+        "label": "稼働状況",
+        "value": "プロジェクト・協業に対応可能"
+      }
+    },
+    "ctaPrimary": "履歴書をダウンロード",
+    "ctaSecondary": "GitHubを見る"
+  },
+  "footer": {
+    "note": "ドイツ的な設計規律で構成し、明快に提供。",
+    "rights": "無断転載禁止。"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "title": "Santhosh Kumar S | Portfölj för maskinteknik",
+    "description": "Maskiningenjör specialiserad på produktutveckling, CAD, CFD, FEA och end-to-end tillverkning."
+  },
+  "brand": {
+    "role": "Maskin-/projektingenjör"
+  },
+  "nav": {
+    "home": "Hem",
+    "about": "Om",
+    "portfolio": "Portfölj",
+    "success": "Framgångar",
+    "contact": "Kontakt"
+  },
+  "controls": {
+    "language": "Språk",
+    "theme": "Tema",
+    "themeToggleAria": "Växla ljus/mörk",
+    "skip": "Hoppa till innehållet"
+  },
+  "hero": {
+    "eyebrow": "Tillgänglig för ingenjörsprojekt",
+    "titleLine1": "Santhosh",
+    "titleLine2": "Kumar S",
+    "subtitle": "Projektingenjör • Produktutveckling • CAD & simulering",
+    "description": "Över 6 år med mekaniska lösningar från design till tillverkning med fokus på precision, tillförlitlighet och kostnad.",
+    "ctaPrimary": "Visa portfölj",
+    "ctaSecondary": "Kontakta",
+    "stats": {
+      "experience": {
+        "value": "6+",
+        "label": "År av erfarenhet"
+      },
+      "projects": {
+        "value": "50+",
+        "label": "Levererade projekt"
+      },
+      "domains": {
+        "value": "6",
+        "label": "Ingenjörsområden"
+      }
+    }
+  },
+  "about": {
+    "label": "Om",
+    "title": "Ingenjörskonst med disciplinerad design",
+    "subtitle": "Tysk tydlighet, strukturerad genomförande och mätbara resultat.",
+    "body": "Projektingenjör med bevisad erfarenhet av end-to-end utveckling av mekaniska system, från koncept till produktion. Stark i SolidWorks, AutoCAD, GD&T, CFD och FEA, med fokus på tillverkningsbarhet och kvalitet.",
+    "highlightsTitle": "Kärnfokus",
+    "highlights": {
+      "one": "Produktutveckling & DFM",
+      "two": "Simulering & validering (CFD/FEA)",
+      "three": "Tillverkningsberedskap & kostnadskontroll"
+    }
+  },
+  "portfolio": {
+    "label": "Portfölj",
+    "title": "Utvalda ingenjörsprojekt",
+    "subtitle": "Strukturerad översikt av multidisciplinära projekt med mätbara resultat.",
+    "items": {
+      "product": {
+        "title": "Produktdesign & CAD",
+        "desc": "Noggrann 3D-modellering och dokumentation enligt GD&T, redo för produktion.",
+        "tag": "Design"
+      },
+      "cfd": {
+        "title": "CFD- och termisk analys",
+        "desc": "Flödes- och termiska simuleringar för att förbättra prestanda, effektivitet och driftsäkerhet.",
+        "tag": "Simulering"
+      },
+      "structural": {
+        "title": "Strukturanalys / FEA",
+        "desc": "Spännings-, deformations- och utmattningsstudier för att verifiera mekanisk integritet.",
+        "tag": "FEA"
+      },
+      "nesting": {
+        "title": "Nestingoptimering",
+        "desc": "Materialoptimerade layouter för laserskärning och högre effektivitet.",
+        "tag": "Optimering"
+      },
+      "concept": {
+        "title": "Konceptutveckling",
+        "desc": "Tidiga koncept och prototyper för industriella system.",
+        "tag": "Innovation"
+      },
+      "e2e": {
+        "title": "End-to-end leverans",
+        "desc": "Fullständig projektcykel från krav till slutvalidering.",
+        "tag": "Leverans"
+      }
+    }
+  },
+  "success": {
+    "label": "Framgångar",
+    "title": "Resultat som betyder något",
+    "subtitle": "Mätbar påverkan och ingenjörsdisciplin.",
+    "items": {
+      "delivery": {
+        "title": "Lansering i tid",
+        "desc": "Koordinerade tvärfunktionella team för att leverera produktionsklara enheter i tid."
+      },
+      "quality": {
+        "title": "Kvalitet och efterlevnad",
+        "desc": "Införde GD&T- och DFM-standarder för högre förstapassutfall och mindre omarbete."
+      },
+      "innovation": {
+        "title": "Tillverkningseffektivitet",
+        "desc": "Optimerade flöden och layouter för att minska materialspill och öka genomströmning."
+      }
+    }
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Låt oss bygga nästa system",
+    "subtitle": "Öppen för heltidstjänster och samarbeten.",
+    "cards": {
+      "phone": {
+        "label": "Telefon"
+      },
+      "email": {
+        "label": "E-post"
+      },
+      "location": {
+        "label": "Plats"
+      },
+      "availability": {
+        "label": "Tillgänglighet",
+        "value": "Öppen för projekt och samarbeten"
+      }
+    },
+    "ctaPrimary": "Ladda ner CV",
+    "ctaSecondary": "Visa GitHub"
+  },
+  "footer": {
+    "note": "Utformad med tysk ingenjörsdisciplin, levererad med tydlighet.",
+    "rights": "Alla rättigheter förbehållna."
+  }
+}

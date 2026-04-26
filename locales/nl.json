@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "title": "Santhosh Kumar S | Portfolio werktuigbouw",
+    "description": "Werktuigbouwkundig ingenieur gespecialiseerd in productontwikkeling, CAD, CFD, FEA en end-to-end productie."
+  },
+  "brand": {
+    "role": "Werktuigbouw / projectingenieur"
+  },
+  "nav": {
+    "home": "Start",
+    "about": "Over mij",
+    "portfolio": "Portfolio",
+    "success": "Successen",
+    "contact": "Contact"
+  },
+  "controls": {
+    "language": "Taal",
+    "theme": "Thema",
+    "themeToggleAria": "Licht/donker wisselen",
+    "skip": "Ga naar inhoud"
+  },
+  "hero": {
+    "eyebrow": "Beschikbaar voor engineeringprojecten",
+    "titleLine1": "Santhosh",
+    "titleLine2": "Kumar S",
+    "subtitle": "Projectingenieur • Productontwikkeling • CAD & simulatie",
+    "description": "6+ jaar ervaring met mechanische oplossingen van ontwerp tot productie, met focus op precisie, betrouwbaarheid en kosten.",
+    "ctaPrimary": "Bekijk portfolio",
+    "ctaSecondary": "Contact opnemen",
+    "stats": {
+      "experience": {
+        "value": "6+",
+        "label": "Jaren ervaring"
+      },
+      "projects": {
+        "value": "50+",
+        "label": "Projecten opgeleverd"
+      },
+      "domains": {
+        "value": "6",
+        "label": "Engineeringdomeinen"
+      }
+    }
+  },
+  "about": {
+    "label": "Over mij",
+    "title": "Engineering met gedisciplineerd ontwerpdenken",
+    "subtitle": "Duitse helderheid, gestructureerde uitvoering en meetbare resultaten.",
+    "body": "Projectingenieur met bewezen ervaring in end-to-end ontwikkeling van mechanische systemen, van concept tot productie. Bekwaam in SolidWorks, AutoCAD, GD&T, CFD en FEA, met sterke focus op maakbaarheid en kwaliteit.",
+    "highlightsTitle": "Kernfocus",
+    "highlights": {
+      "one": "Productontwikkeling & DFM",
+      "two": "Simulatie & validatie (CFD/FEA)",
+      "three": "Productierijpheid & kostenbeheersing"
+    }
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "title": "Geselecteerde engineeringprojecten",
+    "subtitle": "Gestructureerd overzicht van multidisciplinaire projecten met meetbare resultaten.",
+    "items": {
+      "product": {
+        "title": "Productontwerp & CAD",
+        "desc": "Nauwkeurige 3D-modellering en documentatie conform GD&T, klaar voor productie.",
+        "tag": "Ontwerp"
+      },
+      "cfd": {
+        "title": "CFD- en thermische analyse",
+        "desc": "Stromings- en thermische simulaties om prestaties, efficiëntie en betrouwbaarheid te verbeteren.",
+        "tag": "Simulatie"
+      },
+      "structural": {
+        "title": "Structurele analyse / FEA",
+        "desc": "Spannings-, vervormings- en vermoeiingsstudies voor validatie van mechanische integriteit.",
+        "tag": "FEA"
+      },
+      "nesting": {
+        "title": "Nesting-optimalisatie",
+        "desc": "Materiaalgeoptimaliseerde layouts voor lasersnijden en hogere efficiëntie.",
+        "tag": "Optimalisatie"
+      },
+      "concept": {
+        "title": "Conceptontwikkeling",
+        "desc": "Vroege conceptontwikkeling en prototyping voor industriële systemen.",
+        "tag": "Innovatie"
+      },
+      "e2e": {
+        "title": "End-to-end levering",
+        "desc": "Volledige projectcyclus van eisen tot eindvalidatie.",
+        "tag": "Levering"
+      }
+    }
+  },
+  "success": {
+    "label": "Successen",
+    "title": "Resultaten die tellen",
+    "subtitle": "Meetbare impact en engineeringdiscipline.",
+    "items": {
+      "delivery": {
+        "title": "Productlancering op tijd",
+        "desc": "Coördinatie van multidisciplinaire teams om productierijpe assemblages op tijd te leveren."
+      },
+      "quality": {
+        "title": "Kwaliteit & compliance",
+        "desc": "Toepassing van GD&T- en DFM-standaarden om first-pass yield te verhogen en rework te verminderen."
+      },
+      "innovation": {
+        "title": "Productie-efficiëntie",
+        "desc": "Optimalisatie van workflows en layouts om materiaalverlies te verminderen en doorvoer te verhogen."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Laten we het volgende systeem bouwen",
+    "subtitle": "Open voor fulltime rollen en samenwerkingen.",
+    "cards": {
+      "phone": {
+        "label": "Telefoon"
+      },
+      "email": {
+        "label": "E-mail"
+      },
+      "location": {
+        "label": "Locatie"
+      },
+      "availability": {
+        "label": "Beschikbaarheid",
+        "value": "Open voor projecten en samenwerkingen"
+      }
+    },
+    "ctaPrimary": "CV downloaden",
+    "ctaSecondary": "Bekijk GitHub"
+  },
+  "footer": {
+    "note": "Ontworpen met Duitse engineeringdiscipline, geleverd met helderheid.",
+    "rights": "Alle rechten voorbehouden."
+  }
+}

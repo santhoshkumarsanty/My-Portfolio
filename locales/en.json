@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "title": "Santhosh Kumar S | Mechanical Engineer Portfolio",
+    "description": "Mechanical engineer specializing in product development, CAD, CFD, FEA, and end-to-end manufacturing."
+  },
+  "brand": {
+    "role": "Mechanical / Project Engineer"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "success": "Success Stories",
+    "contact": "Contact"
+  },
+  "controls": {
+    "language": "Language",
+    "theme": "Theme",
+    "themeToggleAria": "Toggle light/dark theme",
+    "skip": "Skip to content"
+  },
+  "hero": {
+    "eyebrow": "Available for engineering projects",
+    "titleLine1": "Santhosh",
+    "titleLine2": "Kumar S",
+    "subtitle": "Project Engineer • Product Development • CAD & Simulation",
+    "description": "6+ years delivering mechanical engineering solutions across design, analysis, and manufacturing with a focus on precision, reliability, and cost efficiency.",
+    "ctaPrimary": "View Portfolio",
+    "ctaSecondary": "Contact",
+    "stats": {
+      "experience": {
+        "value": "6+",
+        "label": "Years Experience"
+      },
+      "projects": {
+        "value": "50+",
+        "label": "Projects Delivered"
+      },
+      "domains": {
+        "value": "6",
+        "label": "Engineering Domains"
+      }
+    }
+  },
+  "about": {
+    "label": "About",
+    "title": "Engineering with disciplined design thinking",
+    "subtitle": "German-style clarity, structured execution, and measurable outcomes.",
+    "body": "Project Engineer with proven experience leading end-to-end development of mechanical systems, from concept to production. Skilled in SolidWorks, AutoCAD, GD&T, CFD, and FEA, with a strong focus on manufacturability and quality.",
+    "highlightsTitle": "Core Focus",
+    "highlights": {
+      "one": "Product Development & DFM",
+      "two": "Simulation & Validation (CFD/FEA)",
+      "three": "Manufacturing Readiness & Cost Control"
+    }
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "title": "Selected Engineering Work",
+    "subtitle": "A structured overview of multidisciplinary projects with measurable results.",
+    "items": {
+      "product": {
+        "title": "Product Design & CAD",
+        "desc": "Precision 3D modeling and documentation with GD&T compliance and manufacturing-ready outputs.",
+        "tag": "Design"
+      },
+      "cfd": {
+        "title": "CFD & Thermal Analysis",
+        "desc": "Flow and thermal simulations to improve performance, efficiency, and reliability.",
+        "tag": "Simulation"
+      },
+      "structural": {
+        "title": "Structural / FEA Analysis",
+        "desc": "Stress, deformation, and fatigue studies to validate mechanical integrity.",
+        "tag": "FEA"
+      },
+      "nesting": {
+        "title": "Nesting Optimization",
+        "desc": "Material optimization layouts for laser cutting and fabrication efficiency.",
+        "tag": "Optimization"
+      },
+      "concept": {
+        "title": "Concept Development",
+        "desc": "Early-stage concept generation and prototyping for industrial systems.",
+        "tag": "Innovation"
+      },
+      "e2e": {
+        "title": "End-to-End Delivery",
+        "desc": "Full lifecycle project execution from requirements to final validation.",
+        "tag": "Delivery"
+      }
+    }
+  },
+  "success": {
+    "label": "Success Stories",
+    "title": "Outcomes That Matter",
+    "subtitle": "Focused on measurable impact and engineering discipline.",
+    "items": {
+      "delivery": {
+        "title": "On-time New Product Launch",
+        "desc": "Coordinated cross-functional teams to deliver production-ready assemblies within strict timelines."
+      },
+      "quality": {
+        "title": "Quality & Compliance",
+        "desc": "Implemented GD&T and DFM standards to improve first-pass yield and reduce rework."
+      },
+      "innovation": {
+        "title": "Manufacturing Efficiency",
+        "desc": "Optimized workflows and layouts to reduce material waste and improve throughput."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's build the next system",
+    "subtitle": "Open to full-time roles and engineering collaborations.",
+    "cards": {
+      "phone": {
+        "label": "Phone"
+      },
+      "email": {
+        "label": "Email"
+      },
+      "location": {
+        "label": "Location"
+      },
+      "availability": {
+        "label": "Availability",
+        "value": "Open for projects and collaborations"
+      }
+    },
+    "ctaPrimary": "Download Resume",
+    "ctaSecondary": "View GitHub"
+  },
+  "footer": {
+    "note": "Designed with German engineering discipline, delivered with clarity.",
+    "rights": "All rights reserved."
+  }
+}

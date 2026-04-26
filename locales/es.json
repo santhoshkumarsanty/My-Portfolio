@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "title": "Santhosh Kumar S | Portafolio de ingeniería mecánica",
+    "description": "Ingeniero mecánico especializado en desarrollo de producto, CAD, CFD, FEA y fabricación integral."
+  },
+  "brand": {
+    "role": "Ingeniero mecánico / de proyectos"
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "portfolio": "Portafolio",
+    "success": "Casos de éxito",
+    "contact": "Contacto"
+  },
+  "controls": {
+    "language": "Idioma",
+    "theme": "Tema",
+    "themeToggleAria": "Cambiar claro/oscuro",
+    "skip": "Saltar al contenido"
+  },
+  "hero": {
+    "eyebrow": "Disponible para proyectos de ingeniería",
+    "titleLine1": "Santhosh",
+    "titleLine2": "Kumar S",
+    "subtitle": "Ingeniero de proyectos • Desarrollo de producto • CAD y simulación",
+    "description": "Más de 6 años entregando soluciones mecánicas desde el diseño hasta la fabricación, con foco en precisión, fiabilidad y costos.",
+    "ctaPrimary": "Ver portafolio",
+    "ctaSecondary": "Contactar",
+    "stats": {
+      "experience": {
+        "value": "6+",
+        "label": "Años de experiencia"
+      },
+      "projects": {
+        "value": "50+",
+        "label": "Proyectos entregados"
+      },
+      "domains": {
+        "value": "6",
+        "label": "Dominios de ingeniería"
+      }
+    }
+  },
+  "about": {
+    "label": "Sobre mí",
+    "title": "Ingeniería con pensamiento de diseño disciplinado",
+    "subtitle": "Claridad alemana, ejecución estructurada y resultados medibles.",
+    "body": "Ingeniero de proyectos con experiencia comprobada liderando el desarrollo de sistemas mecánicos de extremo a extremo. Dominio de SolidWorks, AutoCAD, GD&T, CFD y FEA, con fuerte enfoque en manufacturabilidad y calidad.",
+    "highlightsTitle": "Enfoque principal",
+    "highlights": {
+      "one": "Desarrollo de producto y DFM",
+      "two": "Simulación y validación (CFD/FEA)",
+      "three": "Preparación para manufactura y control de costos"
+    }
+  },
+  "portfolio": {
+    "label": "Portafolio",
+    "title": "Trabajos de ingeniería seleccionados",
+    "subtitle": "Resumen estructurado de proyectos multidisciplinarios con resultados medibles.",
+    "items": {
+      "product": {
+        "title": "Diseño de producto y CAD",
+        "desc": "Modelado 3D preciso y documentación conforme a GD&T, lista para fabricación.",
+        "tag": "Diseño"
+      },
+      "cfd": {
+        "title": "Análisis CFD y térmico",
+        "desc": "Simulaciones de flujo y térmicas para mejorar rendimiento, eficiencia y confiabilidad.",
+        "tag": "Simulación"
+      },
+      "structural": {
+        "title": "Análisis estructural / FEA",
+        "desc": "Estudios de esfuerzos, deformación y fatiga para validar la integridad mecánica.",
+        "tag": "FEA"
+      },
+      "nesting": {
+        "title": "Optimización de nesting",
+        "desc": "Diseños optimizados para corte láser y eficiencia de material.",
+        "tag": "Optimización"
+      },
+      "concept": {
+        "title": "Desarrollo de conceptos",
+        "desc": "Generación de conceptos y prototipado para sistemas industriales.",
+        "tag": "Innovación"
+      },
+      "e2e": {
+        "title": "Entrega end-to-end",
+        "desc": "Ejecución completa del ciclo del proyecto desde requisitos hasta validación final.",
+        "tag": "Entrega"
+      }
+    }
+  },
+  "success": {
+    "label": "Casos de éxito",
+    "title": "Resultados que importan",
+    "subtitle": "Impacto medible y disciplina de ingeniería.",
+    "items": {
+      "delivery": {
+        "title": "Lanzamiento de producto a tiempo",
+        "desc": "Coordinación de equipos multidisciplinarios para entregar ensamblajes listos para producción en plazo."
+      },
+      "quality": {
+        "title": "Calidad y cumplimiento",
+        "desc": "Aplicación de estándares GD&T/DFM para mejorar el rendimiento a la primera y reducir retrabajos."
+      },
+      "innovation": {
+        "title": "Eficiencia de manufactura",
+        "desc": "Optimización de flujos y layouts para reducir desperdicio de material y aumentar el throughput."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contacto",
+    "title": "Construyamos el próximo sistema",
+    "subtitle": "Abierto a roles de tiempo completo y colaboraciones.",
+    "cards": {
+      "phone": {
+        "label": "Teléfono"
+      },
+      "email": {
+        "label": "Correo"
+      },
+      "location": {
+        "label": "Ubicación"
+      },
+      "availability": {
+        "label": "Disponibilidad",
+        "value": "Disponible para proyectos y colaboraciones"
+      }
+    },
+    "ctaPrimary": "Descargar CV",
+    "ctaSecondary": "Ver GitHub"
+  },
+  "footer": {
+    "note": "Diseñado con disciplina alemana, entregado con claridad.",
+    "rights": "Todos los derechos reservados."
+  }
+}
