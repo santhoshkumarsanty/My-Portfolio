@@ -1559,6 +1559,12 @@ footer {
   border-color: var(--accent);
   box-shadow: 0 0 8px rgba(0,212,255,0.35);
 }
+.language-status {
+  margin-left: 8px;
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
 .google-translate-hidden {
   position: absolute;
   left: -9999px;
@@ -1803,6 +1809,7 @@ footer {
         <option value="cy">Welsh</option>
       </select>
     </div>
+    <span class="language-status" id="languageStatus" role="status" aria-live="polite"></span>
     <button class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Theme" aria-label="Toggle theme">
       <i class="fas fa-moon" id="themeIcon"></i>
     </button>
@@ -4282,11 +4289,12 @@ async function submitForm(e) {
 /* ---- Language Selector ---- */
 (function initLanguage() {
   const languageSelect = document.getElementById('languageSelect');
+  const languageStatus = document.getElementById('languageStatus');
   if (!languageSelect) return;
 
   const storageKey = 'portfolio-language';
   const defaultLang = 'en';
-  const translationRetryDelayMs = 250;
+  const translationRetryDelayMs = 500;
   const maxTranslationWaitSeconds = 3; // Reasonable timeout for Google Translate to initialize and inject its translation interface.
   const maxTranslationWaitMs = maxTranslationWaitSeconds * 1000;
   const maxTranslationAttempts = Math.ceil(maxTranslationWaitMs / translationRetryDelayMs);
@@ -4294,10 +4302,22 @@ async function submitForm(e) {
   const languageOptions = Array.from(languageSelect.options);
   const supportedLanguages = languageOptions.map(option => option.value);
   const supportedLanguageSet = new Set(supportedLanguages);
-  const saved = supportedLanguageSet.has(stored) ? stored : defaultLang;
+  const selectedLanguage = supportedLanguageSet.has(stored) ? stored : defaultLang;
 
-  languageSelect.value = saved;
-  document.documentElement.lang = saved;
+  languageSelect.value = selectedLanguage;
+  document.documentElement.lang = selectedLanguage;
+
+  let statusTimer;
+  const showLanguageStatus = (message) => {
+    if (!languageStatus) return;
+    languageStatus.textContent = message;
+    if (statusTimer) clearTimeout(statusTimer);
+    if (message) {
+      statusTimer = setTimeout(() => {
+        languageStatus.textContent = '';
+      }, 5000);
+    }
+  };
 
   const applyLanguage = (lang, attemptCount = 0) => {
     document.documentElement.lang = lang;
@@ -4305,18 +4325,21 @@ async function submitForm(e) {
     if (translateCombo) {
       translateCombo.value = lang;
       translateCombo.dispatchEvent(new Event('change'));
+      showLanguageStatus('');
       return;
     }
     if (attemptCount < maxTranslationAttempts) {
       setTimeout(() => applyLanguage(lang, attemptCount + 1), translationRetryDelayMs);
     } else {
       console.warn(`Translation initialization timed out after ${maxTranslationWaitSeconds} seconds. Google Translate may be unavailable or blocked.`);
+      showLanguageStatus('Translation unavailable. Please retry or disable blockers.');
     }
   };
 
   languageSelect.addEventListener('change', event => {
     const lang = event.target.value;
     localStorage.setItem(storageKey, lang);
+    showLanguageStatus('');
     applyLanguage(lang);
   });
 
@@ -4331,7 +4354,7 @@ async function submitForm(e) {
       includedLanguages: supportedLanguages.join(','),
       autoDisplay: false
     }, 'google_translate_element');
-    applyLanguage(saved);
+    applyLanguage(selectedLanguage);
   };
 })();
 
