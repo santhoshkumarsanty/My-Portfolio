@@ -4287,7 +4287,7 @@ async function submitForm(e) {
   const storageKey = 'portfolio-language';
   const defaultLang = 'en';
   const translationRetryDelayMs = 250;
-  const maxTranslationWaitSeconds = 3; // Reasonable timeout for Google Translate to inject the selector.
+  const maxTranslationWaitSeconds = 3; // Reasonable timeout for Google Translate to initialize and inject its translation interface.
   const maxTranslationWaitMs = maxTranslationWaitSeconds * 1000;
   const maxTranslationAttempts = Math.ceil(maxTranslationWaitMs / translationRetryDelayMs);
   const stored = localStorage.getItem(storageKey);
@@ -4299,7 +4299,7 @@ async function submitForm(e) {
   languageSelect.value = saved;
   document.documentElement.lang = saved;
 
-  const applyLanguage = (lang, attempt = 0) => {
+  const applyLanguage = (lang, attemptCount = 0) => {
     document.documentElement.lang = lang;
     const translateCombo = document.querySelector('select.goog-te-combo');
     if (translateCombo) {
@@ -4307,10 +4307,10 @@ async function submitForm(e) {
       translateCombo.dispatchEvent(new Event('change'));
       return;
     }
-    if (attempt < maxTranslationAttempts) {
-      setTimeout(() => applyLanguage(lang, attempt + 1), translationRetryDelayMs);
+    if (attemptCount < maxTranslationAttempts) {
+      setTimeout(() => applyLanguage(lang, attemptCount + 1), translationRetryDelayMs);
     } else {
-      console.warn('Translation initialization timed out.');
+      console.warn(`Translation initialization timed out after ${maxTranslationWaitSeconds} seconds. Google Translate may be unavailable or blocked.`);
     }
   };
 
