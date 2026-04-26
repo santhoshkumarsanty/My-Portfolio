@@ -1532,6 +1532,48 @@ footer {
 }
 
 /* ============================================================
+   LANGUAGE SELECTOR
+   ============================================================ */
+.language-select {
+  margin-left: 12px;
+}
+.language-select select {
+  height: 36px;
+  background: rgba(0,212,255,0.08);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.language-select select:hover {
+  background: rgba(0,212,255,0.15);
+  border-color: var(--accent);
+}
+.language-select select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 8px rgba(0,212,255,0.35);
+}
+.language-status {
+  margin-left: 8px;
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+.google-translate-hidden {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  height: 0;
+  overflow: hidden;
+}
+
+/* ============================================================
    MEDIA MODAL
    ============================================================ */
 .media-modal {
@@ -1720,6 +1762,54 @@ footer {
     <li><a href="#contact" data-section="contact" class="">Contact</a></li>
   </ul>
   <div style="display:flex;align-items:center;">
+    <div class="language-select">
+      <select id="languageSelect" title="Language" aria-label="Language">
+        <option value="en">English</option>
+        <option value="sq">Albanian</option>
+        <option value="hy">Armenian</option>
+        <option value="az">Azerbaijani</option>
+        <option value="eu">Basque</option>
+        <option value="be">Belarusian</option>
+        <option value="bs">Bosnian</option>
+        <option value="bg">Bulgarian</option>
+        <option value="ca">Catalan</option>
+        <option value="hr">Croatian</option>
+        <option value="cs">Czech</option>
+        <option value="da">Danish</option>
+        <option value="nl">Dutch</option>
+        <option value="et">Estonian</option>
+        <option value="fi">Finnish</option>
+        <option value="fr">French</option>
+        <option value="gl">Galician</option>
+        <option value="ka">Georgian</option>
+        <option value="de">German</option>
+        <option value="el">Greek</option>
+        <option value="hu">Hungarian</option>
+        <option value="is">Icelandic</option>
+        <option value="ga">Irish</option>
+        <option value="it">Italian</option>
+        <option value="lv">Latvian</option>
+        <option value="lt">Lithuanian</option>
+        <option value="lb">Luxembourgish</option>
+        <option value="mk">Macedonian</option>
+        <option value="mt">Maltese</option>
+        <option value="no">Norwegian</option>
+        <option value="pl">Polish</option>
+        <option value="pt">Portuguese</option>
+        <option value="ro">Romanian</option>
+        <option value="ru">Russian</option>
+        <option value="gd">Scots Gaelic</option>
+        <option value="sr">Serbian</option>
+        <option value="sk">Slovak</option>
+        <option value="sl">Slovenian</option>
+        <option value="es">Spanish</option>
+        <option value="sv">Swedish</option>
+        <option value="tr">Turkish</option>
+        <option value="uk">Ukrainian</option>
+        <option value="cy">Welsh</option>
+      </select>
+    </div>
+    <span class="language-status" id="languageStatus" role="status" aria-live="polite"></span>
     <button class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Theme" aria-label="Toggle theme">
       <i class="fas fa-moon" id="themeIcon"></i>
     </button>
@@ -1728,6 +1818,7 @@ footer {
     </div>
   </div>
 </nav>
+<div id="google_translate_element" class="google-translate-hidden"></div>
 
 <!-- Section Nav Dots -->
 <div class="nav-dots">
@@ -4195,6 +4286,90 @@ async function submitForm(e) {
   }
 })();
 
+/* ---- Language Selector ---- */
+(function initLanguage() {
+  const languageSelect = document.getElementById('languageSelect');
+  const languageStatus = document.getElementById('languageStatus');
+  if (!languageSelect) return;
+
+  const storageKey = 'portfolio-language';
+  const defaultLang = 'en';
+  const translationRetryDelayMs = 500;
+  const maxTranslationWaitSeconds = 3; // Short timeout to keep the UI responsive when the translate API is slow or fails to load.
+  const maxTranslationWaitMs = maxTranslationWaitSeconds * 1000;
+  const maxTranslationAttempts = Math.ceil(maxTranslationWaitMs / translationRetryDelayMs);
+  const translateFailureMessage = `Failed to initialize Google Translate after ${maxTranslationWaitSeconds} seconds. This may be caused by network issues or content/ad blockers.`;
+  const stored = localStorage.getItem(storageKey);
+  const languageOptions = Array.from(languageSelect.options);
+  const supportedLanguages = languageOptions.map(option => option.value);
+  const supportedLanguageSet = new Set(supportedLanguages);
+  const selectedLanguage = supportedLanguageSet.has(stored) ? stored : defaultLang;
+
+  languageSelect.value = selectedLanguage;
+  document.documentElement.lang = selectedLanguage;
+
+  let statusTimer;
+  const showLanguageStatus = (message) => {
+    if (!languageStatus) return;
+    languageStatus.textContent = message;
+    if (statusTimer) clearTimeout(statusTimer);
+    if (message) {
+      statusTimer = setTimeout(() => {
+        languageStatus.textContent = '';
+      }, 5000);
+    }
+  };
+
+  const applyLanguage = (lang, attemptCount = 0) => {
+    if (attemptCount === 0) {
+      document.documentElement.lang = lang;
+    }
+    const translateCombo = document.querySelector('select.goog-te-combo');
+    if (translateCombo) {
+      translateCombo.value = lang;
+      translateCombo.dispatchEvent(new Event('change'));
+      showLanguageStatus('');
+      return;
+    }
+    if (attemptCount < maxTranslationAttempts) {
+      setTimeout(() => applyLanguage(lang, attemptCount + 1), translationRetryDelayMs);
+    } else {
+      console.warn(translateFailureMessage);
+      showLanguageStatus(translateFailureMessage);
+    }
+  };
+
+  languageSelect.addEventListener('change', event => {
+    const lang = event.target.value;
+    localStorage.setItem(storageKey, lang);
+    showLanguageStatus('');
+    applyLanguage(lang);
+  });
+
+  // Google Translate loads via callback parameter and requires a global function name.
+  const translateInitFlag = '__portfolioTranslateInitRegistered';
+  if (!window[translateInitFlag]) {
+    window[translateInitFlag] = true;
+    const existingTranslateInit = window.googleTranslateElementInit;
+    window.googleTranslateElementInit = () => {
+      if (typeof existingTranslateInit === 'function') {
+        existingTranslateInit();
+      }
+      if (!window.google?.translate?.TranslateElement) {
+        console.warn('Google Translate API failed to load or is not available on the window object.');
+        showLanguageStatus(translateFailureMessage);
+        return;
+      }
+      new window.google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: supportedLanguages.join(','),
+        autoDisplay: false
+      }, 'google_translate_element');
+      applyLanguage(selectedLanguage);
+    };
+  }
+})();
+
 /* ---- scrollToSection (fix for nav dots) ---- */
 function scrollToSection(selector) {
   document.querySelector(selector)?.scrollIntoView({ behavior: 'smooth' });
@@ -4293,5 +4468,7 @@ document.querySelectorAll('.proj-card').forEach(card => {
   });
 })();
 </script>
+<!-- Google Translate serves a dynamic script, so SRI hashes are not stable. -->
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body></html>
