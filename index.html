@@ -4295,7 +4295,7 @@ async function submitForm(e) {
   const storageKey = 'portfolio-language';
   const defaultLang = 'en';
   const translationRetryDelayMs = 500;
-  const maxTranslationWaitSeconds = 5; // Allow extra time on slower connections for Google Translate to initialize.
+  const maxTranslationWaitSeconds = 3; // Short timeout to keep the UI responsive on fast connections.
   const maxTranslationWaitMs = maxTranslationWaitSeconds * 1000;
   const maxTranslationAttempts = Math.ceil(maxTranslationWaitMs / translationRetryDelayMs);
   const translateFailureMessage = `Failed to initialize Google Translate after ${maxTranslationWaitSeconds} seconds. This may be caused by network issues, ad blockers, or Content Security Policy restrictions.`;
@@ -4345,19 +4345,26 @@ async function submitForm(e) {
   });
 
   // Google Translate loads via callback parameter and requires a global function name.
-  window.googleTranslateElementInit = () => {
-    if (!window.google?.translate?.TranslateElement) {
-      console.warn('Google Translate API failed to load or is not available on the window object.');
-      showLanguageStatus(translateFailureMessage);
-      return;
-    }
-    new window.google.translate.TranslateElement({
-      pageLanguage: 'en',
-      includedLanguages: supportedLanguages.join(','),
-      autoDisplay: false
-    }, 'google_translate_element');
-    applyLanguage(selectedLanguage);
-  };
+  const existingTranslateInit = window.googleTranslateElementInit;
+  if (!existingTranslateInit || !existingTranslateInit.__portfolioTranslateInit) {
+    window.googleTranslateElementInit = () => {
+      if (typeof existingTranslateInit === 'function') {
+        existingTranslateInit();
+      }
+      if (!window.google?.translate?.TranslateElement) {
+        console.warn('Google Translate API failed to load or is not available on the window object.');
+        showLanguageStatus(translateFailureMessage);
+        return;
+      }
+      new window.google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: supportedLanguages.join(','),
+        autoDisplay: false
+      }, 'google_translate_element');
+      applyLanguage(selectedLanguage);
+    };
+    window.googleTranslateElementInit.__portfolioTranslateInit = true;
+  }
 })();
 
 /* ---- scrollToSection (fix for nav dots) ---- */
@@ -4458,6 +4465,7 @@ document.querySelectorAll('.proj-card').forEach(card => {
   });
 })();
 </script>
+<!-- Google Translate serves a dynamic script, so SRI hashes are not stable. -->
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body></html>
