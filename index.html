@@ -4298,6 +4298,7 @@ async function submitForm(e) {
   const maxTranslationWaitSeconds = 5; // Allow extra time on slower connections for Google Translate to initialize.
   const maxTranslationWaitMs = maxTranslationWaitSeconds * 1000;
   const maxTranslationAttempts = Math.ceil(maxTranslationWaitMs / translationRetryDelayMs);
+  const translateFailureMessage = `Failed to initialize Google Translate after ${maxTranslationWaitSeconds} seconds. This may be caused by network issues, ad blockers, or Content Security Policy restrictions.`;
   const stored = localStorage.getItem(storageKey);
   const languageOptions = Array.from(languageSelect.options);
   const supportedLanguages = languageOptions.map(option => option.value);
@@ -4331,8 +4332,8 @@ async function submitForm(e) {
     if (attemptCount < maxTranslationAttempts) {
       setTimeout(() => applyLanguage(lang, attemptCount + 1), translationRetryDelayMs);
     } else {
-      console.warn(`Translation initialization timed out after ${maxTranslationWaitSeconds} seconds. Google Translate may be unavailable or blocked.`);
-      showLanguageStatus('Translation unavailable. Please check if content or ad blockers are preventing Google Translate from loading.');
+      console.warn(translateFailureMessage);
+      showLanguageStatus(translateFailureMessage);
     }
   };
 
@@ -4346,8 +4347,8 @@ async function submitForm(e) {
   // Google Translate loads via callback parameter and requires a global function name.
   window.googleTranslateElementInit = () => {
     if (!window.google?.translate?.TranslateElement) {
-      console.warn('Google Translate is unavailable.');
-      showLanguageStatus('Translation unavailable. Please check if content or ad blockers are preventing Google Translate from loading.');
+      console.warn('Google Translate API failed to load or is not available on the window object.');
+      showLanguageStatus(translateFailureMessage);
       return;
     }
     new window.google.translate.TranslateElement({
