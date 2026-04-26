@@ -4284,14 +4284,15 @@ async function submitForm(e) {
   const languageSelect = document.getElementById('languageSelect');
   if (!languageSelect) return;
 
-  const supportedLanguages = 'sq,hy,az,eu,be,bs,bg,ca,hr,cs,da,nl,en,et,fi,fr,gl,ka,de,el,hu,is,ga,it,lv,lt,lb,mk,mt,no,pl,pt,ro,ru,gd,sr,sk,sl,es,sv,tr,uk,cy';
   const storageKey = 'portfolio-language';
   const defaultLang = 'en';
   const maxTranslationAttempts = 12;
   const translationRetryDelayMs = 250;
   const stored = localStorage.getItem(storageKey);
-  const available = Array.from(languageSelect.options).map(option => option.value);
-  const saved = available.includes(stored) ? stored : defaultLang;
+  const languageOptions = Array.from(languageSelect.options);
+  const supportedLanguages = languageOptions.map(option => option.value);
+  const supportedLanguageSet = new Set(supportedLanguages);
+  const saved = supportedLanguageSet.has(stored) ? stored : defaultLang;
 
   languageSelect.value = saved;
   document.documentElement.lang = saved;
@@ -4306,6 +4307,8 @@ async function submitForm(e) {
     }
     if (attempt < maxTranslationAttempts) {
       setTimeout(() => applyLanguage(lang, attempt + 1), translationRetryDelayMs);
+    } else {
+      console.warn('Translation initialization timed out. Please retry later.');
     }
   };
 
@@ -4316,10 +4319,18 @@ async function submitForm(e) {
   });
 
   // Google Translate loads via callback parameter and requires a global function name.
+  const previousTranslateInit = window.googleTranslateElementInit;
   window.googleTranslateElementInit = function googleTranslateElementInit() {
+    if (typeof previousTranslateInit === 'function') {
+      previousTranslateInit();
+    }
+    if (!window.google || !google.translate || !google.translate.TranslateElement) {
+      console.warn('Google Translate is unavailable.');
+      return;
+    }
     new google.translate.TranslateElement({
       pageLanguage: 'en',
-      includedLanguages: supportedLanguages,
+      includedLanguages: supportedLanguages.join(','),
       autoDisplay: false
     }, 'google_translate_element');
     applyLanguage(saved);
