@@ -4295,7 +4295,7 @@ async function submitForm(e) {
   const storageKey = 'portfolio-language';
   const defaultLang = 'en';
   const translationRetryDelayMs = 500;
-  const maxTranslationWaitSeconds = 3; // Reasonable timeout for Google Translate to initialize and inject its translation interface.
+  const maxTranslationWaitSeconds = 5; // Allow extra time on slower connections for Google Translate to initialize.
   const maxTranslationWaitMs = maxTranslationWaitSeconds * 1000;
   const maxTranslationAttempts = Math.ceil(maxTranslationWaitMs / translationRetryDelayMs);
   const stored = localStorage.getItem(storageKey);
@@ -4332,7 +4332,7 @@ async function submitForm(e) {
       setTimeout(() => applyLanguage(lang, attemptCount + 1), translationRetryDelayMs);
     } else {
       console.warn(`Translation initialization timed out after ${maxTranslationWaitSeconds} seconds. Google Translate may be unavailable or blocked.`);
-      showLanguageStatus('Translation unavailable. Please retry or disable blockers.');
+      showLanguageStatus('Translation unavailable. Please check if content or ad blockers are preventing Google Translate from loading.');
     }
   };
 
@@ -4347,6 +4347,7 @@ async function submitForm(e) {
   window.googleTranslateElementInit = () => {
     if (!window.google?.translate?.TranslateElement) {
       console.warn('Google Translate is unavailable.');
+      showLanguageStatus('Translation unavailable. Please check if content or ad blockers are preventing Google Translate from loading.');
       return;
     }
     new window.google.translate.TranslateElement({
