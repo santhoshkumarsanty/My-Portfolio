@@ -11,7 +11,7 @@
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=Exo+2:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Font Awesome Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -46,9 +46,9 @@
   --language-option-hover-text: #ffffff;
   --glow: 0 0 30px rgba(0, 212, 255, 0.15);
   --glow-warm: 0 0 30px rgba(255, 124, 42, 0.2);
-  --font-display: 'Rajdhani', sans-serif;
+  --font-display: 'Rajdhani', 'Noto Sans', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans KR', 'Noto Sans Arabic', sans-serif;
   --font-mono: 'Share Tech Mono', monospace;
-  --font-body: 'Exo 2', sans-serif;
+  --font-body: 'Exo 2', 'Noto Sans', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans KR', 'Noto Sans Arabic', sans-serif;
   --radius: 4px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -92,7 +92,21 @@ body {
   overflow-x: hidden;
   line-height: 1.7;
   cursor: none;
+  transition: opacity 0.25s ease;
 }
+
+body.language-switching { opacity: 0.65; }
+
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] nav { direction: rtl; }
+html[dir="rtl"] .nav-links { flex-direction: row-reverse; }
+html[dir="rtl"] .hero-ctas,
+html[dir="rtl"] .contact-layout,
+html[dir="rtl"] .footer-grid { flex-direction: row-reverse; }
 
 /* ============================================================
    CUSTOM CURSOR
@@ -1583,13 +1597,6 @@ footer {
   color: var(--text-secondary);
   white-space: nowrap;
 }
-.google-translate-hidden {
-  position: absolute;
-  left: -9999px;
-  top: -9999px;
-  height: 0;
-  overflow: hidden;
-}
 
 /* ============================================================
    MEDIA MODAL
@@ -1754,14 +1761,14 @@ footer {
 <!-- Loading Screen -->
 <div id="loader" class="hidden">
   <div class="loader-gear"></div>
-  <div class="loader-text">INITIALIZING PORTFOLIO SYSTEM</div>
+  <div class="loader-text" data-i18n="loader.text">INITIALIZING PORTFOLIO SYSTEM</div>
   <div class="loader-bar"></div>
 </div>
 
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox">
   <div class="lightbox-inner" id="lightbox-inner">
-    <button class="lightbox-close" onclick="closeLightbox()">✕ CLOSE</button>
+    <button class="lightbox-close" onclick="closeLightbox()" data-i18n="common.close">✕ CLOSE</button>
   </div>
 </div>
 
@@ -1772,63 +1779,27 @@ footer {
     <span>SANTHOSH<span> KUMAR</span></span>
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#home" class="" data-section="home">Home</a></li>
-    <li><a href="#about" data-section="about">About</a></li>
-    <li><a href="#projects" data-section="projects" class="">Projects</a></li>
-    <li><a href="#design" data-section="design" class="">3D Design</a></li>
-    <li><a href="#resume" data-section="resume" class="">Resume</a></li>
-    <li><a href="#contact" data-section="contact" class="">Contact</a></li>
+    <li><a href="#home" class="" data-section="home" data-i18n="nav.home">Home</a></li>
+    <li><a href="#about" data-section="about" data-i18n="nav.about">About</a></li>
+    <li><a href="#projects" data-section="projects" class="" data-i18n="nav.projects">Projects</a></li>
+    <li><a href="#design" data-section="design" class="" data-i18n="nav.design">3D Design</a></li>
+    <li><a href="#resume" data-section="resume" class="" data-i18n="nav.resume">Resume</a></li>
+    <li><a href="#contact" data-section="contact" class="" data-i18n="nav.contact">Contact</a></li>
   </ul>
   <div style="display:flex;align-items:center;">
     <div class="language-select">
-      <select id="languageSelect" title="Language" aria-label="Language">
-        <option value="en">English</option>
-        <option value="sq">Albanian</option>
-        <option value="hy">Armenian</option>
-        <option value="az">Azerbaijani</option>
-        <option value="eu">Basque</option>
-        <option value="be">Belarusian</option>
-        <option value="bs">Bosnian</option>
-        <option value="bg">Bulgarian</option>
-        <option value="ca">Catalan</option>
-        <option value="hr">Croatian</option>
-        <option value="cs">Czech</option>
-        <option value="da">Danish</option>
-        <option value="nl">Dutch</option>
-        <option value="et">Estonian</option>
-        <option value="fi">Finnish</option>
-        <option value="fr">French</option>
-        <option value="gl">Galician</option>
-        <option value="ka">Georgian</option>
-        <option value="de">German</option>
-        <option value="el">Greek</option>
-        <option value="hu">Hungarian</option>
-        <option value="is">Icelandic</option>
-        <option value="ga">Irish</option>
-        <option value="it">Italian</option>
-        <option value="lv">Latvian</option>
-        <option value="lt">Lithuanian</option>
-        <option value="lb">Luxembourgish</option>
-        <option value="mk">Macedonian</option>
-        <option value="mt">Maltese</option>
-        <option value="no">Norwegian</option>
-        <option value="pl">Polish</option>
-        <option value="pt">Portuguese</option>
-        <option value="ro">Romanian</option>
-        <option value="ru">Russian</option>
-        <option value="gd">Scots Gaelic</option>
-        <option value="sr">Serbian</option>
-        <option value="sk">Slovak</option>
-        <option value="sl">Slovenian</option>
-        <option value="es">Spanish</option>
-        <option value="sv">Swedish</option>
-        <option value="tr">Turkish</option>
-        <option value="uk">Ukrainian</option>
-        <option value="cy">Welsh</option>
+      <select id="languageSelect" title="Language" aria-label="Language" data-i18n-title="language.label" data-i18n-aria="language.label">
+        <option value="en" data-i18n="language.english">English</option>
+        <option value="de" data-i18n="language.german">Deutsch</option>
+        <option value="fr" data-i18n="language.french">Français</option>
+        <option value="es" data-i18n="language.spanish">Español</option>
+        <option value="ja" data-i18n="language.japanese">日本語</option>
+        <option value="zh" data-i18n="language.chinese">中文</option>
+        <option value="ar" data-i18n="language.arabic">العربية</option>
       </select>
     </div>
     <span class="language-status" id="languageStatus" role="status" aria-live="polite"></span>
-    <button class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Theme" aria-label="Toggle theme">
+    <button class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Theme" aria-label="Toggle theme" data-i18n-title="theme.toggleTitle" data-i18n-aria="theme.toggleLabel">
       <i class="fas fa-moon" id="themeIcon"></i>
     </button>
     <div class="nav-toggle" id="navToggle" onclick="toggleNav()">
@@ -1836,16 +1807,15 @@ footer {
     </div>
   </div>
 </nav>
-<div id="google_translate_element" class="google-translate-hidden"></div>
 
 <!-- Section Nav Dots -->
 <div class="nav-dots">
-  <div class="nav-dot-item" data-section="home" data-label="HOME" onclick="scrollToSection('#home')"></div>
-  <div class="nav-dot-item" data-section="about" data-label="ABOUT" onclick="scrollToSection('#about')"></div>
-  <div class="nav-dot-item" data-section="projects" data-label="PROJECTS" onclick="scrollToSection('#projects')"></div>
-  <div class="nav-dot-item" data-section="design" data-label="3D DESIGN" onclick="scrollToSection('#design')"></div>
-  <div class="nav-dot-item" data-section="resume" data-label="RESUME" onclick="scrollToSection('#resume')"></div>
-  <div class="nav-dot-item" data-section="contact" data-label="CONTACT" onclick="scrollToSection('#contact')"></div>
+  <div class="nav-dot-item" data-section="home" data-label="HOME" data-i18n-data-label="navDots.home" onclick="scrollToSection('#home')"></div>
+  <div class="nav-dot-item" data-section="about" data-label="ABOUT" data-i18n-data-label="navDots.about" onclick="scrollToSection('#about')"></div>
+  <div class="nav-dot-item" data-section="projects" data-label="PROJECTS" data-i18n-data-label="navDots.projects" onclick="scrollToSection('#projects')"></div>
+  <div class="nav-dot-item" data-section="design" data-label="3D DESIGN" data-i18n-data-label="navDots.design" onclick="scrollToSection('#design')"></div>
+  <div class="nav-dot-item" data-section="resume" data-label="RESUME" data-i18n-data-label="navDots.resume" onclick="scrollToSection('#resume')"></div>
+  <div class="nav-dot-item" data-section="contact" data-label="CONTACT" data-i18n-data-label="navDots.contact" onclick="scrollToSection('#contact')"></div>
 </div>
 
 <!-- ============================================================
@@ -1856,49 +1826,49 @@ footer {
   <div class="hero-content">
     <div class="hero-badge">
       <div class="badge-dot"></div>
-      AVAILABLE FOR PROJECTS · MECHANICAL ENGINEER
+      <span data-i18n="hero.badge">AVAILABLE FOR PROJECTS · MECHANICAL ENGINEER</span>
     </div>
     <h1 class="hero-name">
       SANTHOSH
       <span class="line2">KUMAR S</span>
     </h1>
     <div class="hero-title-line">
-      <span class="hero-title">Project Engineer • Product Development • CAD &amp; Simulation Expert</span>
+      <span class="hero-title" data-i18n="hero.title">Project Engineer • Product Development • CAD &amp; Simulation Expert</span>
     </div>
-    <p class="hero-desc">
+    <p class="hero-desc" data-i18n="hero.description">
       6+ years managing end-to-end engineering projects from planning to execution.
       Expertise in product development, CAD design, GD&amp;T, and manufacturing process optimization.
     </p>
     <div class="hero-stats">
       <div class="stat-item">
-        <div class="stat-num">6+</div>
-        <div class="stat-label">Years Exp.</div>
+        <div class="stat-num" data-i18n-number="6" data-i18n-number-suffix="+">6+</div>
+        <div class="stat-label" data-i18n="hero.stats.years">Years Exp.</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">50+</div>
-        <div class="stat-label">Projects</div>
+        <div class="stat-num" data-i18n-number="50" data-i18n-number-suffix="+">50+</div>
+        <div class="stat-label" data-i18n="hero.stats.projects">Projects</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">6</div>
-        <div class="stat-label">Domains</div>
+        <div class="stat-num" data-i18n-number="6">6</div>
+        <div class="stat-label" data-i18n="hero.stats.domains">Domains</div>
       </div>
     </div>
     <div class="hero-ctas">
       <a href="#projects" class="btn btn-primary">
-        <span class="btn-icon"><i class="fas fa-cog"></i></span> View Projects
+        <span class="btn-icon"><i class="fas fa-cog"></i></span> <span data-i18n="hero.cta.projects">View Projects</span>
       </a>
       <a href="#contact" class="btn btn-outline">
-        <span class="btn-icon"><i class="fas fa-envelope"></i></span> Contact Me
+        <span class="btn-icon"><i class="fas fa-envelope"></i></span> <span data-i18n="hero.cta.contact">Contact Me</span>
       </a>
       <a href="resume/Santhosh%20Kumar.pdf" download="Santhosh Kumar.pdf" class="btn btn-warm">
-        <span class="btn-icon"><i class="fas fa-download"></i></span> Download CV
+        <span class="btn-icon"><i class="fas fa-download"></i></span> <span data-i18n="hero.cta.download">Download CV</span>
       </a>
     </div>
   </div>
 
   <div class="scroll-indicator">
     <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-    <span>SCROLL</span>
+    <span data-i18n="hero.scroll">SCROLL</span>
   </div>
 </section>
 
@@ -1906,12 +1876,12 @@ footer {
      ABOUT SECTION
      ============================================================ -->
 <section id="about">
-  <div class="section-label">01 / ABOUT</div>
-  <h2 class="section-title">Engineer. <span class="accent">Designer.</span> <span class="warm">Innovator.</span></h2>
+  <div class="section-label" data-i18n="about.sectionLabel">01 / ABOUT</div>
+  <h2 class="section-title" data-i18n="about.title" data-i18n-html="true">Engineer. <span class="accent">Designer.</span> <span class="warm">Innovator.</span></h2>
   <div class="divider">
     <div class="divider-line"></div>
     <div class="divider-dot"></div>
-    <div class="divider-text">PROFESSIONAL PROFILE</div>
+    <div class="divider-text" data-i18n="about.divider">PROFESSIONAL PROFILE</div>
     <div class="divider-dot"></div>
     <div class="divider-line" style="background: linear-gradient(270deg, var(--border), transparent)"></div>
   </div>
@@ -1923,12 +1893,12 @@ footer {
         <img src="profile/profile photo.png" alt="Santhosh Kumar S" style="display: block;">
         <div class="profile-img-placeholder" style="display: none;">
           <div class="profile-initials">SK</div>
-          <div class="profile-label">PROFILE IMAGE</div>
+          <div class="profile-label" data-i18n="about.profileImage">PROFILE IMAGE</div>
         </div>
       </div>
       <div class="profile-info-block">
         <div class="profile-name-big">SANTHOSH KUMAR S</div>
-        <div class="profile-role">MECHANICAL / PROJECT ENGINEER</div>
+        <div class="profile-role" data-i18n="about.profileRole">MECHANICAL / PROJECT ENGINEER</div>
         <ul class="contact-info-list">
           <li>
             <div class="contact-icon"><i class="fas fa-phone"></i></div>
@@ -1940,7 +1910,7 @@ footer {
           </li>
           <li>
             <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-            <a href="https://tinyurl.com/4yymckfv" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+            <a href="https://tinyurl.com/4yymckfv" target="_blank" rel="noopener noreferrer" data-i18n="about.linkedinProfile">LinkedIn Profile</a>
           </li>
           <li>
             <div class="contact-icon"><i class="fab fa-github"></i></div>
@@ -1951,60 +1921,60 @@ footer {
         <!-- Business Card -->
         <div class="business-card-wrap" style="margin-top: 20px; display: none;">
           <img src="profile/business_card.jpg" alt="Business Card" onerror="this.parentElement.style.display='none'">
-          <div class="bc-label">BUSINESS CARD</div>
+          <div class="bc-label" data-i18n="about.businessCard">BUSINESS CARD</div>
         </div>
       </div>
     </div>
 
     <!-- About Content -->
     <div class="about-content">
-      <p class="about-summary reveal visible">
+      <p class="about-summary reveal visible" data-i18n="about.summary" data-i18n-html="true">
         <strong>Project Engineer with 6 years of experience</strong> managing end-to-end engineering projects from planning to execution. Proven expertise in <strong>product development</strong>, CAD design (SolidWorks, AutoCAD), GD&amp;T, and manufacturing process optimization. Successfully led cross-functional teams to deliver projects within stringent timelines. Proficient in <strong>design for manufacturing (DFM)</strong>, process validation, and quality assurance, with a strong ability to bridge design engineering and production for optimal efficiency.
       </p>
 
       <!-- Skills -->
       <div class="skills-section reveal reveal-delay-1 visible">
-        <div class="skills-title">Core Competencies</div>
+        <div class="skills-title" data-i18n="about.skillsTitle">Core Competencies</div>
         <div class="skills-grid">
-          <div class="skill-tag">Product Development</div>
-          <div class="skill-tag">CAD Modeling</div>
-          <div class="skill-tag">GD&amp;T</div>
-          <div class="skill-tag">DFM</div>
-          <div class="skill-tag">Process Validation</div>
-          <div class="skill-tag">SolidWorks</div>
-          <div class="skill-tag">AutoCAD</div>
-          <div class="skill-tag">CFD Analysis</div>
-          <div class="skill-tag">ANSYS FEA</div>
-          <div class="skill-tag">Project Management</div>
+          <div class="skill-tag" data-i18n="skills.productDevelopment">Product Development</div>
+          <div class="skill-tag" data-i18n="skills.cadModeling">CAD Modeling</div>
+          <div class="skill-tag" data-i18n="skills.gdt">GD&amp;T</div>
+          <div class="skill-tag" data-i18n="skills.dfm">DFM</div>
+          <div class="skill-tag" data-i18n="skills.processValidation">Process Validation</div>
+          <div class="skill-tag" data-i18n="skills.solidworks">SolidWorks</div>
+          <div class="skill-tag" data-i18n="skills.autocad">AutoCAD</div>
+          <div class="skill-tag" data-i18n="skills.cfdAnalysis">CFD Analysis</div>
+          <div class="skill-tag" data-i18n="skills.ansysFea">ANSYS FEA</div>
+          <div class="skill-tag" data-i18n="skills.projectManagement">Project Management</div>
         </div>
       </div>
 
       <!-- Experience -->
       <div class="reveal reveal-delay-2 visible">
-        <div class="skills-title">Work Experience</div>
+        <div class="skills-title" data-i18n="about.workExperience">Work Experience</div>
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-dot-line"></div>
-            <div class="exp-role">New Product Development Engineer</div>
+            <div class="exp-role" data-i18n="experience.npd.role">New Product Development Engineer</div>
             <div class="exp-company">HANAV MANUFACTURING &amp; BUSINESS PVT LTD · BANGALORE</div>
-            <div class="exp-period">FEB 2025 – FEB 2026</div>
+            <div class="exp-period" data-i18n-date-start="2025-02-01" data-i18n-date-end="2026-02-01" data-i18n-date-format="month">FEB 2025 – FEB 2026</div>
             <ul class="exp-list">
-              <li>Led end-to-end new product development initiatives from concept to production</li>
-              <li>Applied DFM principles and GD&amp;T standards to optimize designs for manufacturing</li>
-              <li>Collaborated with cross-functional teams to ensure on-time project delivery</li>
-              <li>Conducted FEA and CFD simulations for design validation</li>
+              <li data-i18n="experience.npd.bullet1">Led end-to-end new product development initiatives from concept to production</li>
+              <li data-i18n="experience.npd.bullet2">Applied DFM principles and GD&amp;T standards to optimize designs for manufacturing</li>
+              <li data-i18n="experience.npd.bullet3">Collaborated with cross-functional teams to ensure on-time project delivery</li>
+              <li data-i18n="experience.npd.bullet4">Conducted FEA and CFD simulations for design validation</li>
             </ul>
           </div>
           <div class="timeline-item">
             <div class="timeline-dot-line"></div>
-            <div class="exp-role">Setter &amp; Maintenance Engineer</div>
+            <div class="exp-role" data-i18n="experience.setter.role">Setter &amp; Maintenance Engineer</div>
             <div class="exp-company">L.G. BALAKRISHNAN &amp; BROS LTD · KARUR</div>
-            <div class="exp-period">NOV 2016 – NOV 2019</div>
+            <div class="exp-period" data-i18n-date-start="2016-11-01" data-i18n-date-end="2019-11-01" data-i18n-date-format="month">NOV 2016 – NOV 2019</div>
             <ul class="exp-list">
-              <li>Managed CNC machine setup, calibration, and preventive maintenance operations</li>
-              <li>Optimized production line efficiency through systematic troubleshooting</li>
-              <li>Implemented quality assurance protocols to reduce defect rates</li>
-              <li>Coordinated with design and production teams for process improvements</li>
+              <li data-i18n="experience.setter.bullet1">Managed CNC machine setup, calibration, and preventive maintenance operations</li>
+              <li data-i18n="experience.setter.bullet2">Optimized production line efficiency through systematic troubleshooting</li>
+              <li data-i18n="experience.setter.bullet3">Implemented quality assurance protocols to reduce defect rates</li>
+              <li data-i18n="experience.setter.bullet4">Coordinated with design and production teams for process improvements</li>
             </ul>
           </div>
         </div>
@@ -2012,17 +1982,17 @@ footer {
 
       <!-- Education -->
       <div class="reveal reveal-delay-3 visible">
-        <div class="skills-title">Academics</div>
+        <div class="skills-title" data-i18n="about.academics">Academics</div>
         <div class="edu-grid">
           <div class="edu-card">
-            <div class="edu-degree">Bachelor of Mechanical Engineering</div>
+            <div class="edu-degree" data-i18n="education.bachelor.degree">Bachelor of Mechanical Engineering</div>
             <div class="edu-school">M Kumarasamy College of Engineering, Thalaivapalaiyam, Karur</div>
-            <div class="edu-year">2022 – 2025</div>
+            <div class="edu-year" data-i18n-year-start="2022" data-i18n-year-end="2025">2022 – 2025</div>
           </div>
           <div class="edu-card">
-            <div class="edu-degree">Diploma in Mechanical Engineering</div>
+            <div class="edu-degree" data-i18n="education.diploma.degree">Diploma in Mechanical Engineering</div>
             <div class="edu-school">Arulmurugan Polytechnic College, Thennilai, Karur</div>
-            <div class="edu-year">2013 – 2016</div>
+            <div class="edu-year" data-i18n-year-start="2013" data-i18n-year-end="2016">2013 – 2016</div>
           </div>
         </div>
       </div>
@@ -2034,29 +2004,29 @@ footer {
      PROJECTS SECTION
      ============================================================ -->
 <section id="projects">
-  <div class="section-label">02 / PROJECTS</div>
-  <h2 class="section-title">Engineering <span class="accent">Portfolio</span></h2>
-  <p class="section-subtitle">
+  <div class="section-label" data-i18n="projects.sectionLabel">02 / PROJECTS</div>
+  <h2 class="section-title" data-i18n="projects.title" data-i18n-html="true">Engineering <span class="accent">Portfolio</span></h2>
+  <p class="section-subtitle" data-i18n="projects.subtitle">
     A curated collection of mechanical engineering projects spanning CFD, FEA, product design, and complete end-to-end development cycles.
   </p>
 
   <!-- Tabs -->
   <div class="projects-tabs" id="projectTabs">
-    <button class="tab-btn active" onclick="switchTab(&#39;product&#39;)">Product Design</button>
-    <button class="tab-btn" onclick="switchTab(&#39;cfd&#39;)">CFD Analysis</button>
-    <button class="tab-btn" onclick="switchTab(&#39;structural&#39;)">Structural</button>
-    <button class="tab-btn" onclick="switchTab(&#39;nesting&#39;)">Nesting</button>
-    <button class="tab-btn" onclick="switchTab(&#39;concept&#39;)">Concept Dev.</button>
-    <button class="tab-btn" onclick="switchTab(&#39;e2e&#39;)">End-to-End</button>
+    <button class="tab-btn active" onclick="switchTab(&#39;product&#39;)" data-i18n="projects.tabs.product">Product Design</button>
+    <button class="tab-btn" onclick="switchTab(&#39;cfd&#39;)" data-i18n="projects.tabs.cfd">CFD Analysis</button>
+    <button class="tab-btn" onclick="switchTab(&#39;structural&#39;)" data-i18n="projects.tabs.structural">Structural</button>
+    <button class="tab-btn" onclick="switchTab(&#39;nesting&#39;)" data-i18n="projects.tabs.nesting">Nesting</button>
+    <button class="tab-btn" onclick="switchTab(&#39;concept&#39;)" data-i18n="projects.tabs.concept">Concept Dev.</button>
+    <button class="tab-btn" onclick="switchTab(&#39;e2e&#39;)" data-i18n="projects.tabs.e2e">End-to-End</button>
   </div>
 
   <!-- Product Design Panel -->
   <div class="project-panel active" id="panel-product">
     <div class="project-header">
       <div>
-        <div class="project-cat-title">Product Design &amp; CAD Modeling</div>
+        <div class="project-cat-title" data-i18n="projects.product.title">Product Design &amp; CAD Modeling</div>
       </div>
-      <p class="project-cat-desc">
+      <p class="project-cat-desc" data-i18n="projects.product.desc">
         Precision CAD modeling and product design using SolidWorks and AutoCAD, with GD&amp;T standards and DFM principles.
       </p>
     </div>
@@ -2064,16 +2034,16 @@ footer {
       <div class="proj-card featured reveal visible">
         <div class="proj-media">
           <img src="Design/1732289257134.jpg" alt="Product Design 1" loading="lazy">
-          <div class="proj-media-badge">IMAGE</div>
+          <div class="proj-media-badge" data-i18n="common.image">IMAGE</div>
         </div>
         <div class="proj-body">
-          <div class="proj-title">PRODUCT DESIGN — SAMPLE 1</div>
-          <p class="proj-desc">Precision CAD modeling and product design using SolidWorks and AutoCAD, with GD&amp;T standards and DFM principles.</p>
+          <div class="proj-title" data-i18n="projects.product.sample1.title">PRODUCT DESIGN — SAMPLE 1</div>
+          <p class="proj-desc" data-i18n="projects.product.desc">Precision CAD modeling and product design using SolidWorks and AutoCAD, with GD&amp;T standards and DFM principles.</p>
           <div class="proj-tags">
-            <span class="proj-tag">SolidWorks</span>
-            <span class="proj-tag">AutoCAD</span>
-            <span class="proj-tag">GD&amp;T</span>
-            <span class="proj-tag">DFM</span>
+            <span class="proj-tag" data-i18n="skills.solidworks">SolidWorks</span>
+            <span class="proj-tag" data-i18n="skills.autocad">AutoCAD</span>
+            <span class="proj-tag" data-i18n="skills.gdt">GD&amp;T</span>
+            <span class="proj-tag" data-i18n="skills.dfm">DFM</span>
           </div>
         </div>
       </div>
@@ -2082,10 +2052,10 @@ footer {
           <img src="Design/1734891575031.jpg" alt="Product Design 2" loading="lazy">
         </div>
         <div class="proj-body">
-          <div class="proj-title">PRODUCT DESIGN — SAMPLE 2</div>
-          <p class="proj-desc">Precision CAD modeling and product design using SolidWorks and AutoCAD, with GD&amp;T standards and DFM principles.</p>
+          <div class="proj-title" data-i18n="projects.product.sample2.title">PRODUCT DESIGN — SAMPLE 2</div>
+          <p class="proj-desc" data-i18n="projects.product.desc">Precision CAD modeling and product design using SolidWorks and AutoCAD, with GD&amp;T standards and DFM principles.</p>
           <div class="proj-tags">
-            <span class="proj-tag">CAD Modeling</span><span class="proj-tag">DFM</span>
+            <span class="proj-tag" data-i18n="skills.cadModeling">CAD Modeling</span><span class="proj-tag" data-i18n="skills.dfm">DFM</span>
           </div>
         </div>
       </div>
@@ -2096,9 +2066,9 @@ footer {
   <div class="project-panel" id="panel-cfd">
     <div class="project-header">
       <div>
-        <div class="project-cat-title">Computational Fluid Dynamics</div>
+        <div class="project-cat-title" data-i18n="projects.cfd.title">Computational Fluid Dynamics</div>
       </div>
-      <p class="project-cat-desc">
+      <p class="project-cat-desc" data-i18n="projects.cfd.desc">
         Computational Fluid Dynamics simulations for optimizing fluid flow, heat transfer, and aerodynamic performance of mechanical components.
       </p>
     </div>
@@ -2108,15 +2078,15 @@ footer {
           <video muted="" loop="" playsinline="" preload="auto" class="lazy-video">
             <source src="CFD/video.mp4" type="video/mp4">
           </video>
-          <div class="proj-media-badge">VIDEO · CFD</div>
+          <div class="proj-media-badge" data-i18n="projects.cfd.badge">VIDEO · CFD</div>
         </div>
         <div class="proj-body">
-          <div class="proj-title">CFD FLOW SIMULATION</div>
-          <p class="proj-desc">Computational Fluid Dynamics simulations for optimizing fluid flow, heat transfer, and aerodynamic performance of mechanical components.</p>
+          <div class="proj-title" data-i18n="projects.cfd.sample1.title">CFD FLOW SIMULATION</div>
+          <p class="proj-desc" data-i18n="projects.cfd.desc">Computational Fluid Dynamics simulations for optimizing fluid flow, heat transfer, and aerodynamic performance of mechanical components.</p>
           <div class="proj-tags">
-            <span class="proj-tag">ANSYS Fluent</span>
-            <span class="proj-tag">Flow Simulation</span>
-            <span class="proj-tag">CFD</span>
+            <span class="proj-tag" data-i18n="projects.cfd.tags.ansysFluent">ANSYS Fluent</span>
+            <span class="proj-tag" data-i18n="projects.cfd.tags.flowSimulation">Flow Simulation</span>
+            <span class="proj-tag" data-i18n="projects.cfd.tags.cfd">CFD</span>
           </div>
         </div>
       </div>
@@ -2125,10 +2095,10 @@ footer {
           <img src="CFD/1734541349413.jpg" alt="CFD Analysis 2" loading="lazy">
         </div>
         <div class="proj-body">
-          <div class="proj-title">CFD ANALYSIS — SAMPLE 2</div>
-          <p class="proj-desc">Computational Fluid Dynamics simulations for optimizing fluid flow, heat transfer, and aerodynamic performance of mechanical components.</p>
+          <div class="proj-title" data-i18n="projects.cfd.sample2.title">CFD ANALYSIS — SAMPLE 2</div>
+          <p class="proj-desc" data-i18n="projects.cfd.desc">Computational Fluid Dynamics simulations for optimizing fluid flow, heat transfer, and aerodynamic performance of mechanical components.</p>
           <div class="proj-tags">
-            <span class="proj-tag">CFD</span><span class="proj-tag">Flow Analysis</span>
+            <span class="proj-tag" data-i18n="projects.cfd.tags.cfd">CFD</span><span class="proj-tag" data-i18n="projects.cfd.tags.flowAnalysis">Flow Analysis</span>
           </div>
         </div>
       </div>
@@ -2137,10 +2107,10 @@ footer {
           <img src="CFD/1736875901787.jpg" alt="CFD Analysis 3" loading="lazy">
         </div>
         <div class="proj-body">
-          <div class="proj-title">CFD ANALYSIS — SAMPLE 3</div>
-          <p class="proj-desc">Computational Fluid Dynamics simulations for optimizing fluid flow, heat transfer, and aerodynamic performance of mechanical components.</p>
+          <div class="proj-title" data-i18n="projects.cfd.sample3.title">CFD ANALYSIS — SAMPLE 3</div>
+          <p class="proj-desc" data-i18n="projects.cfd.desc">Computational Fluid Dynamics simulations for optimizing fluid flow, heat transfer, and aerodynamic performance of mechanical components.</p>
           <div class="proj-tags">
-            <span class="proj-tag">CFD</span><span class="proj-tag">Thermal</span>
+            <span class="proj-tag" data-i18n="projects.cfd.tags.cfd">CFD</span><span class="proj-tag" data-i18n="projects.cfd.tags.thermal">Thermal</span>
           </div>
         </div>
       </div>
@@ -2149,10 +2119,10 @@ footer {
           <img src="CFD/1736875902943.jpg" alt="CFD Analysis 4" loading="lazy">
         </div>
         <div class="proj-body">
-          <div class="proj-title">CFD ANALYSIS — SAMPLE 4</div>
-          <p class="proj-desc">Computational Fluid Dynamics simulations for optimizing fluid flow, heat transfer, and aerodynamic performance of mechanical components.</p>
+          <div class="proj-title" data-i18n="projects.cfd.sample4.title">CFD ANALYSIS — SAMPLE 4</div>
+          <p class="proj-desc" data-i18n="projects.cfd.desc">Computational Fluid Dynamics simulations for optimizing fluid flow, heat transfer, and aerodynamic performance of mechanical components.</p>
           <div class="proj-tags">
-            <span class="proj-tag">CFD</span><span class="proj-tag">Pressure Drop</span>
+            <span class="proj-tag" data-i18n="projects.cfd.tags.cfd">CFD</span><span class="proj-tag" data-i18n="projects.cfd.tags.pressureDrop">Pressure Drop</span>
           </div>
         </div>
       </div>
@@ -2162,8 +2132,8 @@ footer {
   <!-- Structural Panel -->
   <div class="project-panel" id="panel-structural">
     <div class="project-header">
-      <div><div class="project-cat-title">Structural Analysis — ANSYS</div></div>
-      <p class="project-cat-desc">
+      <div><div class="project-cat-title" data-i18n="projects.structural.title">Structural Analysis — ANSYS</div></div>
+      <p class="project-cat-desc" data-i18n="projects.structural.desc">
         FEA-based structural analysis using ANSYS for stress distribution, deformation, and fatigue assessment of mechanical components.
       </p>
     </div>
@@ -2173,15 +2143,15 @@ footer {
           <video muted="" loop="" playsinline="" preload="auto" class="lazy-video">
             <source src="Structural%20analysis/1735919498603.mp4" type="video/mp4">
           </video>
-          <div class="proj-media-badge">VIDEO · FEA</div>
+          <div class="proj-media-badge" data-i18n="projects.structural.badge">VIDEO · FEA</div>
         </div>
         <div class="proj-body">
-          <div class="proj-title">STRUCTURAL ANALYSIS — SAMPLE 1</div>
-          <p class="proj-desc">FEA-based structural analysis using ANSYS for stress distribution, deformation, and fatigue assessment of mechanical components.</p>
+          <div class="proj-title" data-i18n="projects.structural.sample1.title">STRUCTURAL ANALYSIS — SAMPLE 1</div>
+          <p class="proj-desc" data-i18n="projects.structural.desc">FEA-based structural analysis using ANSYS for stress distribution, deformation, and fatigue assessment of mechanical components.</p>
           <div class="proj-tags">
-            <span class="proj-tag">ANSYS</span>
-            <span class="proj-tag">FEA</span>
-            <span class="proj-tag">Structural</span>
+            <span class="proj-tag" data-i18n="projects.structural.tags.ansys">ANSYS</span>
+            <span class="proj-tag" data-i18n="projects.structural.tags.fea">FEA</span>
+            <span class="proj-tag" data-i18n="projects.structural.tags.structural">Structural</span>
           </div>
         </div>
       </div>
@@ -2190,13 +2160,13 @@ footer {
           <video muted="" loop="" playsinline="" preload="auto" class="lazy-video">
             <source src="Structural%20analysis/1736093018080.mp4" type="video/mp4">
           </video>
-          <div class="proj-media-badge">VIDEO · FEA</div>
+          <div class="proj-media-badge" data-i18n="projects.structural.badge">VIDEO · FEA</div>
         </div>
         <div class="proj-body">
-          <div class="proj-title">STRUCTURAL ANALYSIS — SAMPLE 2</div>
-          <p class="proj-desc">FEA-based structural analysis using ANSYS for stress distribution, deformation, and fatigue assessment of mechanical components.</p>
+          <div class="proj-title" data-i18n="projects.structural.sample2.title">STRUCTURAL ANALYSIS — SAMPLE 2</div>
+          <p class="proj-desc" data-i18n="projects.structural.desc">FEA-based structural analysis using ANSYS for stress distribution, deformation, and fatigue assessment of mechanical components.</p>
           <div class="proj-tags">
-            <span class="proj-tag">ANSYS</span><span class="proj-tag">Stress Analysis</span>
+            <span class="proj-tag" data-i18n="projects.structural.tags.ansys">ANSYS</span><span class="proj-tag" data-i18n="projects.structural.tags.stressAnalysis">Stress Analysis</span>
           </div>
         </div>
       </div>
@@ -2205,13 +2175,13 @@ footer {
           <video muted="" loop="" playsinline="" preload="auto" class="lazy-video">
             <source src="Structural%20analysis/1758873893540.mp4" type="video/mp4">
           </video>
-          <div class="proj-media-badge">VIDEO · FEA</div>
+          <div class="proj-media-badge" data-i18n="projects.structural.badge">VIDEO · FEA</div>
         </div>
         <div class="proj-body">
-          <div class="proj-title">STRUCTURAL ANALYSIS — SAMPLE 3</div>
-          <p class="proj-desc">FEA-based structural analysis using ANSYS for stress distribution, deformation, and fatigue assessment of mechanical components.</p>
+          <div class="proj-title" data-i18n="projects.structural.sample3.title">STRUCTURAL ANALYSIS — SAMPLE 3</div>
+          <p class="proj-desc" data-i18n="projects.structural.desc">FEA-based structural analysis using ANSYS for stress distribution, deformation, and fatigue assessment of mechanical components.</p>
           <div class="proj-tags">
-            <span class="proj-tag">Deformation</span><span class="proj-tag">FEA</span>
+            <span class="proj-tag" data-i18n="projects.structural.tags.deformation">Deformation</span><span class="proj-tag" data-i18n="projects.structural.tags.fea">FEA</span>
           </div>
         </div>
       </div>
@@ -2220,10 +2190,10 @@ footer {
           <img src="Structural%20analysis/1748190430562.jpg" alt="Structural Analysis 4" loading="lazy">
         </div>
         <div class="proj-body">
-          <div class="proj-title">STRUCTURAL ANALYSIS — SAMPLE 4</div>
-          <p class="proj-desc">FEA-based structural analysis using ANSYS for stress distribution, deformation, and fatigue assessment of mechanical components.</p>
+          <div class="proj-title" data-i18n="projects.structural.sample4.title">STRUCTURAL ANALYSIS — SAMPLE 4</div>
+          <p class="proj-desc" data-i18n="projects.structural.desc">FEA-based structural analysis using ANSYS for stress distribution, deformation, and fatigue assessment of mechanical components.</p>
           <div class="proj-tags">
-            <span class="proj-tag">Von Mises</span><span class="proj-tag">FEA</span>
+            <span class="proj-tag" data-i18n="projects.structural.tags.vonMises">Von Mises</span><span class="proj-tag" data-i18n="projects.structural.tags.fea">FEA</span>
           </div>
         </div>
       </div>
@@ -2232,10 +2202,10 @@ footer {
           <img src="Structural%20analysis/1748190432810.jpg" alt="Structural Analysis 5" loading="lazy">
         </div>
         <div class="proj-body">
-          <div class="proj-title">STRUCTURAL ANALYSIS — SAMPLE 5</div>
-          <p class="proj-desc">FEA-based structural analysis using ANSYS for stress distribution, deformation, and fatigue assessment of mechanical components.</p>
+          <div class="proj-title" data-i18n="projects.structural.sample5.title">STRUCTURAL ANALYSIS — SAMPLE 5</div>
+          <p class="proj-desc" data-i18n="projects.structural.desc">FEA-based structural analysis using ANSYS for stress distribution, deformation, and fatigue assessment of mechanical components.</p>
           <div class="proj-tags">
-            <span class="proj-tag">Fatigue</span><span class="proj-tag">ANSYS</span>
+            <span class="proj-tag" data-i18n="projects.structural.tags.fatigue">Fatigue</span><span class="proj-tag" data-i18n="projects.structural.tags.ansys">ANSYS</span>
           </div>
         </div>
       </div>
@@ -2245,8 +2215,8 @@ footer {
   <!-- Nesting Panel -->
   <div class="project-panel" id="panel-nesting">
     <div class="project-header">
-      <div><div class="project-cat-title">Nesting for Laser Cutting</div></div>
-      <p class="project-cat-desc">
+      <div><div class="project-cat-title" data-i18n="projects.nesting.title">Nesting for Laser Cutting</div></div>
+      <p class="project-cat-desc" data-i18n="projects.nesting.desc">
         Optimized nesting layouts for laser cutting operations, maximizing material utilization and minimizing manufacturing waste.
       </p>
     </div>
@@ -2254,15 +2224,15 @@ footer {
       <div class="proj-card featured reveal">
         <div class="proj-media">
           <img src="nesting/F030%20-%20(CF001)%20-%20PIEZA%201.JPG" alt="Nesting 1" loading="lazy">
-          <div class="proj-media-badge">IMAGE · NESTING</div>
+          <div class="proj-media-badge" data-i18n="projects.nesting.badge">IMAGE · NESTING</div>
         </div>
         <div class="proj-body">
           <div class="proj-title">F030 — (CF001) — PIEZA 1</div>
-          <p class="proj-desc">Optimized nesting layouts for laser cutting operations, maximizing material utilization and minimizing manufacturing waste.</p>
+          <p class="proj-desc" data-i18n="projects.nesting.desc">Optimized nesting layouts for laser cutting operations, maximizing material utilization and minimizing manufacturing waste.</p>
           <div class="proj-tags">
-            <span class="proj-tag">Laser Cutting</span>
-            <span class="proj-tag">Nesting</span>
-            <span class="proj-tag">Material Optimization</span>
+            <span class="proj-tag" data-i18n="projects.nesting.tags.laserCutting">Laser Cutting</span>
+            <span class="proj-tag" data-i18n="projects.nesting.tags.nesting">Nesting</span>
+            <span class="proj-tag" data-i18n="projects.nesting.tags.materialOptimization">Material Optimization</span>
           </div>
         </div>
       </div>
@@ -2271,10 +2241,10 @@ footer {
           <img src="nesting/Screenshot%202026-04-06%20194734.png" alt="Nesting 2" loading="lazy">
         </div>
         <div class="proj-body">
-          <div class="proj-title">NESTING LAYOUT — SAMPLE 2</div>
-          <p class="proj-desc">Optimized nesting layouts for laser cutting operations, maximizing material utilization and minimizing manufacturing waste.</p>
+          <div class="proj-title" data-i18n="projects.nesting.sample2.title">NESTING LAYOUT — SAMPLE 2</div>
+          <p class="proj-desc" data-i18n="projects.nesting.desc">Optimized nesting layouts for laser cutting operations, maximizing material utilization and minimizing manufacturing waste.</p>
           <div class="proj-tags">
-            <span class="proj-tag">Nesting</span><span class="proj-tag">Laser Cutting</span>
+            <span class="proj-tag" data-i18n="projects.nesting.tags.nesting">Nesting</span><span class="proj-tag" data-i18n="projects.nesting.tags.laserCutting">Laser Cutting</span>
           </div>
         </div>
       </div>
@@ -2284,8 +2254,8 @@ footer {
   <!-- Concept Dev Panel -->
   <div class="project-panel" id="panel-concept">
     <div class="project-header">
-      <div><div class="project-cat-title">Concept Development &amp; Innovation</div></div>
-      <p class="project-cat-desc">
+      <div><div class="project-cat-title" data-i18n="projects.concept.title">Concept Development &amp; Innovation</div></div>
+      <p class="project-cat-desc" data-i18n="projects.concept.desc">
         Innovative concept designs and prototyping for mechanical systems including hydraulic presses and manufacturing machinery.
       </p>
     </div>
@@ -2295,15 +2265,15 @@ footer {
           <video muted="" loop="" playsinline="" preload="auto" class="lazy-video">
             <source src="Concept%20Development/1743597753139.mp4" type="video/mp4">
           </video>
-          <div class="proj-media-badge">VIDEO · CONCEPT</div>
+          <div class="proj-media-badge" data-i18n="projects.concept.badge">VIDEO · CONCEPT</div>
         </div>
         <div class="proj-body">
-          <div class="proj-title">CONCEPT DEVELOPMENT — SAMPLE 1</div>
-          <p class="proj-desc">Innovative concept designs and prototyping for mechanical systems including hydraulic presses and manufacturing machinery.</p>
+          <div class="proj-title" data-i18n="projects.concept.sample1.title">CONCEPT DEVELOPMENT — SAMPLE 1</div>
+          <p class="proj-desc" data-i18n="projects.concept.desc">Innovative concept designs and prototyping for mechanical systems including hydraulic presses and manufacturing machinery.</p>
           <div class="proj-tags">
-            <span class="proj-tag">Concept Design</span>
-            <span class="proj-tag">Prototyping</span>
-            <span class="proj-tag">Innovation</span>
+            <span class="proj-tag" data-i18n="projects.concept.tags.conceptDesign">Concept Design</span>
+            <span class="proj-tag" data-i18n="projects.concept.tags.prototyping">Prototyping</span>
+            <span class="proj-tag" data-i18n="projects.concept.tags.innovation">Innovation</span>
           </div>
         </div>
       </div>
@@ -2312,13 +2282,13 @@ footer {
           <video muted="" loop="" playsinline="" preload="auto" class="lazy-video">
             <source src="Concept%20Development/video%20(1).mp4" type="video/mp4">
           </video>
-          <div class="proj-media-badge">VIDEO · CONCEPT</div>
+          <div class="proj-media-badge" data-i18n="projects.concept.badge">VIDEO · CONCEPT</div>
         </div>
         <div class="proj-body">
-          <div class="proj-title">CONCEPT DEVELOPMENT — SAMPLE 2</div>
-          <p class="proj-desc">Innovative concept designs and prototyping for mechanical systems including hydraulic presses and manufacturing machinery.</p>
+          <div class="proj-title" data-i18n="projects.concept.sample2.title">CONCEPT DEVELOPMENT — SAMPLE 2</div>
+          <p class="proj-desc" data-i18n="projects.concept.desc">Innovative concept designs and prototyping for mechanical systems including hydraulic presses and manufacturing machinery.</p>
           <div class="proj-tags">
-            <span class="proj-tag">Concept</span><span class="proj-tag">Mechanical Design</span>
+            <span class="proj-tag" data-i18n="projects.concept.tags.concept">Concept</span><span class="proj-tag" data-i18n="projects.concept.tags.mechanicalDesign">Mechanical Design</span>
           </div>
         </div>
       </div>
@@ -2327,13 +2297,13 @@ footer {
           <video muted="" loop="" playsinline="" preload="auto" class="lazy-video">
             <source src="Concept%20Development/Recording%202026-03-20%20030201.mp4" type="video/mp4">
           </video>
-          <div class="proj-media-badge">VIDEO · CONCEPT</div>
+          <div class="proj-media-badge" data-i18n="projects.concept.badge">VIDEO · CONCEPT</div>
         </div>
         <div class="proj-body">
-          <div class="proj-title">CONCEPT DEVELOPMENT — SAMPLE 3</div>
-          <p class="proj-desc">Innovative concept designs and prototyping for mechanical systems including hydraulic presses and manufacturing machinery.</p>
+          <div class="proj-title" data-i18n="projects.concept.sample3.title">CONCEPT DEVELOPMENT — SAMPLE 3</div>
+          <p class="proj-desc" data-i18n="projects.concept.desc">Innovative concept designs and prototyping for mechanical systems including hydraulic presses and manufacturing machinery.</p>
           <div class="proj-tags">
-            <span class="proj-tag">3D Modeling</span><span class="proj-tag">Innovation</span>
+            <span class="proj-tag" data-i18n="projects.concept.tags.modeling3d">3D Modeling</span><span class="proj-tag" data-i18n="projects.concept.tags.innovation">Innovation</span>
           </div>
         </div>
       </div>
@@ -2343,8 +2313,8 @@ footer {
   <!-- End to End Panel -->
   <div class="project-panel" id="panel-e2e">
     <div class="project-header">
-      <div><div class="project-cat-title">End-to-End Project Development</div></div>
-      <p class="project-cat-desc">
+      <div><div class="project-cat-title" data-i18n="projects.e2e.title">End-to-End Project Development</div></div>
+      <p class="project-cat-desc" data-i18n="projects.e2e.desc">
         Complete lifecycle project management from initial concept through design, manufacturing, assembly, and final validation.
       </p>
     </div>
@@ -2352,15 +2322,15 @@ footer {
       <div class="proj-card featured reveal">
         <div class="proj-media">
           <img src="End%20to%20end/1769537669531.jpg" alt="End-to-End Project 1" loading="lazy">
-          <div class="proj-media-badge">IMAGE · END-TO-END</div>
+          <div class="proj-media-badge" data-i18n="projects.e2e.badge">IMAGE · END-TO-END</div>
         </div>
         <div class="proj-body">
-          <div class="proj-title">END-TO-END PROJECTS — SAMPLE 1</div>
-          <p class="proj-desc">Complete lifecycle project management from initial concept through design, manufacturing, assembly, and final validation.</p>
+          <div class="proj-title" data-i18n="projects.e2e.sample1.title">END-TO-END PROJECTS — SAMPLE 1</div>
+          <p class="proj-desc" data-i18n="projects.e2e.desc">Complete lifecycle project management from initial concept through design, manufacturing, assembly, and final validation.</p>
           <div class="proj-tags">
-            <span class="proj-tag">Full Lifecycle</span>
-            <span class="proj-tag">Project Management</span>
-            <span class="proj-tag">Delivered</span>
+            <span class="proj-tag" data-i18n="projects.e2e.tags.fullLifecycle">Full Lifecycle</span>
+            <span class="proj-tag" data-i18n="skills.projectManagement">Project Management</span>
+            <span class="proj-tag" data-i18n="projects.e2e.tags.delivered">Delivered</span>
           </div>
         </div>
       </div>
@@ -2372,9 +2342,9 @@ footer {
      3D DESIGN VIEWER
      ============================================================ -->
 <section id="design">
-  <div class="section-label">03 / 3D DESIGN VIEWER</div>
-  <h2 class="section-title">Interactive <span class="accent">3D Viewer</span></h2>
-  <p class="section-subtitle">
+  <div class="section-label" data-i18n="design.sectionLabel">03 / 3D DESIGN VIEWER</div>
+  <h2 class="section-title" data-i18n="design.title" data-i18n-html="true">Interactive <span class="accent">3D Viewer</span></h2>
+  <p class="section-subtitle" data-i18n="design.subtitle">
     Upload and inspect STEP / STL / OBJ files in real time. Rotate, zoom, and pan with full WebGL rendering.
   </p>
 
@@ -2382,57 +2352,57 @@ footer {
     <div class="viewer-container reveal visible">
       <canvas id="three-canvas"></canvas>
       <div class="viewer-hud">
-        <div class="hud-line"><div class="hud-dot"></div> WEBGL RENDERER ACTIVE</div>
-        <div class="hud-line">MODEL: <span id="hud-model-name">DEFAULT GEAR</span></div>
-        <div class="hud-line">VERTS: <span id="hud-verts">—</span></div>
-        <div class="hud-line">DIMS: <span id="hud-dims">—</span></div>
-        <div class="hud-line">FPS: <span id="hud-fps">60</span></div>
+        <div class="hud-line"><div class="hud-dot"></div> <span data-i18n="design.hud.webgl">WEBGL RENDERER ACTIVE</span></div>
+        <div class="hud-line"><span data-i18n="design.hud.model">MODEL:</span> <span id="hud-model-name" data-i18n="design.hud.defaultModel">DEFAULT GEAR</span></div>
+        <div class="hud-line"><span data-i18n="design.hud.verts">VERTS:</span> <span id="hud-verts">—</span></div>
+        <div class="hud-line"><span data-i18n="design.hud.dims">DIMS:</span> <span id="hud-dims">—</span></div>
+        <div class="hud-line"><span data-i18n="design.hud.fps">FPS:</span> <span id="hud-fps" data-i18n-number="60">60</span></div>
       </div>
       <div class="viewer-controls-hud">
-        <button class="hud-btn" title="Reset View" onclick="resetCamera()"><i class="fas fa-sync-alt"></i></button>
-        <button class="hud-btn" id="renderModeBtn" title="Render Mode" onclick="cycleRenderMode()"><i class="fas fa-cube"></i></button>
-        <button class="hud-btn" title="Screenshot" onclick="takeScreenshot()"><i class="fas fa-camera"></i></button>
-        <button class="hud-btn" id="measureBtn" title="Measure" onclick="toggleMeasure()"><i class="fas fa-ruler-combined"></i></button>
-        <button class="hud-btn" title="Clear Measurements" onclick="clearMeasurements()"><i class="fas fa-eraser"></i></button>
+        <button class="hud-btn" title="Reset View" onclick="resetCamera()" data-i18n-title="design.controls.reset"><i class="fas fa-sync-alt"></i></button>
+        <button class="hud-btn" id="renderModeBtn" title="Render Mode" onclick="cycleRenderMode()" data-i18n-title="design.controls.renderMode"><i class="fas fa-cube"></i></button>
+        <button class="hud-btn" title="Screenshot" onclick="takeScreenshot()" data-i18n-title="design.controls.screenshot"><i class="fas fa-camera"></i></button>
+        <button class="hud-btn" id="measureBtn" title="Measure" onclick="toggleMeasure()" data-i18n-title="design.controls.measure"><i class="fas fa-ruler-combined"></i></button>
+        <button class="hud-btn" title="Clear Measurements" onclick="clearMeasurements()" data-i18n-title="design.controls.clearMeasurements"><i class="fas fa-eraser"></i></button>
       </div>
       <div class="measure-toolbar" id="measureToolbar">
-        <button class="measure-mode-btn active" data-mode="distance" onclick="setMeasureMode('distance')"><i class="fas fa-ruler"></i> DISTANCE</button>
-        <button class="measure-mode-btn" data-mode="diameter" onclick="setMeasureMode('diameter')"><i class="fas fa-circle-notch"></i> DIAMETER</button>
-        <button class="measure-mode-btn" data-mode="angle" onclick="setMeasureMode('angle')"><i class="fas fa-drafting-compass"></i> ANGLE</button>
-        <button class="measure-mode-btn" data-mode="pitch" onclick="setMeasureMode('pitch')"><i class="fas fa-wave-square"></i> PITCH</button>
+        <button class="measure-mode-btn active" data-mode="distance" onclick="setMeasureMode('distance')"><i class="fas fa-ruler"></i> <span data-i18n="design.measure.distance">DISTANCE</span></button>
+        <button class="measure-mode-btn" data-mode="diameter" onclick="setMeasureMode('diameter')"><i class="fas fa-circle-notch"></i> <span data-i18n="design.measure.diameter">DIAMETER</span></button>
+        <button class="measure-mode-btn" data-mode="angle" onclick="setMeasureMode('angle')"><i class="fas fa-drafting-compass"></i> <span data-i18n="design.measure.angle">ANGLE</span></button>
+        <button class="measure-mode-btn" data-mode="pitch" onclick="setMeasureMode('pitch')"><i class="fas fa-wave-square"></i> <span data-i18n="design.measure.pitch">PITCH</span></button>
       </div>
-      <div class="measure-status" id="measureStatus">DISTANCE: CLICK POINT 1/2</div>
-      <div class="render-mode-indicator" id="renderModeLabel">SHADED</div>
-      <div class="viewer-loading" id="viewerLoading"><div class="spinner"></div><span id="viewerLoadText">LOADING MODEL...</span></div>
+      <div class="measure-status" id="measureStatus" data-i18n="design.measure.status.initial">DISTANCE: CLICK POINT 1/2</div>
+      <div class="render-mode-indicator" id="renderModeLabel" data-i18n="design.renderMode.shaded">SHADED</div>
+      <div class="viewer-loading" id="viewerLoading"><div class="spinner"></div><span id="viewerLoadText" data-i18n="design.loading">LOADING MODEL...</span></div>
     </div>
 
     <div class="viewer-info">
       <div class="info-card reveal visible">
-        <div class="info-card-label">Loaded Model</div>
-        <div class="model-name" id="model-name-display">PARAMETRIC GEAR</div>
-        <div class="model-meta" id="model-meta-display">Generated procedural geometry · SolidWorks STEP-compatible</div>
+        <div class="info-card-label" data-i18n="design.info.loadedModel">Loaded Model</div>
+        <div class="model-name" id="model-name-display" data-i18n="design.info.defaultModelName">PARAMETRIC GEAR</div>
+        <div class="model-meta" id="model-meta-display" data-i18n="design.info.defaultModelMeta">Generated procedural geometry · SolidWorks STEP-compatible</div>
       </div>
 
       <div class="info-card reveal reveal-delay-1 visible">
-        <div class="info-card-label">Upload STEP / STL / OBJ</div>
+        <div class="info-card-label" data-i18n="design.upload.title">Upload STEP / STL / OBJ</div>
         <div class="upload-zone" onclick="document.getElementById(&#39;step-file-input&#39;).click()">
           <div class="upload-icon"><i class="fas fa-folder-open" style="font-size:2rem"></i></div>
-          <div class="upload-text">Click to upload 3D model file</div>
-          <div class="upload-hint">STEP · STP · STL · OBJ</div>
+          <div class="upload-text" data-i18n="design.upload.cta">Click to upload 3D model file</div>
+          <div class="upload-hint" data-i18n="design.upload.hint">STEP · STP · STL · OBJ</div>
         </div>
         <input type="file" id="step-file-input" accept=".step,.stp,.stl,.obj" onchange="loadUserModel(this)">
       </div>
 
       <div class="info-card reveal reveal-delay-2 visible">
-        <div class="info-card-label">Viewer Controls</div>
+        <div class="info-card-label" data-i18n="design.controls.title">Viewer Controls</div>
         <div class="controls-guide">
-          <div class="ctrl-row"><span class="ctrl-key">LEFT DRAG</span> Rotate model</div>
-          <div class="ctrl-row"><span class="ctrl-key">RIGHT DRAG</span> Pan view</div>
-          <div class="ctrl-row"><span class="ctrl-key">SCROLL</span> Zoom in / out</div>
-          <div class="ctrl-row"><span class="ctrl-key"><i class="fas fa-sync-alt"></i></span> Reset to default view</div>
-          <div class="ctrl-row"><span class="ctrl-key"><i class="fas fa-cube"></i></span> Cycle: Shaded → Edges → Wire</div>
-          <div class="ctrl-row"><span class="ctrl-key"><i class="fas fa-ruler-combined"></i></span> Measurement tool (4 modes)</div>
-          <div class="ctrl-row"><span class="ctrl-key"><i class="fas fa-eraser"></i></span> Clear all measurements</div>
+          <div class="ctrl-row"><span class="ctrl-key">LEFT DRAG</span> <span data-i18n="design.controls.rotate">Rotate model</span></div>
+          <div class="ctrl-row"><span class="ctrl-key">RIGHT DRAG</span> <span data-i18n="design.controls.pan">Pan view</span></div>
+          <div class="ctrl-row"><span class="ctrl-key">SCROLL</span> <span data-i18n="design.controls.zoom">Zoom in / out</span></div>
+          <div class="ctrl-row"><span class="ctrl-key"><i class="fas fa-sync-alt"></i></span> <span data-i18n="design.controls.resetText">Reset to default view</span></div>
+          <div class="ctrl-row"><span class="ctrl-key"><i class="fas fa-cube"></i></span> <span data-i18n="design.controls.cycle">Cycle: Shaded → Edges → Wire</span></div>
+          <div class="ctrl-row"><span class="ctrl-key"><i class="fas fa-ruler-combined"></i></span> <span data-i18n="design.controls.measureText">Measurement tool (4 modes)</span></div>
+          <div class="ctrl-row"><span class="ctrl-key"><i class="fas fa-eraser"></i></span> <span data-i18n="design.controls.clearText">Clear all measurements</span></div>
         </div>
       </div>
 
@@ -2441,43 +2411,43 @@ footer {
 
   <!-- Dimension Inspection Methodology — full width below viewer -->
   <div class="methodology-section reveal visible" style="border-color:var(--border-warm)">
-    <div class="info-card-label">Dimension Inspection Methodology</div>
+    <div class="info-card-label" data-i18n="design.methodology.title">Dimension Inspection Methodology</div>
     <ul class="methodology-list" id="methodologyList">
       <li class="methodology-item active" data-method="distance">
-        <div class="methodology-item-title"><i class="fas fa-ruler"></i> LINEAR DISTANCE</div>
-        <div class="methodology-item-desc">Point-to-point measurement between two surface locations.</div>
+        <div class="methodology-item-title"><i class="fas fa-ruler"></i> <span data-i18n="design.methodology.distance.title">LINEAR DISTANCE</span></div>
+        <div class="methodology-item-desc" data-i18n="design.methodology.distance.desc">Point-to-point measurement between two surface locations.</div>
         <ol class="methodology-item-steps">
-          <li>Click first surface point</li>
-          <li>Click second surface point</li>
-          <li>Displays straight-line distance in mm / m</li>
+          <li data-i18n="design.methodology.distance.step1">Click first surface point</li>
+          <li data-i18n="design.methodology.distance.step2">Click second surface point</li>
+          <li data-i18n="design.methodology.distance.step3">Displays straight-line distance in mm / m</li>
         </ol>
       </li>
       <li class="methodology-item" data-method="diameter">
-        <div class="methodology-item-title"><i class="fas fa-circle-notch"></i> DIAMETER (3-POINT CIRCLE FIT)</div>
-        <div class="methodology-item-desc">Fits a circumscribed circle through 3 points on a cylindrical or circular edge to compute the diameter.</div>
+        <div class="methodology-item-title"><i class="fas fa-circle-notch"></i> <span data-i18n="design.methodology.diameter.title">DIAMETER (3-POINT CIRCLE FIT)</span></div>
+        <div class="methodology-item-desc" data-i18n="design.methodology.diameter.desc">Fits a circumscribed circle through 3 points on a cylindrical or circular edge to compute the diameter.</div>
         <ol class="methodology-item-steps">
-          <li>Click 3 points along a circular feature (bore, shaft, fillet)</li>
-          <li>Algorithm computes circumscribed circle in 3D space</li>
-          <li>Displays fitted circle, center marker, and ⌀ dimension</li>
+          <li data-i18n="design.methodology.diameter.step1">Click 3 points along a circular feature (bore, shaft, fillet)</li>
+          <li data-i18n="design.methodology.diameter.step2">Algorithm computes circumscribed circle in 3D space</li>
+          <li data-i18n="design.methodology.diameter.step3">Displays fitted circle, center marker, and ⌀ dimension</li>
         </ol>
       </li>
       <li class="methodology-item" data-method="angle">
-        <div class="methodology-item-title"><i class="fas fa-drafting-compass"></i> ANGLE (3-POINT VERTEX)</div>
-        <div class="methodology-item-desc">Measures the included angle at a vertex defined by 3 surface points (A → B → C, angle at B).</div>
+        <div class="methodology-item-title"><i class="fas fa-drafting-compass"></i> <span data-i18n="design.methodology.angle.title">ANGLE (3-POINT VERTEX)</span></div>
+        <div class="methodology-item-desc" data-i18n="design.methodology.angle.desc">Measures the included angle at a vertex defined by 3 surface points (A → B → C, angle at B).</div>
         <ol class="methodology-item-steps">
-          <li>Click first ray point (A)</li>
-          <li>Click vertex point (B)</li>
-          <li>Click second ray point (C)</li>
-          <li>Displays angle in degrees with visual arc</li>
+          <li data-i18n="design.methodology.angle.step1">Click first ray point (A)</li>
+          <li data-i18n="design.methodology.angle.step2">Click vertex point (B)</li>
+          <li data-i18n="design.methodology.angle.step3">Click second ray point (C)</li>
+          <li data-i18n="design.methodology.angle.step4">Displays angle in degrees with visual arc</li>
         </ol>
       </li>
       <li class="methodology-item" data-method="pitch">
-        <div class="methodology-item-title"><i class="fas fa-wave-square"></i> PITCH (TOOTH/THREAD SPACING)</div>
-        <div class="methodology-item-desc">Measures the linear pitch between two adjacent gear teeth or thread crests.</div>
+        <div class="methodology-item-title"><i class="fas fa-wave-square"></i> <span data-i18n="design.methodology.pitch.title">PITCH (TOOTH/THREAD SPACING)</span></div>
+        <div class="methodology-item-desc" data-i18n="design.methodology.pitch.desc">Measures the linear pitch between two adjacent gear teeth or thread crests.</div>
         <ol class="methodology-item-steps">
-          <li>Click the tip of one tooth/thread crest</li>
-          <li>Click the corresponding point on the next tooth/thread</li>
-          <li>Displays pitch distance (P = value)</li>
+          <li data-i18n="design.methodology.pitch.step1">Click the tip of one tooth/thread crest</li>
+          <li data-i18n="design.methodology.pitch.step2">Click the corresponding point on the next tooth/thread</li>
+          <li data-i18n="design.methodology.pitch.step3">Displays pitch distance (P = value)</li>
         </ol>
       </li>
     </ul>
@@ -2488,9 +2458,9 @@ footer {
      RESUME SECTION
      ============================================================ -->
 <section id="resume">
-  <div class="section-label">04 / RESUME</div>
-  <h2 class="section-title">Curriculum <span class="accent">Vitae</span></h2>
-  <p class="section-subtitle">
+  <div class="section-label" data-i18n="resume.sectionLabel">04 / RESUME</div>
+  <h2 class="section-title" data-i18n="resume.title" data-i18n-html="true">Curriculum <span class="accent">Vitae</span></h2>
+  <p class="section-subtitle" data-i18n="resume.subtitle">
     Download the full PDF resume or view key highlights below.
   </p>
 
@@ -2507,51 +2477,51 @@ footer {
       </div>
       <div class="resume-content-preview">
         <div class="r-name">SANTHOSH KUMAR S</div>
-        <div class="r-title">MECHANICAL ENGINEER</div>
+        <div class="r-title" data-i18n="resume.preview.title">MECHANICAL ENGINEER</div>
         <hr>
-        <div class="resume-sec-head">Contact</div>
+        <div class="resume-sec-head" data-i18n="resume.preview.contact">Contact</div>
         <p><i class="fas fa-phone" style="font-size:0.75rem"></i> 8072013409 &nbsp;|&nbsp; <i class="fas fa-envelope" style="font-size:0.75rem"></i> sundramsivasanthosh@gmail.com<br>
-        <i class="fab fa-linkedin" style="font-size:0.75rem"></i> LinkedIn: <a href="https://tinyurl.com/4yymckfv" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">tinyurl.com/4yymckfv</a></p>
+        <i class="fab fa-linkedin" style="font-size:0.75rem"></i> <span data-i18n="resume.preview.linkedinLabel">LinkedIn:</span> <a href="https://tinyurl.com/4yymckfv" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">tinyurl.com/4yymckfv</a></p>
 
-        <div class="resume-sec-head">Executive Summary</div>
-        <p>Project Engineer with 1 year of experience managing end-to-end engineering projects from planning to execution. Skilled in project coordination, technical documentation, vendor management, and cross-functional collaboration. Proven ability to control cost, quality, and timelines while ensuring compliance with industry standards and successful on-time project delivery.</p>
+        <div class="resume-sec-head" data-i18n="resume.preview.summaryTitle">Executive Summary</div>
+        <p data-i18n="resume.preview.summary">Project Engineer with 1 year of experience managing end-to-end engineering projects from planning to execution. Skilled in project coordination, technical documentation, vendor management, and cross-functional collaboration. Proven ability to control cost, quality, and timelines while ensuring compliance with industry standards and successful on-time project delivery.</p>
 
-        <div class="resume-sec-head">Skills</div>
+        <div class="resume-sec-head" data-i18n="resume.preview.skillsTitle">Skills</div>
         <ul>
-          <li>Product Development</li>
-          <li>CAD Modeling</li>
-          <li>GD&amp;T</li>
-          <li>Design For Manufacturing (DFM)</li>
-          <li>Process Validation</li>
+          <li data-i18n="skills.productDevelopment">Product Development</li>
+          <li data-i18n="skills.cadModeling">CAD Modeling</li>
+          <li data-i18n="skills.gdt">GD&amp;T</li>
+          <li data-i18n="skills.dfmExpanded">Design For Manufacturing (DFM)</li>
+          <li data-i18n="skills.processValidation">Process Validation</li>
         </ul>
 
-        <div class="resume-sec-head">Work Experience</div>
-        <p><strong>NEW PRODUCT DEVELOPMENT ENGINEER</strong> — Hanav Manufacturing &amp; Bussiness Pvt Ltd, Bangalore, FEB 2025 – FEB 2026</p>
+        <div class="resume-sec-head" data-i18n="resume.preview.workTitle">Work Experience</div>
+        <p><strong data-i18n="resume.preview.exp1.role">NEW PRODUCT DEVELOPMENT ENGINEER</strong> — Hanav Manufacturing &amp; Bussiness Pvt Ltd, Bangalore, <span data-i18n-date-start="2025-02-01" data-i18n-date-end="2026-02-01" data-i18n-date-format="month">FEB 2025 – FEB 2026</span></p>
         <ul>
-          <li>Lead end-to-end new product development from concept to production release.</li>
-          <li>Analyze customer requirements and translate them into technical specifications.</li>
-          <li>Develop 3D models, detailed drawings, and BOMs using CAD tools.</li>
-          <li>Perform GD&amp;T application, tolerance stack-up, and design validation.</li>
-          <li>Conduct feasibility studies, risk assessments, and cost analysis.</li>
-          <li>Coordinate with manufacturing, quality, procurement, and suppliers.</li>
-          <li>Support prototyping, testing, and product validation activities.</li>
-          <li>Implement DFM/DFA principles to optimize manufacturability and cost.</li>
-          <li>Manage project timelines, documentation, and change management (ECR/ECN).</li>
+          <li data-i18n="resume.preview.exp1.bullet1">Lead end-to-end new product development from concept to production release.</li>
+          <li data-i18n="resume.preview.exp1.bullet2">Analyze customer requirements and translate them into technical specifications.</li>
+          <li data-i18n="resume.preview.exp1.bullet3">Develop 3D models, detailed drawings, and BOMs using CAD tools.</li>
+          <li data-i18n="resume.preview.exp1.bullet4">Perform GD&amp;T application, tolerance stack-up, and design validation.</li>
+          <li data-i18n="resume.preview.exp1.bullet5">Conduct feasibility studies, risk assessments, and cost analysis.</li>
+          <li data-i18n="resume.preview.exp1.bullet6">Coordinate with manufacturing, quality, procurement, and suppliers.</li>
+          <li data-i18n="resume.preview.exp1.bullet7">Support prototyping, testing, and product validation activities.</li>
+          <li data-i18n="resume.preview.exp1.bullet8">Implement DFM/DFA principles to optimize manufacturability and cost.</li>
+          <li data-i18n="resume.preview.exp1.bullet9">Manage project timelines, documentation, and change management (ECR/ECN).</li>
         </ul>
-        <p><strong>SETTER &amp; MAINTENANCE ENGINEER</strong> — L.G. Balakrishnan &amp; Bros Ltd, Karur, NOV 2016 – NOV 2019</p>
+        <p><strong data-i18n="resume.preview.exp2.role">SETTER &amp; MAINTENANCE ENGINEER</strong> — L.G. Balakrishnan &amp; Bros Ltd, Karur, <span data-i18n-date-start="2016-11-01" data-i18n-date-end="2019-11-01" data-i18n-date-format="month">NOV 2016 – NOV 2019</span></p>
         <ul>
-          <li>Take Preventive maintenance action.</li>
-          <li>Performed weekly maintenance on machine.</li>
-          <li>Troubleshoot and resolved problems.</li>
-          <li>Reduce Machine Downtime.</li>
-          <li>Kaizen, Suggestions &amp; Manpower optimizing.</li>
-          <li>Involve in TPM activities.</li>
+          <li data-i18n="resume.preview.exp2.bullet1">Take Preventive maintenance action.</li>
+          <li data-i18n="resume.preview.exp2.bullet2">Performed weekly maintenance on machine.</li>
+          <li data-i18n="resume.preview.exp2.bullet3">Troubleshoot and resolved problems.</li>
+          <li data-i18n="resume.preview.exp2.bullet4">Reduce Machine Downtime.</li>
+          <li data-i18n="resume.preview.exp2.bullet5">Kaizen, Suggestions &amp; Manpower optimizing.</li>
+          <li data-i18n="resume.preview.exp2.bullet6">Involve in TPM activities.</li>
         </ul>
 
-        <div class="resume-sec-head">Academics</div>
-        <p>Bachelor of Mechanical Engineering, 2022 – 2025<br>
+        <div class="resume-sec-head" data-i18n="resume.preview.academicsTitle">Academics</div>
+        <p><span data-i18n="resume.preview.academics.bachelor">Bachelor of Mechanical Engineering</span>, <span data-i18n-year-start="2022" data-i18n-year-end="2025">2022 – 2025</span><br>
         M Kumarasamy College of Engineering, Thalavapalaiyam, Karur</p>
-        <p>Diploma in Mechanical Engineering, 2013 – 2016<br>
+        <p><span data-i18n="resume.preview.academics.diploma">Diploma in Mechanical Engineering</span>, <span data-i18n-year-start="2013" data-i18n-year-end="2016">2013 – 2016</span><br>
         Arulmurugan Polytechnic College, Thennilai, Karur</p>
       </div>
     </div>
@@ -2559,30 +2529,30 @@ footer {
     <!-- Actions -->
     <div class="resume-actions">
       <div class="action-card reveal visible">
-        <div class="action-card-title">DOWNLOAD RESUME</div>
-        <div class="action-card-desc">Full CV with detailed experience, skills, certifications, and project references.</div>
+        <div class="action-card-title" data-i18n="resume.actions.downloadTitle">DOWNLOAD RESUME</div>
+        <div class="action-card-desc" data-i18n="resume.actions.downloadDesc">Full CV with detailed experience, skills, certifications, and project references.</div>
         <div class="file-info">
           <div class="file-icon"><i class="fas fa-file-pdf"></i></div>
           <div class="file-name">Santhosh Kumar.pdf</div>
         </div>
         <a href="resume/Santhosh%20Kumar.pdf" download="Santhosh Kumar.pdf" class="btn btn-primary" style="width:100%;justify-content:center">
-          <i class="fas fa-download"></i> Download PDF
+          <i class="fas fa-download"></i> <span data-i18n="resume.actions.downloadButton">Download PDF</span>
         </a>
       </div>
 
       <div class="action-card reveal reveal-delay-1 visible">
-        <div class="action-card-title">VIEW ON LINKEDIN</div>
-        <div class="action-card-desc">Connect and view full professional history, endorsements, and recommendations.</div>
+        <div class="action-card-title" data-i18n="resume.actions.linkedinTitle">VIEW ON LINKEDIN</div>
+        <div class="action-card-desc" data-i18n="resume.actions.linkedinDesc">Connect and view full professional history, endorsements, and recommendations.</div>
         <a href="https://tinyurl.com/4yymckfv" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width:100%;justify-content:center">
-          <i class="fab fa-linkedin"></i> Open LinkedIn
+          <i class="fab fa-linkedin"></i> <span data-i18n="resume.actions.linkedinButton">Open LinkedIn</span>
         </a>
       </div>
 
       <div class="action-card reveal reveal-delay-2 visible">
-        <div class="action-card-title">GITHUB PORTFOLIO</div>
-        <div class="action-card-desc">Engineering scripts, automation tools, and simulation post-processing code.</div>
+        <div class="action-card-title" data-i18n="resume.actions.githubTitle">GITHUB PORTFOLIO</div>
+        <div class="action-card-desc" data-i18n="resume.actions.githubDesc">Engineering scripts, automation tools, and simulation post-processing code.</div>
         <a href="https://github.com/santhoshkumarsanty" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width:100%;justify-content:center">
-          <i class="fab fa-github"></i> View GitHub
+          <i class="fab fa-github"></i> <span data-i18n="resume.actions.githubButton">View GitHub</span>
         </a>
       </div>
 
@@ -2595,9 +2565,9 @@ footer {
      CONTACT SECTION
      ============================================================ -->
 <section id="contact">
-  <div class="section-label">05 / CONTACT</div>
-  <h2 class="section-title">Get In <span class="accent">Touch</span></h2>
-  <p class="section-subtitle">
+  <div class="section-label" data-i18n="contact.sectionLabel">05 / CONTACT</div>
+  <h2 class="section-title" data-i18n="contact.title" data-i18n-html="true">Get In <span class="accent">Touch</span></h2>
+  <p class="section-subtitle" data-i18n="contact.subtitle">
     Have a project in mind? Interested in collaboration? Let's connect and build something great together.
   </p>
 
@@ -2606,35 +2576,35 @@ footer {
       <a href="tel:8072013409" class="contact-link-card reveal visible">
         <div class="contact-link-icon"><i class="fas fa-phone"></i></div>
         <div>
-          <div class="contact-link-name">PHONE</div>
+          <div class="contact-link-name" data-i18n="contact.info.phone">PHONE</div>
           <div class="contact-link-val">+91 8072013409</div>
         </div>
       </a>
       <a href="mailto:sundramsivasanthosh@gmail.com" class="contact-link-card reveal reveal-delay-1 visible">
         <div class="contact-link-icon"><i class="fas fa-envelope"></i></div>
         <div>
-          <div class="contact-link-name">EMAIL</div>
+          <div class="contact-link-name" data-i18n="contact.info.email">EMAIL</div>
           <div class="contact-link-val">sundramsivasanthosh@gmail.com</div>
         </div>
       </a>
       <a href="https://tinyurl.com/4yymckfv" target="_blank" rel="noopener noreferrer" class="contact-link-card reveal reveal-delay-2 visible">
         <div class="contact-link-icon"><i class="fab fa-linkedin"></i></div>
         <div>
-          <div class="contact-link-name">LINKEDIN</div>
+          <div class="contact-link-name" data-i18n="contact.info.linkedin">LINKEDIN</div>
           <div class="contact-link-val">tinyurl.com/4yymckfv</div>
         </div>
       </a>
       <a href="https://github.com/santhoshkumarsanty" target="_blank" rel="noopener noreferrer" class="contact-link-card reveal reveal-delay-3 visible">
         <div class="contact-link-icon"><i class="fab fa-github"></i></div>
         <div>
-          <div class="contact-link-name">GITHUB</div>
+          <div class="contact-link-name" data-i18n="contact.info.github">GITHUB</div>
           <div class="contact-link-val">github.com/santhoshkumarsanty</div>
         </div>
       </a>
       <div class="contact-link-card reveal visible" style="pointer-events:none">
         <div class="contact-link-icon"><i class="fas fa-map-marker-alt"></i></div>
         <div>
-          <div class="contact-link-name">LOCATION</div>
+          <div class="contact-link-name" data-i18n="contact.info.location">LOCATION</div>
           <div class="contact-link-val">Karur, Tamil Nadu, India</div>
         </div>
       </div>
@@ -2642,32 +2612,32 @@ footer {
 
     <!-- Contact Form -->
     <div class="contact-form reveal visible">
-      <div class="form-title">SEND A MESSAGE</div>
+      <div class="form-title" data-i18n="contact.form.title">SEND A MESSAGE</div>
       <form id="contactForm" onsubmit="submitForm(event)">
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label" for="fname">First Name</label>
-            <input class="form-input" id="fname" name="fname" type="text" placeholder="John" required="">
+            <label class="form-label" for="fname" data-i18n="contact.form.firstName">First Name</label>
+            <input class="form-input" id="fname" name="fname" type="text" placeholder="John" data-i18n-placeholder="contact.form.firstNamePlaceholder" required="">
           </div>
           <div class="form-group">
-            <label class="form-label" for="lname">Last Name</label>
-            <input class="form-input" id="lname" name="lname" type="text" placeholder="Doe" required="">
+            <label class="form-label" for="lname" data-i18n="contact.form.lastName">Last Name</label>
+            <input class="form-input" id="lname" name="lname" type="text" placeholder="Doe" data-i18n-placeholder="contact.form.lastNamePlaceholder" required="">
           </div>
         </div>
         <div class="form-group">
-          <label class="form-label" for="email">Email Address</label>
-          <input class="form-input" id="email" name="email" type="email" placeholder="john@example.com" required="">
+          <label class="form-label" for="email" data-i18n="contact.form.email">Email Address</label>
+          <input class="form-input" id="email" name="email" type="email" placeholder="john@example.com" data-i18n-placeholder="contact.form.emailPlaceholder" required="">
         </div>
         <div class="form-group">
-          <label class="form-label" for="subject">Subject</label>
-          <input class="form-input" id="subject" name="subject" type="text" placeholder="Project inquiry / Collaboration">
+          <label class="form-label" for="subject" data-i18n="contact.form.subject">Subject</label>
+          <input class="form-input" id="subject" name="subject" type="text" placeholder="Project inquiry / Collaboration" data-i18n-placeholder="contact.form.subjectPlaceholder">
         </div>
         <div class="form-group">
-          <label class="form-label" for="message">Message</label>
-          <textarea class="form-textarea" id="message" name="message" placeholder="Tell me about your project..." required="" rows="5"></textarea>
+          <label class="form-label" for="message" data-i18n="contact.form.message">Message</label>
+          <textarea class="form-textarea" id="message" name="message" placeholder="Tell me about your project..." data-i18n-placeholder="contact.form.messagePlaceholder" required="" rows="5"></textarea>
         </div>
         <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" id="submitBtn">
-          <i class="fas fa-paper-plane"></i> SEND MESSAGE
+          <i class="fas fa-paper-plane"></i> <span data-i18n="contact.form.submit">SEND MESSAGE</span>
         </button>
         <div class="form-status" id="formStatus"></div>
       </form>
@@ -2680,7 +2650,7 @@ footer {
   <div class="footer-grid">
     <div>
       <div class="footer-brand">SANTHOSH <span>KUMAR S</span></div>
-      <div class="footer-tagline">MECHANICAL ENGINEER · PRODUCT DEVELOPER · SIMULATION SPECIALIST</div>
+      <div class="footer-tagline" data-i18n="footer.tagline">MECHANICAL ENGINEER · PRODUCT DEVELOPER · SIMULATION SPECIALIST</div>
     </div>
     <div class="footer-links">
       <a href="https://tinyurl.com/4yymckfv" target="_blank" rel="noopener noreferrer" class="footer-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -2690,8 +2660,8 @@ footer {
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2026 SANTHOSH KUMAR S — ALL RIGHTS RESERVED</div>
-    <div class="footer-copy">BUILT WITH HTML · CSS · THREE.JS</div>
+    <div class="footer-copy" data-i18n="footer.rights">© 2026 SANTHOSH KUMAR S — ALL RIGHTS RESERVED</div>
+    <div class="footer-copy" data-i18n="footer.builtWith">BUILT WITH HTML · CSS · THREE.JS</div>
   </div>
 </footer>
 
@@ -2702,6 +2672,17 @@ footer {
 /* ---- Global Error Reporter ---- */
 window.onerror = function(msg, src, line, col, err) {
   console.error('[PAGE ERROR]', msg, 'at line', line, ':', col, err);
+};
+const getTranslation = (key, vars = {}) => window.portfolioI18n?.t ? window.portfolioI18n.t(key, vars) : key;
+const formatNumber = (value, options = {}) => {
+  try {
+    if (window.portfolioI18n?.formatNumber) {
+      return window.portfolioI18n.formatNumber(value, options);
+    }
+    return new Intl.NumberFormat(undefined, options).format(value);
+  } catch (e) {
+    return String(value);
+  }
 };
 /* ---- Loader ---- */
 window.addEventListener('load', () => {
@@ -2823,23 +2804,29 @@ document.getElementById('lightbox').addEventListener('click', e => {
 async function submitForm(e) {
   e.preventDefault();
   const btn = document.getElementById('submitBtn');
+  const submitLabel = btn?.querySelector('span');
   const status = document.getElementById('formStatus');
-  btn.textContent = 'OPENING MAIL…'; btn.disabled = true;
+  const setSubmitLabel = (key) => {
+    const text = getTranslation(key);
+    if (submitLabel) submitLabel.textContent = text;
+    else btn.textContent = text;
+  };
+  setSubmitLabel('contact.form.openingMail'); btn.disabled = true;
   status.className = 'form-status';
 
   const data = {
     name: document.getElementById('fname').value + ' ' + document.getElementById('lname').value,
     email: document.getElementById('email').value,
-    subject: document.getElementById('subject').value || 'Portfolio Inquiry',
+    subject: document.getElementById('subject').value || getTranslation('contact.form.defaultSubject'),
     message: document.getElementById('message').value,
   };
 
   var body = 'From: ' + data.name + ' (' + data.email + ')\n\n' + data.message;
   window.location.href = 'mailto:sundramsivasanthosh@gmail.com?subject=' + encodeURIComponent(data.subject) + '&body=' + encodeURIComponent(body);
 
-  status.textContent = '↗ Opening your email client…';
+  status.textContent = getTranslation('contact.form.openingClient');
   status.className = 'form-status success';
-  btn.textContent = 'SEND MESSAGE'; btn.disabled = false;
+  setSubmitLabel('contact.form.submit'); btn.disabled = false;
 }
 </script>
 
@@ -3596,7 +3583,7 @@ async function submitForm(e) {
     const shaft = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.15, 2.0, 16), mat);
     shaft.rotation.x = Math.PI / 2;
     group.add(shaft);
-    document.getElementById('hud-verts').textContent = geo.attributes.position.count.toLocaleString();
+    document.getElementById('hud-verts').textContent = formatNumber(geo.attributes.position.count);
     return group;
   }
 
@@ -3619,7 +3606,7 @@ async function submitForm(e) {
   const measureToolbar = document.getElementById('measureToolbar');
 
   const POINTS_NEEDED = { distance: 2, diameter: 3, angle: 3, pitch: 2 };
-  const MODE_LABELS = { distance: 'DISTANCE', diameter: 'DIAMETER', angle: 'ANGLE', pitch: 'PITCH' };
+  const getModeLabel = (mode) => getTranslation(`design.measure.${mode}`);
 
   // Sphere markers
   const markerGeo = new THREE.SphereGeometry(0.04, 12, 12);
@@ -3712,17 +3699,17 @@ async function submitForm(e) {
 
   function formatDim(distScaled) {
     const d = distScaled / modelScale;
-    if (d >= 1000) return (d / 1000).toFixed(3) + ' m';
-    if (d >= 100) return d.toFixed(2) + ' mm';
-    if (d >= 1) return d.toFixed(3) + ' mm';
-    if (d >= 0.001) return (d * 1000).toFixed(2) + ' \u00b5m';
-    return d.toExponential(2) + ' mm';
+    if (d >= 1000) return formatNumber(d / 1000, { minimumFractionDigits: 3, maximumFractionDigits: 3 }) + ' m';
+    if (d >= 100) return formatNumber(d, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' mm';
+    if (d >= 1) return formatNumber(d, { minimumFractionDigits: 3, maximumFractionDigits: 3 }) + ' mm';
+    if (d >= 0.001) return formatNumber(d * 1000, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' \u00b5m';
+    return formatNumber(d, { notation: 'scientific', maximumFractionDigits: 2 }) + ' mm';
   }
 
   function formatBBox(v) {
-    if (v >= 1000) return (v / 1000).toFixed(2) + 'm';
-    if (v >= 1) return v.toFixed(1) + 'mm';
-    return (v * 1000).toFixed(0) + '\u00b5m';
+    if (v >= 1000) return formatNumber(v / 1000, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + 'm';
+    if (v >= 1) return formatNumber(v, { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + 'mm';
+    return formatNumber(v * 1000, { maximumFractionDigits: 0 }) + '\u00b5m';
   }
 
   // === 3-Point Circumscribed Circle (Diameter) ===
@@ -3796,12 +3783,12 @@ async function submitForm(e) {
       const text = formatDim(p1.distanceTo(p2));
       entry.labelEl = createLabel(text);
       entry.labelPos = new THREE.Vector3().addVectors(p1, p2).multiplyScalar(0.5);
-      measureStatus.textContent = 'DISTANCE: ' + text + ' \u2014 CLICK NEXT PAIR';
+      measureStatus.textContent = getTranslation('design.measure.status.nextPair', { mode: getModeLabel('distance'), value: text });
 
     } else if (measureType === 'diameter') {
       const circle = circumcircle3D(pts[0], pts[1], pts[2]);
       if (!circle) {
-        measureStatus.textContent = 'ERROR: POINTS ARE COLLINEAR \u2014 TRY AGAIN';
+        measureStatus.textContent = getTranslation('design.measure.status.collinear');
         markers.forEach(m => scene.remove(m));
         return;
       }
@@ -3815,7 +3802,7 @@ async function submitForm(e) {
       const text = '\u2300 ' + formatDim(circle.radius * 2);
       entry.labelEl = createLabel(text, 'measure-label-dia');
       entry.labelPos = circle.center;
-      measureStatus.textContent = 'DIAMETER: ' + text + ' \u2014 CLICK NEXT SET';
+      measureStatus.textContent = getTranslation('design.measure.status.nextSet', { mode: getModeLabel('diameter'), value: text });
 
     } else if (measureType === 'angle') {
       const [pA, pB, pC] = pts; // B is vertex
@@ -3829,7 +3816,7 @@ async function submitForm(e) {
       const text = deg.toFixed(1) + '\u00b0';
       entry.labelEl = createLabel(text, 'measure-label-angle');
       entry.labelPos = pB.clone().addScaledVector(vBA, 0.22).addScaledVector(vBC, 0.22);
-      measureStatus.textContent = 'ANGLE: ' + text + ' \u2014 CLICK NEXT SET';
+      measureStatus.textContent = getTranslation('design.measure.status.nextSet', { mode: getModeLabel('angle'), value: text });
 
     } else if (measureType === 'pitch') {
       const [p1, p2] = pts;
@@ -3837,7 +3824,7 @@ async function submitForm(e) {
       const text = 'P = ' + formatDim(p1.distanceTo(p2));
       entry.labelEl = createLabel(text, 'measure-label-pitch');
       entry.labelPos = new THREE.Vector3().addVectors(p1, p2).multiplyScalar(0.5);
-      measureStatus.textContent = 'PITCH: ' + text + ' \u2014 CLICK NEXT PAIR';
+      measureStatus.textContent = getTranslation('design.measure.status.nextPair', { mode: getModeLabel('pitch'), value: text });
     }
 
     measurements.push(entry);
@@ -3856,7 +3843,12 @@ async function submitForm(e) {
     const needed = POINTS_NEEDED[measureType];
     const count = measurePoints.length;
     if (count < needed) {
-      measureStatus.textContent = MODE_LABELS[measureType] + ': POINT ' + count + '/' + needed + ' \u2014 CLICK POINT ' + (count + 1);
+      measureStatus.textContent = getTranslation('design.measure.status.point', {
+        mode: getModeLabel(measureType),
+        current: count,
+        total: needed,
+        next: count + 1
+      });
     } else {
       completeMeasurement(measurePoints.map(mp => mp.pt), measurePoints.map(mp => mp.marker));
     }
@@ -3868,7 +3860,7 @@ async function submitForm(e) {
     measurePoints.forEach(mp => scene.remove(mp.marker));
     measurePoints = [];
     document.querySelectorAll('.measure-mode-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
-    measureStatus.textContent = MODE_LABELS[mode] + ': CLICK POINT 1/' + POINTS_NEEDED[mode];
+    measureStatus.textContent = getTranslation('design.measure.status.start', { mode: getModeLabel(mode), total: POINTS_NEEDED[mode] });
     // Show matching methodology card
     document.querySelectorAll('.methodology-item').forEach(el => {
       el.classList.toggle('active', el.dataset.method === mode);
@@ -3883,7 +3875,7 @@ async function submitForm(e) {
     canvas.style.cursor = measureMode ? 'crosshair' : '';
     if (measureMode) {
       measurePoints = [];
-      measureStatus.textContent = MODE_LABELS[measureType] + ': CLICK POINT 1/' + POINTS_NEEDED[measureType];
+      measureStatus.textContent = getTranslation('design.measure.status.start', { mode: getModeLabel(measureType), total: POINTS_NEEDED[measureType] });
     }
   };
 
@@ -3895,7 +3887,14 @@ async function submitForm(e) {
     measurements.length = 0;
     measurePoints.forEach(mp => scene.remove(mp.marker));
     measurePoints = [];
-    if (measureMode) measureStatus.textContent = MODE_LABELS[measureType] + ': CLICK POINT 1/' + POINTS_NEEDED[measureType];
+    if (measureMode) measureStatus.textContent = getTranslation('design.measure.status.start', { mode: getModeLabel(measureType), total: POINTS_NEEDED[measureType] });
+  };
+
+  window.refreshMeasureStatus = () => {
+    if (!measureStatus) return;
+    const modeLabel = getModeLabel(measureType);
+    const key = measureMode ? 'design.measure.status.start' : 'design.measure.status.initial';
+    measureStatus.textContent = getTranslation(key, { mode: modeLabel, total: POINTS_NEEDED[measureType] });
   };
 
   /* ================================================================
@@ -3988,7 +3987,7 @@ async function submitForm(e) {
     const now = performance.now();
     if (now - lastTime >= 1000) {
       fps = Math.round(frameCount * 1000 / (now - lastTime));
-      if (fpsEl) fpsEl.textContent = fps;
+      if (fpsEl) fpsEl.textContent = formatNumber(fps);
       frameCount = 0; lastTime = now;
     }
     updateLabels();
@@ -4005,7 +4004,11 @@ async function submitForm(e) {
   let renderMode = 0;
   let edgeLineSegments = []; // store edge overlays
   const renderModeLabel = document.getElementById('renderModeLabel');
-  const RENDER_NAMES = ['SHADED', 'SHADED + EDGES', 'WIREFRAME'];
+  const getRenderNames = () => ([
+    getTranslation('design.renderMode.shaded'),
+    getTranslation('design.renderMode.shadedEdges'),
+    getTranslation('design.renderMode.wireframe')
+  ]);
   const RENDER_ICONS = ['fa-cube', 'fa-vector-square', 'fa-border-all'];
 
   function clearEdges() {
@@ -4032,7 +4035,7 @@ async function submitForm(e) {
 
   function applyRenderMode() {
     const btn = document.getElementById('renderModeBtn');
-    renderModeLabel.textContent = RENDER_NAMES[renderMode];
+    renderModeLabel.textContent = getRenderNames()[renderMode];
     btn.querySelector('i').className = 'fas ' + RENDER_ICONS[renderMode];
     clearEdges();
     if (renderMode === 0) {
@@ -4051,6 +4054,11 @@ async function submitForm(e) {
   window.cycleRenderMode = () => {
     renderMode = (renderMode + 1) % 3;
     applyRenderMode();
+  };
+
+  window.refreshRenderModeLabel = () => {
+    if (!renderModeLabel) return;
+    renderModeLabel.textContent = getRenderNames()[renderMode];
   };
 
   // Legacy alias
@@ -4080,7 +4088,7 @@ async function submitForm(e) {
     applyRenderMode();
     document.getElementById('hud-model-name').textContent = name.toUpperCase();
     document.getElementById('model-name-display').textContent = name.toUpperCase();
-    document.getElementById('hud-verts').textContent = verts.toLocaleString();
+    document.getElementById('hud-verts').textContent = formatNumber(verts);
     if (originalBBox) {
       document.getElementById('hud-dims').textContent =
         formatBBox(originalBBox.x) + ' \u00d7 ' + formatBBox(originalBBox.y) + ' \u00d7 ' + formatBBox(originalBBox.z);
@@ -4109,14 +4117,14 @@ async function submitForm(e) {
     const file = input.files[0];
     if (!file) return;
     const ext = file.name.split('.').pop().toLowerCase();
-    showLoading('READING FILE: ' + file.name.toUpperCase());
+    showLoading(getTranslation('design.loading.readingFile', { name: file.name.toUpperCase() }));
     const reader = new FileReader();
     reader.onload = (e) => {
       if (currentModel) { scene.remove(currentModel); currentModel = null; }
       if (ext === 'stl') loadSTL(e.target.result, file.name);
       else if (ext === 'obj') loadOBJ(e.target.result, file.name);
       else if (ext === 'step' || ext === 'stp') loadSTEP(e.target.result, file.name);
-      else { hideLoading(); alert('Supported formats: STEP, STP, STL, OBJ'); }
+      else { hideLoading(); alert(getTranslation('design.alert.supportedFormats')); }
     };
     if (ext === 'obj') reader.readAsText(file);
     else reader.readAsArrayBuffer(file);
@@ -4126,7 +4134,7 @@ async function submitForm(e) {
      STL LOADER
      ================================================================ */
   function loadSTL(buffer, name) {
-    showLoading('PARSING STL...');
+    showLoading(getTranslation('design.loading.parsingStl'));
     // Use setTimeout to let the loading overlay render
     setTimeout(() => {
       const geo = parseSTL(buffer);
@@ -4166,7 +4174,7 @@ async function submitForm(e) {
      OBJ LOADER
      ================================================================ */
   function loadOBJ(text, name) {
-    showLoading('PARSING OBJ...');
+    showLoading(getTranslation('design.loading.parsingObj'));
     setTimeout(() => {
       const verts = [], faces = [];
       const lines = text.split('\n');
@@ -4199,8 +4207,8 @@ async function submitForm(e) {
   let occtInstance = null; // cache once, reuse
 
   async function loadSTEP(buffer, name) {
-    showLoading('INITIALIZING STEP ENGINE...');
-    document.getElementById('model-meta-display').textContent = 'Parsing geometry — please wait';
+    showLoading(getTranslation('design.loading.initStep'));
+    document.getElementById('model-meta-display').textContent = getTranslation('design.model.parsing');
 
     try {
       // Cache the OCCT instance so subsequent STEP loads are instant
@@ -4209,7 +4217,7 @@ async function submitForm(e) {
           locateFile: (f) => 'https://cdn.jsdelivr.net/npm/occt-import-js@0.0.23/dist/' + f
         });
       }
-      showLoading('PARSING STEP GEOMETRY...');
+      showLoading(getTranslation('design.loading.parsingStep'));
 
       // Use setTimeout to let UI update before heavy parsing
       await new Promise(r => setTimeout(r, 50));
@@ -4219,11 +4227,11 @@ async function submitForm(e) {
 
       if (!result || !result.meshes || result.meshes.length === 0) {
         hideLoading();
-        alert('Failed to parse STEP file. The file may be corrupted or unsupported.');
+        alert(getTranslation('design.alert.failedParse'));
         return;
       }
 
-      showLoading('BUILDING 3D MESHES (' + result.meshes.length + ' BODIES)...');
+      showLoading(getTranslation('design.loading.buildingMeshes', { count: formatNumber(result.meshes.length) }));
       await new Promise(r => setTimeout(r, 20));
 
       const group = new THREE.Group();
@@ -4256,14 +4264,14 @@ async function submitForm(e) {
       // Default STEP to Shaded+Edges
       renderMode = 1;
       applyRenderMode();
-      document.getElementById('model-meta-display').textContent = 'STEP file · ' + result.meshes.length + ' bodies · Loaded successfully';
+      document.getElementById('model-meta-display').textContent = getTranslation('design.model.loaded', { count: formatNumber(result.meshes.length) });
 
     } catch (err) {
       console.error('STEP loading error:', err);
       hideLoading();
-      alert('Error loading STEP file: ' + err.message);
-      document.getElementById('hud-model-name').textContent = 'ERROR';
-      document.getElementById('model-name-display').textContent = 'Failed to load';
+      alert(getTranslation('design.alert.loadError', { error: err.message }));
+      document.getElementById('hud-model-name').textContent = getTranslation('design.model.errorLabel');
+      document.getElementById('model-name-display').textContent = getTranslation('design.model.failed');
     }
   }
   } catch(e) { console.error('[ModelViewer Error]', e.message, e.stack); }
@@ -4277,7 +4285,7 @@ async function submitForm(e) {
 <!-- Media Modal (merged from secondary file) -->
 <div class="media-modal" id="mediaModal">
   <div class="media-modal-inner" id="mediaModalInner">
-    <button class="media-modal-close" onclick="closeMediaModal()">✕ CLOSE</button>
+    <button class="media-modal-close" onclick="closeMediaModal()" data-i18n="common.close">✕ CLOSE</button>
   </div>
 </div>
 
@@ -4304,7 +4312,7 @@ async function submitForm(e) {
   }
 })();
 
-/* ---- Language Selector ---- */
+/* ---- Language Selector + i18n ---- */
 (function initLanguage() {
   const languageSelect = document.getElementById('languageSelect');
   const languageStatus = document.getElementById('languageStatus');
@@ -4312,19 +4320,13 @@ async function submitForm(e) {
 
   const storageKey = 'portfolio-language';
   const defaultLang = 'en';
-  const translationRetryDelayMs = 500;
-  const maxTranslationWaitSeconds = 3; // Short timeout to keep the UI responsive when the translate API is slow or fails to load.
-  const maxTranslationWaitMs = maxTranslationWaitSeconds * 1000;
-  const maxTranslationAttempts = Math.ceil(maxTranslationWaitMs / translationRetryDelayMs);
-  const translateFailureMessage = `Failed to initialize Google Translate after ${maxTranslationWaitSeconds} seconds. This may be caused by network issues or content/ad blockers.`;
-  const stored = localStorage.getItem(storageKey);
+  const rtlLanguages = new Set(['ar', 'he', 'fa', 'ur']);
+  const cache = new Map();
   const languageOptions = Array.from(languageSelect.options);
   const supportedLanguages = languageOptions.map(option => option.value);
-  const supportedLanguageSet = new Set(supportedLanguages);
-  const selectedLanguage = supportedLanguageSet.has(stored) ? stored : defaultLang;
-
-  languageSelect.value = selectedLanguage;
-  document.documentElement.lang = selectedLanguage;
+  let currentLang = defaultLang;
+  let currentTranslations = {};
+  let fallbackTranslations = {};
 
   let statusTimer;
   const showLanguageStatus = (message) => {
@@ -4338,54 +4340,126 @@ async function submitForm(e) {
     }
   };
 
-  const applyLanguage = (lang, attemptCount = 0) => {
-    if (attemptCount === 0) {
-      document.documentElement.lang = lang;
+  const formatTemplate = (template, vars = {}) =>
+    template.replace(/\{(\w+)\}/g, (match, key) => (vars[key] !== undefined ? vars[key] : match));
+
+  const t = (key, vars = {}) => {
+    const template = currentTranslations[key] || fallbackTranslations[key] || key;
+    return formatTemplate(template, vars);
+  };
+
+  const formatNumberLocalized = (value, options = {}) => {
+    try {
+      return new Intl.NumberFormat(currentLang, options).format(value);
+    } catch (err) {
+      return String(value);
     }
-    const translateCombo = document.querySelector('select.goog-te-combo');
-    if (translateCombo) {
-      translateCombo.value = lang;
-      translateCombo.dispatchEvent(new Event('change'));
+  };
+
+  const loadTranslations = async (lang) => {
+    if (cache.has(lang)) return cache.get(lang);
+    const response = await fetch(`i18n/${lang}.json`, { cache: 'force-cache' });
+    if (!response.ok) throw new Error(`Unable to load translations for ${lang}`);
+    const data = await response.json();
+    cache.set(lang, data);
+    return data;
+  };
+
+  const applyTranslations = () => {
+    document.documentElement.lang = currentLang;
+    document.documentElement.dir = rtlLanguages.has(currentLang) ? 'rtl' : 'ltr';
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      const value = t(key);
+      if (el.dataset.i18nHtml === 'true') {
+        el.innerHTML = value;
+      } else {
+        el.textContent = value;
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.dataset.i18nPlaceholder;
+      el.setAttribute('placeholder', t(key));
+    });
+
+    document.querySelectorAll('[data-i18n-title]').forEach(el => {
+      const key = el.dataset.i18nTitle;
+      el.setAttribute('title', t(key));
+    });
+
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+      const key = el.dataset.i18nAria;
+      el.setAttribute('aria-label', t(key));
+    });
+
+    document.querySelectorAll('[data-i18n-data-label]').forEach(el => {
+      const key = el.dataset.i18nDataLabel;
+      el.setAttribute('data-label', t(key));
+    });
+
+    document.querySelectorAll('[data-i18n-number]').forEach(el => {
+      const raw = Number(el.dataset.i18nNumber);
+      if (Number.isNaN(raw)) return;
+      const suffix = el.dataset.i18nNumberSuffix || '';
+      el.textContent = `${formatNumberLocalized(raw)}${suffix}`;
+    });
+
+    document.querySelectorAll('[data-i18n-date-start]').forEach(el => {
+      const start = new Date(el.dataset.i18nDateStart);
+      const end = new Date(el.dataset.i18nDateEnd);
+      if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) return;
+      const format = el.dataset.i18nDateFormat || 'month';
+      const options = format === 'month'
+        ? { month: 'short', year: 'numeric' }
+        : { year: 'numeric' };
+      const formatter = new Intl.DateTimeFormat(currentLang, options);
+      el.textContent = `${formatter.format(start)} – ${formatter.format(end)}`;
+    });
+
+    document.querySelectorAll('[data-i18n-year-start]').forEach(el => {
+      const start = Number(el.dataset.i18nYearStart);
+      const end = Number(el.dataset.i18nYearEnd);
+      if (Number.isNaN(start) || Number.isNaN(end)) return;
+      el.textContent = `${formatNumberLocalized(start, { maximumFractionDigits: 0 })} – ${formatNumberLocalized(end, { maximumFractionDigits: 0 })}`;
+    });
+  };
+
+  window.portfolioI18n = {
+    t,
+    formatNumber: formatNumberLocalized,
+    getLang: () => currentLang
+  };
+
+  const setLanguage = async (lang) => {
+    const nextLang = supportedLanguages.includes(lang) ? lang : defaultLang;
+    document.body.classList.add('language-switching');
+    try {
+      fallbackTranslations = await loadTranslations(defaultLang);
+      currentTranslations = nextLang === defaultLang ? fallbackTranslations : await loadTranslations(nextLang);
+      currentLang = nextLang;
+      applyTranslations();
+      window.refreshMeasureStatus?.();
+      window.refreshRenderModeLabel?.();
+      languageSelect.value = nextLang;
+      localStorage.setItem(storageKey, nextLang);
       showLanguageStatus('');
-      return;
-    }
-    if (attemptCount < maxTranslationAttempts) {
-      setTimeout(() => applyLanguage(lang, attemptCount + 1), translationRetryDelayMs);
-    } else {
-      console.warn(translateFailureMessage);
-      showLanguageStatus(translateFailureMessage);
+    } catch (err) {
+      console.error('Translation load failed:', err);
+      showLanguageStatus(t('language.status.error'));
+    } finally {
+      setTimeout(() => document.body.classList.remove('language-switching'), 150);
     }
   };
 
   languageSelect.addEventListener('change', event => {
-    const lang = event.target.value;
-    localStorage.setItem(storageKey, lang);
-    showLanguageStatus('');
-    applyLanguage(lang);
+    setLanguage(event.target.value);
   });
 
-  // Google Translate loads via callback parameter and requires a global function name.
-  const translateInitFlag = '__portfolioTranslateInitRegistered';
-  if (!window[translateInitFlag]) {
-    window[translateInitFlag] = true;
-    const existingTranslateInit = window.googleTranslateElementInit;
-    window.googleTranslateElementInit = () => {
-      if (typeof existingTranslateInit === 'function') {
-        existingTranslateInit();
-      }
-      if (!window.google?.translate?.TranslateElement) {
-        console.warn('Google Translate API failed to load or is not available on the window object.');
-        showLanguageStatus(translateFailureMessage);
-        return;
-      }
-      new window.google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: supportedLanguages.join(','),
-        autoDisplay: false
-      }, 'google_translate_element');
-      applyLanguage(selectedLanguage);
-    };
-  }
+  const stored = localStorage.getItem(storageKey);
+  const selectedLanguage = supportedLanguages.includes(stored) ? stored : defaultLang;
+  setLanguage(selectedLanguage);
 })();
 
 /* ---- scrollToSection (fix for nav dots) ---- */
@@ -4487,6 +4561,5 @@ document.querySelectorAll('.proj-card').forEach(card => {
 })();
 </script>
 <!-- Google Translate serves a dynamic script, so SRI hashes are not stable. -->
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body></html>
