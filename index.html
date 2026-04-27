@@ -48,6 +48,9 @@
   --radius: 4px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+[data-theme="dark"] {
+  color-scheme: dark;
+}
 
 /* Light Theme Override */
 [data-theme="light"] {
@@ -67,6 +70,7 @@
   --border-warm: rgba(200, 80, 20, 0.2);
   --glow: 0 0 20px rgba(0, 150, 200, 0.1);
   --glow-warm: 0 0 20px rgba(200, 80, 20, 0.1);
+  color-scheme: light;
 }
 [data-theme="light"] body { cursor: auto; }
 [data-theme="light"] .cursor,
@@ -1543,7 +1547,6 @@ footer {
   border: 1px solid var(--border);
   border-radius: 6px;
   color: var(--text-primary);
-  color-scheme: dark;
   font-family: var(--font-mono);
   font-size: 0.7rem;
   letter-spacing: 1px;
@@ -1563,9 +1566,6 @@ footer {
 .language-select select option {
   background: var(--bg-secondary);
   color: var(--text-primary);
-}
-[data-theme="light"] .language-select select {
-  color-scheme: light;
 }
 .language-status {
   margin-left: 8px;
