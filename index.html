@@ -1539,10 +1539,10 @@ footer {
 }
 .language-select select {
   height: 36px;
-  background: rgba(0,212,255,0.08);
+  background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 6px;
-  color: var(--text);
+  color: var(--text-primary);
   font-family: var(--font-mono);
   font-size: 0.7rem;
   letter-spacing: 1px;
@@ -1551,13 +1551,23 @@ footer {
   transition: var(--transition);
 }
 .language-select select:hover {
-  background: rgba(0,212,255,0.15);
+  background: var(--bg-card-hover);
   border-color: var(--accent);
 }
 .language-select select:focus {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 8px rgba(0,212,255,0.35);
+}
+.language-select select option {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+.language-select select option:hover,
+.language-select select option:focus,
+.language-select select option:checked {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
 }
 .language-status {
   margin-left: 8px;
