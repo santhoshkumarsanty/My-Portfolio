@@ -1542,13 +1542,27 @@ footer {
   background: rgba(0,212,255,0.08);
   border: 1px solid var(--border);
   border-radius: 6px;
-  color: var(--text);
+  color: var(--text-primary);
   font-family: var(--font-mono);
   font-size: 0.7rem;
   letter-spacing: 1px;
   padding: 0 10px;
   cursor: pointer;
   transition: var(--transition);
+}
+.language-select select option {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+[data-theme="dark"] .language-select select option {
+  background: #0f1a26;
+  color: #e8f0f7;
+}
+[data-theme="dark"] .language-select select option:checked,
+[data-theme="dark"] .language-select select option:hover,
+[data-theme="dark"] .language-select select option:focus {
+  background: #1b2a3a;
+  color: #ffffff;
 }
 .language-select select:hover {
   background: rgba(0,212,255,0.15);
