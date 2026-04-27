@@ -40,6 +40,10 @@
   --text-dim: #4a6070;
   --border: rgba(0, 212, 255, 0.12);
   --border-warm: rgba(255, 124, 42, 0.2);
+  --language-option-bg: #0f1a26;
+  --language-option-text: #e8f0f7;
+  --language-option-hover-bg: #1b2a3a;
+  --language-option-hover-text: #ffffff;
   --glow: 0 0 30px rgba(0, 212, 255, 0.15);
   --glow-warm: 0 0 30px rgba(255, 124, 42, 0.2);
   --font-display: 'Rajdhani', sans-serif;
@@ -1555,14 +1559,14 @@ footer {
   color: var(--text-primary);
 }
 [data-theme="dark"] .language-select select option {
-  background: #0f1a26;
-  color: #e8f0f7;
+  background: var(--language-option-bg);
+  color: var(--language-option-text);
 }
 [data-theme="dark"] .language-select select option:checked,
 [data-theme="dark"] .language-select select option:hover,
 [data-theme="dark"] .language-select select option:focus {
-  background: #1b2a3a;
-  color: #ffffff;
+  background: var(--language-option-hover-bg);
+  color: var(--language-option-hover-text);
 }
 .language-select select:hover {
   background: rgba(0,212,255,0.15);
