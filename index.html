@@ -1543,6 +1543,7 @@ footer {
   border: 1px solid var(--border);
   border-radius: 6px;
   color: var(--text-primary);
+  color-scheme: dark;
   font-family: var(--font-mono);
   font-size: 0.7rem;
   letter-spacing: 1px;
@@ -1563,9 +1564,8 @@ footer {
   background: var(--bg-secondary);
   color: var(--text-primary);
 }
-.language-select select option:checked {
-  background: var(--bg-card-hover);
-  color: var(--text-primary);
+[data-theme="light"] .language-select select {
+  color-scheme: light;
 }
 .language-status {
   margin-left: 8px;
